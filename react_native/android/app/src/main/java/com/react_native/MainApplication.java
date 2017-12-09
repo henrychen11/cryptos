@@ -1,4 +1,4 @@
-package com.cryptos;
+package com.react_native;
 
 import android.app.Application;
 
