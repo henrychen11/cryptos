@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
 import App from './App';
 
-AppRegistry.registerComponent('Cryptos', () => App);
+AppRegistry.registerComponent('react_native', () => App);
