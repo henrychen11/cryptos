@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import Home from './app/components/screens/home';
-import News from './app/components/screens/news';
+import Home from './screens/home';
+import News from './screens/news';
 
 const App = StackNavigator({
   Home: { screen: Home },

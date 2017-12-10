@@ -15,7 +15,7 @@ class CoinIndexItem extends React.Component {
   }
 
   render() {
-    const {symbol, name, price, change} = this.props.coin;
+    const {Currency, CurrencyLong, price, change} = this.props.coin;
     return(
       <TouchableHighlight
         activeOpacity={5}
@@ -24,10 +24,10 @@ class CoinIndexItem extends React.Component {
         <View style={styles.coinIndexItem}>
             <View style={styles.coinTitles}>
               <Text style={styles.coinSymbol}>
-                {symbol}
+                {Currency}
               </Text>
               <Text style={styles.coinName}>
-                {" | "}{name}
+                {" | "}{CurrencyLong}
               </Text>
             </View>
             <View style={styles.coinValues}>
