@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Button, Text } from 'react-native';
-import CoinIndex from '../coin/coin_index';
+import CoinIndexContainer from '../coin/coin_index_container';
 import CoinShow from '../coin/coin_show';
 
 
@@ -13,7 +13,7 @@ class Home extends React.Component{
     const { navigate } = this.props.navigation;
     return(
       <View style={styles.container}>
-        <CoinIndex />
+        <CoinIndexContainer />
         <View style={styles.coinShow}>
           <CoinShow />
         </View>

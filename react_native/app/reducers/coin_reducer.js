@@ -16,7 +16,7 @@ const CoinReducer = (state = initialState, action) => {
       return merge({}, state, newState);
     case RECEIVE_COINS:
       newState = action.coins;
-      return newState;
+      return merge({}, state, newState);
     default:
       return state;
   }
