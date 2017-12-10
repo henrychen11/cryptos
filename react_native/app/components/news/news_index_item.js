@@ -5,9 +5,11 @@ import { colors, layouts } from '../../stylesheets/constants';
 class NewsIndexItem extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   render() {
+
     return (
       <TouchableHighlight
         activeOpacity={5}
@@ -16,11 +18,10 @@ class NewsIndexItem extends React.Component {
         <View style={styles.newsIndexItem}>
           <View style={styles.left}>
             <Image
-              source={this.props.article.urlToImage}
+              source={{ uri: `${this.props.article.urlToImage}` }}
               style={styles.image}>
             </Image>
           </View>
-
         <View style={styles.right}>
           <Text
             style={styles.newsName}>
@@ -62,7 +63,6 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     color: 'white',
     fontSize: 14,
-
   },
   newsDescription: {
     color: 'white',
@@ -73,5 +73,6 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 50,
     width: 100
-  }
+  },
+
 });
