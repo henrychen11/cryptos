@@ -7,7 +7,7 @@ class CoinShowPrice extends React.Component {
 
   render() {
     return(
-      <View style={styles.coinShow}>
+      <View style={styles.coinShowPrice}>
         <CoinPriceInfo />
       </View>
     );
@@ -19,8 +19,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     backgroundColor: colors.dark_gray,
-    borderWidth: 5,
-    borderColor: 'green',
   }
 });
 
