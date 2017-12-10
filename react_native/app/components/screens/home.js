@@ -1,13 +1,22 @@
 import React from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet, Button, Text } from 'react-native';
 import CoinIndex from '../coin/coin_index';
+import CoinShow from '../coin/coin_show';
+
 
 class Home extends React.Component{
+  static navigationOptions = {
+    title: 'Cryptos',
+  }
+
   render() {
     const { navigate } = this.props.navigation;
     return(
       <View style={styles.container}>
         <CoinIndex />
+        <View style={styles.coinShow}>
+          <CoinShow />
+        </View>
         <Button
           title="go to news"
           onPress={() =>
@@ -24,18 +33,10 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  coinShow: {
+    flex: .8,
+    width: '100%',
   },
 });
