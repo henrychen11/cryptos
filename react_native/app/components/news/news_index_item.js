@@ -1,11 +1,19 @@
 import React from 'react';
-import { View, StyleSheet, Text, ListView, TouchableHighlight, Image } from 'react-native';
+import { View, StyleSheet, Text, ListView, TouchableHighlight, Image, WebView } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 
 class NewsIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
+  }
+  _onPress(weblink) {
+    console.log(weblink);
+    return (
+      <WebView
+        source={{ uri: `weblink` }}
+        />
+    );
   }
 
   render() {
@@ -14,7 +22,7 @@ class NewsIndexItem extends React.Component {
       <TouchableHighlight
         activeOpacity={5}
         underlayColor="gray"
-        onPress={this._onPress}>
+        onPress={() => this._onPress(this.props.article.url)}>
         <View style={styles.newsIndexItem}>
           <View style={styles.left}>
             <Image
@@ -32,9 +40,6 @@ class NewsIndexItem extends React.Component {
             numberOfLines={3}
             style={styles.newsDescription}>
             {this.props.article.description}
-          </Text>
-          <Text>
-            {this.props.article.publishedAt}
           </Text>
         </View>
         </View>
@@ -56,7 +61,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   newsIndexItem: {
-    paddingVertical: 5,
+    paddingVertical: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -65,6 +70,7 @@ const styles = StyleSheet.create({
     marginHorizontal: layouts.marginHorizontal,
   },
   newsName: {
+    paddingTop: 10,
     fontWeight: "800",
     color: 'white',
     fontSize: 14,

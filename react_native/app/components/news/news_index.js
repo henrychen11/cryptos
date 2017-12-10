@@ -33,7 +33,7 @@ class NewsIndex extends React.Component {
 
   updateNews(term){
     console.log("inside update news");
-    const url = 'https://newsapi.org/v2/top-headlines?'
+    const url = 'https://newsapi.org/v2/everything?'
      + `q=${term}&sortBy=publishedAt&`
      + 'apiKey=bfa105efac2f4515889f3e14dddfc0f1';
 
@@ -65,10 +65,11 @@ class NewsIndex extends React.Component {
             value={this.state.searchTerm}
             placeholder="Enter Search Term"
             onSubmitEditing={ (event) => this.updateNews(event.nativeEvent.text)}
-            enableEmptySections={true}
+
             />
           <ListView style={styles.newsIndexList}
             dataSource={this.state.dataSource}
+            enableEmptySections={true}
             renderRow={(article) => (
               <NewsIndexItem article={article} />
             )}>
