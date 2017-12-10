@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, ListView, TouchableHighlight } from 'react-native';
+import { View, StyleSheet, Text, ListView, TouchableHighlight, Image } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 
 class NewsIndexItem extends React.Component {
@@ -14,17 +14,26 @@ class NewsIndexItem extends React.Component {
         underlayColor="gray"
         onPress={this._onPress}>
         <View style={styles.newsIndexItem}>
-        <Text
-          style={styles.newsName}>
-          {this.props.article.title}
-        </Text>
-        <Text
-          style={styles.newsDescription}>
-          {this.props.article.description}
-        </Text>
-        <Text>
-          {this.props.article.publishedAt}
-        </Text>
+          <View style={styles.left}>
+            <Image
+              source={this.props.article.urlToImage}
+              style={styles.image}>
+            </Image>
+          </View>
+
+        <View style={styles.right}>
+          <Text
+            style={styles.newsName}>
+            {this.props.article.title}
+          </Text>
+          <Text
+            style={styles.newsDescription}>
+            {this.props.article.description}
+          </Text>
+          <Text>
+            {this.props.article.publishedAt}
+          </Text>
+        </View>
         </View>
       </TouchableHighlight>
     );
@@ -33,11 +42,17 @@ class NewsIndexItem extends React.Component {
 
 export default NewsIndexItem;
 
-
 const styles = StyleSheet.create({
+  left: {
+    flex: 1,
+  },
+  right: {
+    flex: 2,
+    flexDirection: 'column',
+  },
   newsIndexItem: {
     paddingVertical: 10,
-    flexDirection: 'column',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     borderColor: 'gray',
     borderBottomWidth: 1,
@@ -46,14 +61,17 @@ const styles = StyleSheet.create({
   newsName: {
     fontWeight: "800",
     color: 'white',
+    fontSize: 14,
 
   },
   newsDescription: {
     color: 'white',
     flexDirection: 'row',
-    // alignItems: 'center'
+    fontSize: 11,
   },
-  newsThumb: {
-    color: 'white'
-  },
+  image: {
+    height: 100,
+    borderRadius: 50,
+    width: 100
+  }
 });
