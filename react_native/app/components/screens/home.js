@@ -6,7 +6,7 @@ import CoinShow from '../coin/coin_show';
 
 class Home extends React.Component{
   static navigationOptions = {
-    title: 'Cryptos',
+    tabBarLabel: 'Cryptos',
   }
 
   render() {
