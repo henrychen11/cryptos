@@ -24,10 +24,12 @@ class NewsIndexItem extends React.Component {
           </View>
         <View style={styles.right}>
           <Text
+            numberOfLines={2}
             style={styles.newsName}>
             {this.props.article.title}
           </Text>
           <Text
+            numberOfLines={3}
             style={styles.newsDescription}>
             {this.props.article.description}
           </Text>
@@ -46,15 +48,18 @@ export default NewsIndexItem;
 const styles = StyleSheet.create({
   left: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   right: {
     flex: 2,
     flexDirection: 'column',
   },
   newsIndexItem: {
-    paddingVertical: 10,
+    paddingVertical: 5,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    alignItems: 'center',
+    justifyContent: 'center',
     borderColor: 'gray',
     borderBottomWidth: 1,
     marginHorizontal: layouts.marginHorizontal,
@@ -65,14 +70,16 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   newsDescription: {
+    paddingTop: 10,
     color: 'white',
     flexDirection: 'row',
     fontSize: 11,
   },
   image: {
-    height: 100,
-    borderRadius: 50,
-    width: 100
+    justifyContent: 'center',
+    height: 80,
+    borderRadius: 3,
+    width: 80
   },
 
 });

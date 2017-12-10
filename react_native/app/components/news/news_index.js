@@ -12,7 +12,7 @@ class NewsIndex extends React.Component {
   }
 
   componentDidMount(){
-    const url = 'https://newsapi.org/v2/top-headlines?'
+    const url = 'https://newsapi.org/v2/everything?'
      + 'q=bitcoin&sortBy=publishedAt&'
      + 'apiKey=bfa105efac2f4515889f3e14dddfc0f1';
 
@@ -22,7 +22,6 @@ class NewsIndex extends React.Component {
               const ds = new ListView.DataSource({
                 rowHasChanged: (r1, r2) => r1 !== r2
               });
-
               this.setState({
                 isLoading: false,
                 dataSource: ds.cloneWithRows(responseJSON.articles)
@@ -53,7 +52,6 @@ class NewsIndex extends React.Component {
   }
 
   render(){
-    console.log("articles", this.state.dataSource);
     if (this.state.isLoading){
       return (
         <Text>I'm LOADING!!!!</Text>
@@ -101,6 +99,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'white',
     borderBottomWidth: 1,
     height: 35,
+    textAlign: 'center',
   }
 });
 
