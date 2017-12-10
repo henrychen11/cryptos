@@ -4,7 +4,6 @@ import App from './App';
 import configureStore from '../store/store';
 
 let store = configureStore();
-console.log(store.getState());
 
 const Root = () => (
   <Provider store={store}>

@@ -20,3 +20,17 @@ export const requestCoins = () => dispatch => (
     .then(coins => dispatch(receiveCoins(coins)))
     .catch((error) => (console.log(error)))
 );
+
+export const requestCoin = (coinSymbol) => dispatch => (
+  fetch(`https://bittrex.com/api/v1.1/public/getorderbook?market=BTC-${coinSymbol}&type=both`)
+    .then((response) => (response.json()))
+    .then((coin) => dispatch(receiveCoin))
+    .catch((error) => console.log(error))
+);
+
+export const requestBTC = () => dispatch => (
+  fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+    .then((response) => (response.json()))
+    .then((coin) => dispatch(receiveCoin))
+    .catch((error) => console.log(error))
+);

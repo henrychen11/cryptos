@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import CoinShowPrice from '../coin/coin_show_price';
 import { TabNavigator } from 'react-navigation';
 
-import Home from './screens/home';
-import News from './screens/news';
 
 const App = TabNavigator({
-  Home: { screen: Home },
-  News: { screen: News }
+  Price: { screen: CoinShowPrice },
+  Graph: { screen: CoinShowPrice },
+  News: { screen: CoinShowPrice }
 }, {
-  tabBarPosition: 'top',
+  tabBarVisible: false,
   animationEnabled: true,
-  swipeEnabled: true,
   lazyLoad: true,
+  swipeEnabled: true,
+  tabBarPosition: 'bottom',
   tabBarOptions: {
     activeTintColor: 'green',
     labelStyle: {

@@ -9,6 +9,11 @@ class CoinIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestCoins();
+    if (this.props.coins.length > 0) {
+      this.props.coins.length.forEach( coin => {
+        this.props.requestCoin(coin.Currency);
+      });
+    }
   }
 
   render() {

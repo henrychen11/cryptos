@@ -44,7 +44,7 @@ class CoinIndexItem extends React.Component {
 
 const styles = StyleSheet.create({
   coinIndexItem: {
-    paddingVertical: 10,
+    paddingVertical: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderColor: 'gray',
@@ -53,21 +53,24 @@ const styles = StyleSheet.create({
   },
   coinTitles: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   coinSymbol: {
-    color: 'white'
+    color: 'white',
+    fontSize: 18,
   },
   coinName: {
-    color: 'white'
+    color: 'white',
+    fontSize: 18,
   },
   coinValues: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   coinPrice: {
     color: 'white',
-    paddingRight: 7
+    fontSize: 18,
+    paddingRight: 7,
   }
 });
 

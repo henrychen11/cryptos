@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import CoinPriceInfo from '../coin/coin_price_info';
 import { colors } from '../../stylesheets/constants';
 
-class CoinShow extends React.Component {
+class CoinShowPrice extends React.Component {
 
   render() {
     return(
@@ -12,15 +12,16 @@ class CoinShow extends React.Component {
       </View>
     );
   }
-
 }
 
 const styles = StyleSheet.create({
-  coinShow: {
+  coinShowPrice: {
     flex: 1,
     width: "100%",
     backgroundColor: colors.dark_gray,
+    borderWidth: 5,
+    borderColor: 'green',
   }
 });
 
-export default CoinShow;
+export default CoinShowPrice;

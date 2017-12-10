@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { requestCoins } from '../../actions/coin_actions';
+import { requestCoins, requestCoin, requestBTC } from '../../actions/coin_actions';
 import CoinIndex from './coin_index';
 
 const mapStateToProps = (state) => ({
@@ -8,7 +8,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  requestCoins: () => dispatch(requestCoins())
+  requestCoins: () => dispatch(requestCoins()),
+  requestCoin: (coin) => dispatch(requestCoins(coin)),
+  requestBTC: () => dispatch(requestBTC())
 });
 
 export default connect(
