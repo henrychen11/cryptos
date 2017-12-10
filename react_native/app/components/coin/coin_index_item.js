@@ -5,6 +5,8 @@ import {
   StyleSheet,
   TouchableHighlight,
 } from 'react-native';
+import { colors, layouts } from '../../stylesheets/constants';
+
 import CoinPriceChange from './coin_price_change';
 
 class CoinIndexItem extends React.Component {
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderColor: 'gray',
     borderBottomWidth: 1,
-    marginHorizontal: 20,
+    marginHorizontal: layouts.marginHorizontal,
   },
   coinTitles: {
     flexDirection: 'row',
