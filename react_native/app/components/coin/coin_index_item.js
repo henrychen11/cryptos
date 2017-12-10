@@ -15,7 +15,7 @@ class CoinIndexItem extends React.Component {
   }
 
   render() {
-    const {symbol, name, price, change} = this.props.coin;
+    const {Currency, CurrencyLong, price, change} = this.props.coin;
     return(
       <TouchableHighlight
         activeOpacity={5}
@@ -24,10 +24,10 @@ class CoinIndexItem extends React.Component {
         <View style={styles.coinIndexItem}>
             <View style={styles.coinTitles}>
               <Text style={styles.coinSymbol}>
-                {symbol}
+                {Currency}
               </Text>
               <Text style={styles.coinName}>
-                {" | "}{name}
+                {" | "}{CurrencyLong}
               </Text>
             </View>
             <View style={styles.coinValues}>
@@ -44,7 +44,7 @@ class CoinIndexItem extends React.Component {
 
 const styles = StyleSheet.create({
   coinIndexItem: {
-    paddingVertical: 10,
+    paddingVertical: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderColor: 'gray',
@@ -53,21 +53,24 @@ const styles = StyleSheet.create({
   },
   coinTitles: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   coinSymbol: {
-    color: 'white'
+    color: 'white',
+    fontSize: 18,
   },
   coinName: {
-    color: 'white'
+    color: 'white',
+    fontSize: 18,
   },
   coinValues: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   coinPrice: {
     color: 'white',
-    paddingRight: 7
+    fontSize: 18,
+    paddingRight: 7,
   }
 });
 

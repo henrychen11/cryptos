@@ -1,34 +1,29 @@
 import React from 'react';
 import { View, StyleSheet, Button, Text } from 'react-native';
-import CoinIndex from '../coin/coin_index';
-import CoinShow from '../coin/coin_show';
+
+import CoinIndexContainer from '../coin/coin_index_container';
+import CoinShow from './coin_show';
+// import CoinShowPrice from '../coin/coin_show_price';
 
 
 class Home extends React.Component{
   static navigationOptions = {
-    title: 'Cryptos',
+    tabBarLabel: 'Cryptos',
   }
 
   render() {
-    const { navigate } = this.props.navigation;
     return(
       <View style={styles.container}>
-        <CoinIndex />
+        <CoinIndexContainer />
         <View style={styles.coinShow}>
           <CoinShow />
         </View>
-        <Button
-          title="go to news"
-          onPress={() =>
-            navigate('News')}
-        />
       </View>
     );
   }
 }
 
-export default Home;
-
+Home.router = CoinShow.router;
 
 const styles = StyleSheet.create({
   container: {
@@ -40,3 +35,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+
+
+
+export default Home;

@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
   },
   priceChange: {
     color: 'white',
+    fontSize: 18,
     padding: 5,
   }
 });
