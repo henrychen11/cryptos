@@ -33,6 +33,8 @@ const styles = StyleSheet.create({
   coinShow: {
     flex: .8,
     width: '100%',
+    flexDirection: 'column',
+
   },
 });
 
