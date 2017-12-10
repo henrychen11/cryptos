@@ -18,8 +18,10 @@ class NewsIndex extends React.Component {
     return fetch(url)
             .then((response) => (response.json()))
             .then((responseJSON) => {
-              const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-              console.log(responseJSON.articles);
+              const ds = new ListView.DataSource({
+                rowHasChanged: (r1, r2) => r1 !== r2
+              });
+
               this.setState({
                 isLoading: false,
                 articles: responseJSON.articles,
@@ -30,23 +32,37 @@ class NewsIndex extends React.Component {
   }
 
   render(){
-    console.log("articles", this.state.articles);
+    console.log("articles", this.state.dataSource);
     if (this.state.isLoading){
       return (
         <Text>I'm LOADING!!!!</Text>
       );
     } else {
       return (
-        <View>
-          {this.state.articles.map( (article) => (
-            <NewsIndexItem key={article.url} article={article}/>
-          )
-        )}
-        </View>
+          <ListView style={styles.newsIndex}
+            dataSource={this.state.dataSource}
+            renderRow={(article) => (
+              <NewsIndexItem article={article} />
+            )}>
+          </ListView>
+
       );
     }
   }
 
 }
+
+const styles = StyleSheet.create({
+  newsIndex: {
+    backgroundColor: 'black',
+    flex: 1,
+    flexDirection: 'column',
+    width: '100%',
+    paddingTop: 10,
+    overflow: 'scroll',
+    borderBottomWidth: 1,
+    borderColor: 'gray'
+  }
+});
 
 export default NewsIndex;
