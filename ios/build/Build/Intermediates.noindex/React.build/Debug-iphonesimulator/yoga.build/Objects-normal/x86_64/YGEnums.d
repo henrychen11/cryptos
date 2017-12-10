@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.c \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/ReactCommon/yoga/yoga/YGMacros.h
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.c \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/ReactCommon/yoga/yoga/YGMacros.h
