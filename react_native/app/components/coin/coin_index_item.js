@@ -1,39 +1,53 @@
 import React from 'react';
-import { Text, View, StyleSheet} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableHighlight,
+} from 'react-native';
 import CoinPriceChange from './coin_price_change';
 
 class CoinIndexItem extends React.Component {
+  _onPress() {
+
+  }
+
   render() {
     const {symbol, name, price, change} = this.props.coin;
-    console.log(symbol);
     return(
-      <View style={styles.coinIndexItem}>
-        <View style={styles.coinTitles}>
-          <Text style={styles.coinSymbol}>
-            {symbol}
-          </Text>
-          <Text style={styles.coinName}>
-            {" | "}{name}
-          </Text>
+      <TouchableHighlight
+        activeOpacity={5}
+        underlayColor="gray"
+        onPress={this._onPress}>
+        <View style={styles.coinIndexItem}>
+            <View style={styles.coinTitles}>
+              <Text style={styles.coinSymbol}>
+                {symbol}
+              </Text>
+              <Text style={styles.coinName}>
+                {" | "}{name}
+              </Text>
+            </View>
+            <View style={styles.coinValues}>
+              <Text style={styles.coinPrice}>
+                ${price}
+              </Text>
+              <CoinPriceChange priceChange={change}/>
+            </View>
         </View>
-        <View style={styles.coinValues}>
-          <Text style={styles.coinPrice}>
-            {price}
-          </Text>
-          <CoinPriceChange priceChange={change}/>
-        </View>
-      </View>
+      </TouchableHighlight>
     );
   }
 }
 
 const styles = StyleSheet.create({
   coinIndexItem: {
-    padding: 10,
+    paddingVertical: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderColor: 'white',
+    borderColor: 'gray',
     borderBottomWidth: 1,
+    marginHorizontal: 20,
   },
   coinTitles: {
     flexDirection: 'row',
@@ -51,7 +65,7 @@ const styles = StyleSheet.create({
   },
   coinPrice: {
     color: 'white',
-    padding: 5
+    paddingRight: 7
   }
 });
 
