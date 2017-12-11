@@ -28,7 +28,7 @@ class CoinPriceInfo extends React.Component {
     } else {
        return (
         <View style={styles.coinPriceInfo}>
-          <Text>Loading</Text>
+          <Text style={styles.title}>Select a coin</Text>
         </View>
       );
     }
@@ -51,9 +51,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   title: {
-    fontSize: 16,
+    fontSize: 18,
     padding: 4,
     color: colors.white,
+    textAlign: 'center',
   }
 });
 

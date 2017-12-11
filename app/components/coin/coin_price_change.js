@@ -5,7 +5,7 @@ class CoinPriceChange extends React.Component {
 
   render() {
     let viewStyle, sign;
-    if (this.props.priceChange >= 0) {
+    if (this.props.priceChange < 0) {
       sign = "+";
       viewStyle = styles.positive;
     } else {
@@ -28,17 +28,21 @@ const styles = StyleSheet.create({
   coinPriceChange: {
     borderRadius: 5,
     overflow: 'hidden',
+    width: 65,
   },
   positive: {
-    backgroundColor: 'green'
+    backgroundColor: 'green',
+    width: '100%',
   },
   negative: {
-    backgroundColor: 'red'
+    backgroundColor: 'red',
+    width: '100%',
   },
   priceChange: {
     color: 'white',
     fontSize: 18,
     padding: 5,
+    textAlign: 'right',
   }
 });
 

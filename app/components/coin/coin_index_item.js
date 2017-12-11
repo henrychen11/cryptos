@@ -22,16 +22,29 @@ class CoinIndexItem extends React.Component {
 
   render() {
     const { id, symbol, name, price, change } = this.props.coin;
-    let coinIndexItemStyle = styles.coinIndexItem;
+    let highlightStyle = styles.normal;
     if (id === this.props.currentCoin.id) {
-      coinIndexItemStyle = styles.coinIndexItemSelected;
+      highlightStyle = styles.selected;
+    }
+    let priceDisplay, changeDisplay;
+    if (price) {
+      priceDisplay = `$${price}`;
+    } else {
+      priceDisplay = "----";
+    }
+
+    if (change) {
+      changeDisplay = change;
+    } else {
+      changeDisplay = "----";
     }
     return(
       <TouchableHighlight
         activeOpacity={5}
         underlayColor="gray"
-        onPress={this._onPress}>
-        <View style={coinIndexItemStyle}>
+        onPress={this._onPress}
+        style={highlightStyle}>
+        <View style={styles.coinIndexItem}>
             <View style={styles.coinTitles}>
               <Text style={styles.coinSymbol}>
                 {symbol}
@@ -42,9 +55,9 @@ class CoinIndexItem extends React.Component {
             </View>
             <View style={styles.coinValues}>
               <Text style={styles.coinPrice}>
-                ${price}
+                {priceDisplay}
               </Text>
-              <CoinPriceChange priceChange={change}/>
+              <CoinPriceChange priceChange={changeDisplay}/>
             </View>
         </View>
       </TouchableHighlight>
@@ -61,14 +74,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     marginHorizontal: layouts.marginHorizontal,
   },
-  coinIndexItemSelected: {
-    paddingVertical: 12,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  normal: {
+    backgroundColor: 'transparent',
+  },
+  selected: {
     backgroundColor: 'gray',
-    borderColor: 'gray',
-    borderBottomWidth: 1,
-    marginHorizontal: layouts.marginHorizontal,
   },
   coinTitles: {
     flexDirection: 'row',
