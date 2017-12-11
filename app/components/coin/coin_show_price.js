@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import CoinPriceInfo from '../coin/coin_price_info';
+import CoinPriceInfoContainer from '../coin/coin_price_info_container';
 import { colors } from '../../stylesheets/constants';
 
 class CoinShowPrice extends React.Component {
@@ -8,7 +8,7 @@ class CoinShowPrice extends React.Component {
   render() {
     return(
       <View style={styles.coinShowPrice}>
-        <CoinPriceInfo />
+        <CoinPriceInfoContainer />
       </View>
     );
   }

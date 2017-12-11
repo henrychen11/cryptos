@@ -10,31 +10,54 @@ import { colors, layouts } from '../../stylesheets/constants';
 import CoinPriceChange from './coin_price_change';
 
 class CoinIndexItem extends React.Component {
-  _onPress() {
+  constructor(props) {
+    super(props);
+    this._onPress = this._onPress.bind(this);
+  }
 
+  _onPress() {
+    console.log(this.props.receiveCurrentCoin);
+    this.props.receiveCurrentCoin(this.props.coin);
   }
 
   render() {
-    const {Currency, CurrencyLong, price, change} = this.props.coin;
+    const { id, symbol, name, price, change } = this.props.coin;
+    let highlightStyle = styles.normal;
+    if (id === this.props.currentCoin.id) {
+      highlightStyle = styles.selected;
+    }
+    let priceDisplay, changeDisplay;
+    if (price) {
+      priceDisplay = `$${price}`;
+    } else {
+      priceDisplay = "----";
+    }
+
+    if (change) {
+      changeDisplay = change;
+    } else {
+      changeDisplay = "----";
+    }
     return(
       <TouchableHighlight
         activeOpacity={5}
         underlayColor="gray"
-        onPress={this._onPress}>
+        onPress={this._onPress}
+        style={highlightStyle}>
         <View style={styles.coinIndexItem}>
             <View style={styles.coinTitles}>
               <Text style={styles.coinSymbol}>
-                {Currency}
+                {symbol}
               </Text>
               <Text style={styles.coinName}>
-                {" | "}{CurrencyLong}
+                {" | "}{name}
               </Text>
             </View>
             <View style={styles.coinValues}>
               <Text style={styles.coinPrice}>
-                ${price}
+                {priceDisplay}
               </Text>
-              <CoinPriceChange priceChange={change}/>
+              <CoinPriceChange priceChange={changeDisplay}/>
             </View>
         </View>
       </TouchableHighlight>
@@ -50,6 +73,12 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderBottomWidth: 1,
     marginHorizontal: layouts.marginHorizontal,
+  },
+  normal: {
+    backgroundColor: 'transparent',
+  },
+  selected: {
+    backgroundColor: 'gray',
   },
   coinTitles: {
     flexDirection: 'row',

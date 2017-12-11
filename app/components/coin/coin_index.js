@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, ScrollView, StyleSheet } from 'react-native';
-import CoinIndexItem from './coin_index_item';
+import CoinIndexItemContainer from './coin_index_item_container';
 
 class CoinIndex extends React.Component {
   constructor(props) {
@@ -17,13 +17,13 @@ class CoinIndex extends React.Component {
   }
 
   render() {
-    const { coins } = this.props;
+    const { coins, receiveCurrentCoin } = this.props;
     if (coins.length > 0) {
       return (
         <ScrollView style={styles.coinIndex}>
           {
             coins.map((coin, idx) => (
-              <CoinIndexItem
+              <CoinIndexItemContainer
                 key={idx}
                 coin={coin} />
             ))
