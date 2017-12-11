@@ -11,7 +11,7 @@ class Wallet extends React.Component{
     return(
 
       <WebView
-        source={{uri: 'https://buy.coinbase.com?code=9023urn3f8934hg34&address=1JcssT2Cr2xhnfcYscLL1bZPbojg4rUC2X'}}
+        source={{uri: 'https://buy.coinbase.com?code=0223524a-33bb-5bc0-ac22-ebbdd8a7d357'}}
         style={{marginTop: 20}} />
     );
   }
