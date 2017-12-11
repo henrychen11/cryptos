@@ -3,12 +3,13 @@ by Jay Schwartz, Miles McLeod, and Henry Chen
 
 
 ## Background and Overview
-Cryptos is an app that all
+Cryptos is an app that allows users to view the top 30 coins traded on that day with detailed information along with the last 24 hours of pricing data. There is also an interactive chart that visualizes the last 24 hours of data. In addition, users also have the ability to see and search the current crypto currency news.
 
 ## Functionality & MVP
+
 * View Cryptocurrency Coin Prices for a single exchange
-* (1) API - Bittrex
-* Graph of coin pricing using Chart.js
+* API - Bittrex
+* Graph of coin pricing using ChartJS
 * View coin specific news
 * Search News
 * Demo Emulator & Site (splash page)
@@ -16,7 +17,7 @@ Cryptos is an app that all
 
 ## Bonus Features
 * Buy/Sell coins
-* Utilize coinbase auth
+* Utilize CoinBase Auth
 * Get data from multiple API’s
 * Utilize iPhone accelerometer for graphs when sideways
 * Favorite Coins (with user sign-in)
@@ -27,9 +28,21 @@ Cryptos is an app that all
 
 * Backend
   * MongoDB, ExpressJS, NodeJS, Mongoose.JS
+  * The backend will make periodic requests to the Bittrex API and then store coin and exchange data in the database. API requests from our frontend will hit an action in our backend that sends coin data from our database, and not from the foreign API.
+    * The data will be served to the frontend in JSON format via Express.
+
 
 * Frontend
   * ReactNative for App, ChartJS,  HTML/CSS/JS for browser demo/splash page
+  * The frontend will implement calls to the backend API for current cryptocurrency data and allows users to swipe to change between list of coins & news search
+  * Selected coin to show coin specific info on the bottom & swipe to navigate between:
+    * News
+    * Data
+    * Graph
+    * Touch pricing to change between
+    * % change
+    * $ change
+    * Bitcoin change (Last 24 hours)
 
 * Refining API Data
 
@@ -38,27 +51,6 @@ Cryptos is an app that all
   * Coinbase has a publicly available dataset of three coins.  Since all of the other coins are traded using one of those three and are priced in Bitcoin, we will use the current Bitcoin to USD from Coinbase API to calculate the current price of all other coins in both Bitcoin and USD.
 
 * The data we receive from Bittrex & Coinbase will also be stored in our database to allow for historical data generation and create graphs further back as we generate the data.
-
-
-UX
-Frontend Interface
-The frontend will implement calls to the backend API for current cryptocurrency data
-The frontend will implement API calls directly to a News API for current news search
-Swipe to change between list of coins & news search
-Select a coin to show coin specific info on the bottom & swipe to navigate between:
-news
-data
-Graph
-Touch pricing to change between
-% change
-$ change
-Bitcoin change
-Backend
-Our backend will be implemented with MongoDB, Express, and Node.
-The backend will make periodic requests to the Bittrex API and then store coin and exchange data in the database. API requests from our frontend will hit an action in our backend that sends coin data from our database, and not from the foreign API.
-The data will be served to the frontend in JSON format via Express.
-Project Flowchart
-
 
 ## Accomplished over the Weekend
 
@@ -102,21 +94,19 @@ Finish Demo site with active phone simulators and descriptions
 
 ## Wireframes
 
-![wire1]()
+![wire1](wireframes/1_home.png)
 
-![wire1]()
+![wire1](wireframes/2_home.png)
 
-![wire1]()
+![wire1](wireframes/3_home.png)
 
-![wire1]()
+![wire1](wireframes/4_home.png)
 
-![wire1]()
+![wire1](wireframes/5_search.png)
 
-![wire1]()
+![wire1](wireframes/6_side_graph.png)
 
-![wire1]()
-
-![wire1]()
+![wire1](wireframes/7_news_art.png)
 
 
 ## Plan for getting users and reviews
