@@ -12,10 +12,11 @@ class NewsIndex extends React.Component {
   }
 
   componentDidMount(){
-    const url = 'https://newsapi.org/v2/everything?'
-     + 'q=bitcoin&sortBy=publishedAt&'
-     + 'apiKey=bfa105efac2f4515889f3e14dddfc0f1';
+    // const url = 'https://newsapi.org/v2/everything?'
+    //  + 'q=bitcoin&sortBy=publishedAt&'
+    //  + 'apiKey=bfa105efac2f4515889f3e14dddfc0f1';
 
+    const url = 'https://newsapi.org/v2/everything?q=bitcoin&from=2017-12-09&to=2017-12-09&sortBy=popularity&apiKey=bfa105efac2f4515889f3e14dddfc0f1';
     return fetch(url)
             .then((response) => (response.json()))
             .then((responseJSON) => {
