@@ -2,6 +2,7 @@ const Express = require('express');
 const Mongoose = require('mongoose');
 const BodyParser = require('body-parser');
 const path = require('path');
+const https = require ('https');
 
 const coinSchema = new Mongoose.Schema({
   name: String,
@@ -33,12 +34,32 @@ app.get('/coins', (req, res) => {
   });
 });
 
-// app.get('/coins/:coinId', (req, res) => {
-//   Coin.findById((????????????) => {
-//     if (err) return res.status(500).send(err);
-//     res.send(coins);
-//   });
-// });
+const requestCoins = () => {
+  https.get('https://bittrex.com/api/v1.1/public/getcurrencies', (response) => {
+    response.setEncoding("utf8");
+    let body = "";
+    response.on("data", data => {
+      body += data;
+    });
+    response.on("end", () => {
+      body = JSON.parse(body);
+      console.log(body);
+    });
+    // const res = response.filter( (coin, idx) => idx < 20);
+    // res.map((coin, idx) => ({
+    //   id: idx,
+    //   symbol: coin.Currency,
+    //   name: coin.CurrencyLong,
+    // }));
+  });
+};
+
+setInterval(() => {
+  const mockDB = [];
+  mockDB.push(requestCoins());
+  console.log(mockDB);
+}, 5000);
+
 
 
 app.use((req, res) => {
