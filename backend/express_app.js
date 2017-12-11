@@ -5,9 +5,9 @@ const path = require('path');
 const https = require ('https');
 
 const coinSchema = new Mongoose.Schema({
-  name: String,
-  acronym: String,
-  currentValue: Number
+  id: Number,
+  symbol: String,
+  name: String
 });
 
 const app = Express();
@@ -27,19 +27,19 @@ try {
   process.exit(1);
 }
 
-// app.get('/coins', (req, res) => {
-//   Coin.find((err, coins) => {
-//     if (err) return res.status(500).send(err);
-//     res.send(coins);
-//   });
-// });
+app.get('/coins', (req, res) => {
+  Coin.find((err, coins) => {
+    if (err) return res.status(500).send(err);
+    res.send(coins);
+  });
+});
 
 let mockDB = [];
 
-app.get('/coins', (req, res) => {
-  res.send(mockDB);
-  console.log('sent');
-});
+// app.get('/coins', (req, res) => {
+//   res.send(mockDB);
+//   console.log('sent');
+// });
 
 const requestCoins = () => {
   https.get('https://bittrex.com/api/v1.1/public/getcurrencies', (response) => {
@@ -51,11 +51,14 @@ const requestCoins = () => {
     response.on("end", () => {
       body = JSON.parse(body);
       let result = body.result.filter( (coin, idx) => idx < 20);
-      mockDB = result.map((coin, idx) => ({
-        id: idx,
-        symbol: coin.Currency,
-        name: coin.CurrencyLong,
-      }));
+      result = result.map((coin, idx) => {
+        const coinToSave = new Coin({
+          id: idx,
+          symbol: coin.Currency,
+          name: coin.CurrencyLong,
+        });
+        coinToSave.save();
+      });
     });
   });
 };
