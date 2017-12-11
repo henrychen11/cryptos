@@ -4,23 +4,8 @@ const BodyParser = require('body-parser');
 const path = require('path');
 const https = require ('https');
 const CoinModel = require('./coin.js');
-
-const historicalCoinSchema = new Mongoose.Schema({
-  name: String,
-  symbol: String,
-  today: Number,
-  day1: Number,
-  day2: Number,
-  day3: Number,
-  day4: Number,
-  day5: Number,
-  day6: Number,
-  day7: Number
-}); //historical data
-
-const exchangeSchema = new Mongoose.Schema({
-
-}); //macro exchange data
+const HistoricalCoinModel = require('./historical_coin.js');
+const ExghangeModel = require('./exchange.js');
 
 const app = Express();
 
