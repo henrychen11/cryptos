@@ -7,7 +7,14 @@ const https = require ('https');
 const coinSchema = new Mongoose.Schema({
   id: Number,
   symbol: String,
-  name: String
+  name: String,
+  high: Number,
+  low: Number,
+  volume: Number,
+  last: Number,
+  bid: Number,
+  ask: Number,
+  prevDay: Number
 });
 
 const app = Express();
@@ -31,6 +38,7 @@ app.get('/coins', (req, res) => {
   Coin.find((err, coins) => {
     if (err) return res.status(500).send(err);
     res.send(coins);
+    console.log('done');
   });
 });
 
@@ -41,7 +49,7 @@ let mockDB = [];
 //   console.log('sent');
 // });
 
-const requestCoins = () => {
+const getCoinNames = new Promise((success, failure) => {
   https.get('https://bittrex.com/api/v1.1/public/getcurrencies', (response) => {
     response.setEncoding("utf8");
     let body = "";
@@ -51,21 +59,84 @@ const requestCoins = () => {
     response.on("end", () => {
       body = JSON.parse(body);
       let result = body.result.filter( (coin, idx) => idx < 20);
-      result = result.map((coin, idx) => {
-        const coinToSave = new Coin({
-          id: idx,
-          symbol: coin.Currency,
-          name: coin.CurrencyLong,
+      // result = result.map((coin, idx) => {
+      //   const coinToSave = new Coin({
+      //     id: idx,
+      //     symbol: coin.Currency,
+      //     name: coin.CurrencyLong,
+      //   });
+      //   coinToSave.save();
+      // });
+      result = result.map((coin, idx) => ({
+        id: idx,
+        symbol: coin.Currency,
+        name: coin.CurrencyLong
+      }));
+      success(result);
+    });
+  });
+});
+
+setTimeout(() => {
+  getCoinNames.then((result) => {
+    result.forEach(coin => {
+      https.get(`https://bittrex.com/api/v1.1/public/getmarketsummary?market=BTC-${coin.symbol}`, (response) => {
+        response.setEncoding("utf8");
+        let body = "";
+        response.on("data", data => {
+          body += data;
         });
-        coinToSave.save();
+        response.on("end", () => {
+          body = JSON.parse(body);
+          console.log(body);
+          if (body["success"] === true) {
+            coin.high = body['result'][0]["High"];
+            coin.low = body['result'][0]["Low"];
+            coin.volume = body['result'][0]["Volume"];
+            coin.last = body['result'][0]["Last"];
+            coin.bid = body['result'][0]["Bid"];
+            coin.ask = body['result'][0]["Ask"];
+            coin.prevDay = body['result'][0]["PrevDay"];
+            let coinToSave = Coin.find({name: coin.name});
+            if (coinToSave) {
+              coinToSave.update(coin);
+            } else {
+              coinToSave = new Coin(coin);
+              coinToSave.save();
+            }
+          }
+        });
       });
     });
   });
-};
+}, 1000);
 
-setInterval(() => {
-  requestCoins();
-}, 5000);
+// const requestCoinNames = () => {
+//   https.get('https://bittrex.com/api/v1.1/public/getcurrencies', (response) => {
+//     response.setEncoding("utf8");
+//     let body = "";
+//     response.on("data", data => {
+//       body += data;
+//     });
+//     response.on("end", () => {
+//       body = JSON.parse(body);
+//       let result = body.result.filter( (coin, idx) => idx < 20);
+//       // result = result.map((coin, idx) => {
+//       //   const coinToSave = new Coin({
+//       //     id: idx,
+//       //     symbol: coin.Currency,
+//       //     name: coin.CurrencyLong,
+//       //   });
+//       //   coinToSave.save();
+//       // });
+//       result = result.map((coin, idx) => ({
+//         id: idx,
+//         symbol: coin.Currency,
+//         name: coin.CurrencyLong
+//       }));
+//     });
+//   });
+// };
 
 
 
