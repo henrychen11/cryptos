@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, ListView, TouchableHighlight, Image, WebView } from 'react-native';
+import { View, StyleSheet, Text, ListView, TouchableHighlight, Image, WebView, Linking } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 
 class NewsIndexItem extends React.Component {
@@ -9,41 +9,48 @@ class NewsIndexItem extends React.Component {
   }
   _onPress(weblink) {
     console.log(weblink);
-    return (
-      <WebView
-        source={{ uri: `weblink` }}
-        />
-    );
+
   }
 
-  render() {
+    handleClick(weblink) {
+     Linking.canOpenURL(weblink).then(supported => {
+       if (supported) {
+         Linking.openURL(weblink);
+       } else {
+         console.log("Invalid URL");
+       }
+     });
+   }
 
+  render() {
     return (
-      <TouchableHighlight
-        activeOpacity={5}
-        underlayColor="gray"
-        onPress={() => this._onPress(this.props.article.url)}>
-        <View style={styles.newsIndexItem}>
-          <View style={styles.left}>
-            <Image
-              source={{ uri: `${this.props.article.urlToImage}` }}
-              style={styles.image}>
-            </Image>
+      <View>
+        <TouchableHighlight
+          activeOpacity={5}
+          underlayColor="gray"
+          onPress={() => this.handleClick(this.props.article.url)}>
+          <View style={styles.newsIndexItem}>
+            <View style={styles.left}>
+              <Image
+                source={{ uri: `${this.props.article.urlToImage}` }}
+                style={styles.image}>
+              </Image>
+            </View>
+            <View style={styles.right}>
+              <Text
+                numberOfLines={2}
+                style={styles.newsName}>
+                {this.props.article.title}
+              </Text>
+              <Text
+                numberOfLines={3}
+                style={styles.newsDescription}>
+                {this.props.article.description}
+              </Text>
+            </View>
           </View>
-        <View style={styles.right}>
-          <Text
-            numberOfLines={2}
-            style={styles.newsName}>
-            {this.props.article.title}
-          </Text>
-          <Text
-            numberOfLines={3}
-            style={styles.newsDescription}>
-            {this.props.article.description}
-          </Text>
-        </View>
-        </View>
-      </TouchableHighlight>
+        </TouchableHighlight>
+      </View>
     );
   }
 }
