@@ -31,10 +31,12 @@ class NewsIndexItem extends React.Component {
           onPress={() => this.handleClick(this.props.article.url)}>
           <View style={styles.newsIndexItem}>
             <View style={styles.left}>
-              <Image
-                source={{ uri: `${this.props.article.urlToImage}` }}
-                style={styles.image}>
-              </Image>
+              {(!this.props.article.urlToImage) ? <Text>No Image</Text> :
+                 <Image
+                    source={{ uri: `${this.props.article.urlToImage}` }}
+                    style={styles.image}>
+                  </Image>
+              }
             </View>
             <View style={styles.right}>
               <Text
