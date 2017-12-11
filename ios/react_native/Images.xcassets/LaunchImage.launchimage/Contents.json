@@ -1,6 +1,20 @@
 {
   "images" : [
-
+    {
+      "orientation" : "portrait",
+      "idiom" : "iphone",
+      "filename" : "Screen Shot 2017-12-10 at 3.26.20 PM-1.png",
+      "minimum-system-version" : "7.0",
+      "scale" : "2x"
+    },
+    {
+      "orientation" : "portrait",
+      "idiom" : "iphone",
+      "filename" : "Screen Shot 2017-12-10 at 3.26.20 PM.png",
+      "minimum-system-version" : "7.0",
+      "subtype" : "retina4",
+      "scale" : "2x"
+    }
   ],
   "info" : {
     "version" : 1,
