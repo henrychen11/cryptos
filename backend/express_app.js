@@ -96,15 +96,20 @@ setTimeout(() => {
             coin.bid = body['result'][0]["Bid"];
             coin.ask = body['result'][0]["Ask"];
             coin.prevDay = body['result'][0]["PrevDay"];
-            let coinToSave = Coin.find({name: coin.name});
+            const query = { name: coin.name };
+            const update = coin;
+            const options = { upsert: true };
+            Coin.findOneAndUpdate(query, update, options, () => {
+              console.log('updated');
+            });
             // if (coinToSave) {
-            //   coinToSave.update(coin);
-            //   coinToSave.save();
-            //   console.log("updated");
+            //   // coinToSave.update(coin);
+            //   // coinToSave.save();
+            //   console.log(coinToSave);
             // } else {
-              coinToSave = new Coin(coin);
-              coinToSave.save();
-              console.log("saved");
+            //   coinToSave = new Coin(coin);
+            //   coinToSave.save();
+            //   console.log("saved");
             // }
           }
         });
