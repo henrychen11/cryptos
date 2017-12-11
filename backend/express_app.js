@@ -44,21 +44,22 @@ const requestCoins = () => {
     response.on("end", () => {
       body = JSON.parse(body);
       console.log(body);
+      let result = body.result.filter( (coin, idx) => idx < 20);
+      result = result.map((coin, idx) => ({
+        id: idx,
+        symbol: coin.Currency,
+        name: coin.CurrencyLong,
+      }));
+      console.log(result);
     });
-    // const res = response.filter( (coin, idx) => idx < 20);
-    // res.map((coin, idx) => ({
-    //   id: idx,
-    //   symbol: coin.Currency,
-    //   name: coin.CurrencyLong,
-    // }));
   });
 };
 
-setInterval(() => {
+setTimeout(() => {
   const mockDB = [];
   mockDB.push(requestCoins());
   console.log(mockDB);
-}, 5000);
+}, 1000);
 
 
 
