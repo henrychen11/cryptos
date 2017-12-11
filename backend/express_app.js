@@ -27,11 +27,18 @@ try {
   process.exit(1);
 }
 
+// app.get('/coins', (req, res) => {
+//   Coin.find((err, coins) => {
+//     if (err) return res.status(500).send(err);
+//     res.send(coins);
+//   });
+// });
+
+let mockDB = [];
+
 app.get('/coins', (req, res) => {
-  Coin.find((err, coins) => {
-    if (err) return res.status(500).send(err);
-    res.send(coins);
-  });
+  res.send(mockDB);
+  console.log('sent');
 });
 
 const requestCoins = () => {
@@ -43,23 +50,19 @@ const requestCoins = () => {
     });
     response.on("end", () => {
       body = JSON.parse(body);
-      console.log(body);
       let result = body.result.filter( (coin, idx) => idx < 20);
-      result = result.map((coin, idx) => ({
+      mockDB = result.map((coin, idx) => ({
         id: idx,
         symbol: coin.Currency,
         name: coin.CurrencyLong,
       }));
-      console.log(result);
     });
   });
 };
 
-setTimeout(() => {
-  const mockDB = [];
-  mockDB.push(requestCoins());
-  console.log(mockDB);
-}, 1000);
+setInterval(() => {
+  requestCoins();
+}, 5000);
 
 
 
