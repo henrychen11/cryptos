@@ -88,7 +88,6 @@ setTimeout(() => {
         });
         response.on("end", () => {
           body = JSON.parse(body);
-          console.log(body);
           if (body["success"] === true) {
             coin.high = body['result'][0]["High"];
             coin.low = body['result'][0]["Low"];
@@ -98,12 +97,15 @@ setTimeout(() => {
             coin.ask = body['result'][0]["Ask"];
             coin.prevDay = body['result'][0]["PrevDay"];
             let coinToSave = Coin.find({name: coin.name});
-            if (coinToSave) {
-              coinToSave.update(coin);
-            } else {
+            // if (coinToSave) {
+            //   coinToSave.update(coin);
+            //   coinToSave.save();
+            //   console.log("updated");
+            // } else {
               coinToSave = new Coin(coin);
               coinToSave.save();
-            }
+              console.log("saved");
+            // }
           }
         });
       });
@@ -137,13 +139,6 @@ setTimeout(() => {
 //     });
 //   });
 // };
-
-
-
-app.use((req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
-
 
 const server = app.listen('8080', () => {
   console.log('running server on port ' + server.address().port);
