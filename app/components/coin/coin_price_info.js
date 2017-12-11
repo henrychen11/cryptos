@@ -6,22 +6,32 @@ import CoinPriceInfoItem from './coin_price_info_item';
 class CoinPriceInfo extends React.Component {
 
   render() {
-    return(
-      <View style={styles.coinPriceInfo}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Coin Title</Text>
+    const { currentCoin } = this.props;
+    let coinInfo;
+    if (currentCoin.name) {
+      return (
+        <View style={styles.coinPriceInfo}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{currentCoin.name}</Text>
+          </View>
+          <CoinPriceInfoItem
+            title1="OPEN" value1={5}
+            title2="MKT CAP" value2={10} />
+          <CoinPriceInfoItem
+            title1="24H HIGH" value1={0}
+            title2="7D HIGH" value2={10} />
+          <CoinPriceInfoItem
+            title1="24H LOW" value1={0}
+            title2="7D LOW" value2={10} />
         </View>
-        <CoinPriceInfoItem
-          title1="OPEN" value1={5}
-          title2="MKT CAP" value2={10} />
-        <CoinPriceInfoItem
-          title1="24H HIGH" value1={0}
-          title2="7D HIGH" value2={10} />
-        <CoinPriceInfoItem
-          title1="24H LOW" value1={0}
-          title2="7D LOW" value2={10} />
-      </View>
-    );
+      );
+    } else {
+       return (
+        <View style={styles.coinPriceInfo}>
+          <Text>Loading</Text>
+        </View>
+      );
+    }
   }
 
 }
