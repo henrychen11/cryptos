@@ -7,7 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "lodash": "^4.17.4",
+    "mongodb": "^3.0.0-rc0",
+    "mongoose": "^4.13.6",
     "react": "16.0.0",
     "react-native": "0.51.0",
     "react-navigation": "^1.0.0-beta.21",
