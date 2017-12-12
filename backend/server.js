@@ -15,7 +15,10 @@ app.use(BodyParser.json());
 Mongoose.Promise = global.Promise;
 
 try {
-  Mongoose.connect('mongodb://localhost/cryptos_coins', {
+  // Mongoose.connect('mongodb://localhost/cryptos_coins', {
+  //   useMongoClient: true,
+  // });
+  Mongoose.connect(process.env.MONGODB_URI, {
     useMongoClient: true,
   });
   console.log('connected to mongoDB');
