@@ -5,6 +5,21 @@ import CoinIndexItemContainer from './coin_index_item_container';
 class CoinIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      changeDisplay: 'priceVar'
+    };
+  }
+
+  toggleChangeDisplay(e) {
+    e.preventDefault();
+    const changeDisplay = this.state.changeDisplay;
+    if (changeDisplay === 'percentVar') {
+      this.setState({ changeDisplay: 'priceVar' });
+    } else if (changeDisplay === 'priceVar') {
+      this.setState({ changeDisplay: 'marketCap' });
+    } else if (changeDisplay === 'marketCap') {
+      this.setState({ changeDisplay: 'percentVar' });
+    }
   }
 
   componentDidMount() {
@@ -25,6 +40,8 @@ class CoinIndex extends React.Component {
             coins.map((coin, idx) => (
               <CoinIndexItemContainer
                 key={idx}
+                toggleChangeDisplay={this.toggleChangeDisplay.bind(this)}
+                changeDisplay={this.state.changeDisplay}
                 coin={coin} />
             ))
           }
