@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import { colors, layouts } from '../stylesheets/constants';
 
 import Home from './screens/home';
 import News from './screens/news';
+import NewsPreview from './news/news_preview';
+
+const ModalStack = StackNavigator({
+  News: {
+    screen: News,
+    navigationOptions: {
+      title: 'news'
+    }
+  },
+  NewsPreview: {
+    path: 'NewsPreview',
+    screen: NewsPreview,
+  },
+}, {
+  mode: 'modal',
+  headerMode: 'none',
+});
 
 const App = TabNavigator({
   Home: { screen: Home },
-  News: { screen: News }
+  News: { screen: ModalStack }
 }, {
   tabBarPosition: 'top',
   animationEnabled: true,

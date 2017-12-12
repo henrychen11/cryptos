@@ -1,70 +1,108 @@
 import React from 'react';
-import { View, StyleSheet, Text, ListView, TouchableHighlight, Image, WebView, Linking } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import {
+  View, StyleSheet, Text, ListView, TouchableHighlight, Image, WebView, Linking
+} from 'react-native';
+import NewsPreview from './news_preview';
+
 import { colors, layouts } from '../../stylesheets/constants';
 
 class NewsIndexItem extends React.Component {
+  static navigationOptions = {
+    title: 'News',
+  }
+
   constructor(props) {
     super(props);
     this.state = {
-      check: false
+
     };
   }
 
-    handleClick(weblink) {
-     Linking.canOpenURL(weblink).then(supported => {
-       if (supported) {
-         Linking.openURL(weblink);
-       } else {
-         console.log("Invalid URL");
-       }
-     });
-   }
+  // handleClick(weblink) {
+  //   Linking.canOpenURL(weblink).then(supported => {
+  //     if (supported) {
+  //       Linking.openURL(weblink);
+  //     } else {
+  //       console.log("Invalid URL");
+  //     }
+  //    });
+  //  }
 
-   renderWebView(){
-     console.log(this.props.article);
-     if(this.state.check){
-       return (
-         <WebView
-           source={{ uri: `${this.props.article.url}`}}
-           style={{ marginTop: 20}} />
-       );
-     } else {
-       return (
-         <View>
-           <TouchableHighlight
-             activeOpacity={5}
-             underlayColor="gray"
-             onPress={() => this.setState({check: true })}>
-             <View style={styles.newsIndexItem}>
-               <View style={styles.left}>
-                    <Image
-                       source={{ uri: `${this.props.article.urlToImage}` }}
-                       style={styles.image}>
-                     </Image>
-               </View>
-               <View style={styles.right}>
-                 <Text
-                   numberOfLines={2}
-                   style={styles.newsName}>
-                   {this.props.article.title}
-                 </Text>
-                 <Text
-                   numberOfLines={3}
-                   style={styles.newsDescription}>
-                   {this.props.article.description}
-                 </Text>
-               </View>
-             </View>
-           </TouchableHighlight>
-         </View>
-       );
-     }
-   }
+  // renderWebView(){
+  //   console.log(this.props.article);
+  //   if(this.state.check){
+  //     return (
+  //       <WebView
+  //         source={{ uri: `${this.props.article.url}`}}
+  //         style={{ marginTop: 20}} />
+  //     );
+  //   } else {
+  //     return (
+  //       <View>
+  //         <TouchableHighlight
+  //           activeOpacity={5}
+  //           underlayColor="gray"
+  //           onPress={() => this.setState({check: true })}>
+  //           <View style={styles.newsIndexItem}>
+  //             <View style={styles.left}>
+  //               <Image
+  //                 source={{ uri: `${this.props.article.urlToImage}` }}
+  //                 style={styles.image}>
+  //               </Image>
+  //             </View>
+  //             <View style={styles.right}>
+  //               <Text
+  //                 numberOfLines={2}
+  //                 style={styles.newsName}>
+  //                 {this.props.article.title}
+  //               </Text>
+  //               <Text
+  //                 numberOfLines={3}
+  //                 style={styles.newsDescription}>
+  //                 {this.props.article.description}
+  //               </Text>
+  //             </View>
+  //           </View>
+  //         </TouchableHighlight>
+  //       </View>
+  //     );
+  //   }
+  // }
+  //
+  _onClick() {
+    console.log(this.props.navigate);
+    return this.props.navigate('NewsPreview', {uri: this.props.article.url});
+  }
 
   render() {
     return (
-      <View style={{flex:1}}>
-        {this.renderWebView()}
+      <View>
+        <TouchableHighlight
+          activeOpacity={5}
+          underlayColor="gray"
+          onPress={ this._onClick.bind(this) }>
+          <View style={styles.newsIndexItem}>
+            <View style={styles.left}>
+              <Image
+                source={{ uri: `${this.props.article.urlToImage}` }}
+                style={styles.image}>
+              </Image>
+            </View>
+            <View style={styles.right}>
+              <Text
+                numberOfLines={2}
+                style={styles.newsName}>
+                {this.props.article.title}
+              </Text>
+              <Text
+                numberOfLines={3}
+                style={styles.newsDescription}>
+                {this.props.article.description}
+              </Text>
+            </View>
+          </View>
+        </TouchableHighlight>
       </View>
     );
   }

@@ -10,6 +10,7 @@ class News extends React.Component {
       searchTerm: ''
     };
   }
+
   componentDidMount(){
     const url = 'https://newsapi.org/v2/everything?q=bitcoin&from=2017-12-09&to=2017-12-09&sortBy=popularity&apiKey=bfa105efac2f4515889f3e14dddfc0f1';
     return fetch(url)
@@ -57,6 +58,7 @@ class News extends React.Component {
           onSubmitEditing={ (event) => this.updateNews(event.nativeEvent.text)}
           />
         <NewsIndex
+          navigate={this.props.navigation.navigate}
           dataSource={this.state.dataSource}
           isLoading={this.state.isLoading}/>
       </View>
