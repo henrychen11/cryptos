@@ -5,11 +5,9 @@ import { colors, layouts } from '../../stylesheets/constants';
 class NewsIndexItem extends React.Component {
   constructor(props) {
     super(props);
-
-  }
-  _onPress(weblink) {
-    console.log(weblink);
-
+    this.state = {
+      check: false
+    };
   }
 
     handleClick(weblink) {
@@ -22,36 +20,51 @@ class NewsIndexItem extends React.Component {
      });
    }
 
+   renderWebView(){
+     console.log(this.props.article);
+     if(this.state.check){
+       return (
+         <WebView
+           source={{ uri: `${this.props.article.url}`}}
+           style={{ marginTop: 20}} />
+       );
+     } else {
+       return (
+         <View>
+           <TouchableHighlight
+             activeOpacity={5}
+             underlayColor="gray"
+             onPress={() => this.setState({check: true })}>
+             <View style={styles.newsIndexItem}>
+               <View style={styles.left}>
+                    <Image
+                       source={{ uri: `${this.props.article.urlToImage}` }}
+                       style={styles.image}>
+                     </Image>
+               </View>
+               <View style={styles.right}>
+                 <Text
+                   numberOfLines={2}
+                   style={styles.newsName}>
+                   {this.props.article.title}
+                 </Text>
+                 <Text
+                   numberOfLines={3}
+                   style={styles.newsDescription}>
+                   {this.props.article.description}
+                 </Text>
+               </View>
+             </View>
+           </TouchableHighlight>
+         </View>
+       );
+     }
+   }
+
   render() {
     return (
-      <View>
-        <TouchableHighlight
-          activeOpacity={5}
-          underlayColor="gray"
-          onPress={() => this.handleClick(this.props.article.url)}>
-          <View style={styles.newsIndexItem}>
-            <View style={styles.left}>
-              {(!this.props.article.urlToImage) ? <Text>No Image</Text> :
-                 <Image
-                    source={{ uri: `${this.props.article.urlToImage}` }}
-                    style={styles.image}>
-                  </Image>
-              }
-            </View>
-            <View style={styles.right}>
-              <Text
-                numberOfLines={2}
-                style={styles.newsName}>
-                {this.props.article.title}
-              </Text>
-              <Text
-                numberOfLines={3}
-                style={styles.newsDescription}>
-                {this.props.article.description}
-              </Text>
-            </View>
-          </View>
-        </TouchableHighlight>
+      <View style={{flex:1}}>
+        {this.renderWebView()}
       </View>
     );
   }
