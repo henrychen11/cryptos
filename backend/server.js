@@ -5,7 +5,7 @@ const path = require('path');
 const https = require ('https');
 const CoinModel = require('./coin.js');
 const HistoricalCoinModel = require('./historical_coin.js');
-const ExghangeModel = require('./exchange.js');
+const ExchangeModel = require('./exchange.js');
 
 const app = Express();
 
@@ -23,6 +23,8 @@ try {
 }
 
 const coinModel = new CoinModel();
+// const historicalCoinModel = new HistoricalCoinModel();
+// const exchangeModel= new ExchangeModel();
 
 app.get('/coins', (req, res) => {
   coinModel.Coin.find((err, coins) => {
