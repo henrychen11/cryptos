@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/Libraries/Image/RCTImageBlurUtils.m \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/Libraries/Image/RCTImageBlurUtils.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/Libraries/Image/RCTImageBlurUtils.m \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/Libraries/Image/RCTImageBlurUtils.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h

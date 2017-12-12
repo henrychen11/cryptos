@@ -4,6 +4,8 @@ import App from './App';
 import configureStore from '../store/store';
 
 let store = configureStore();
+// Disable warnings
+console.disableYellowBox = true;
 
 const Root = () => (
   <Provider store={store}>

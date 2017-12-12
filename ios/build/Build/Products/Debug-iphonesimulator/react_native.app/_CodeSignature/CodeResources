@@ -4,9 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AppIcon60x60@2x.png</key>
+		<data>
+		5mbgInXirMTdTAwMWJQFU76nN84=
+		</data>
+		<key>Assets.car</key>
+		<data>
+		64Ntknd73WD5U8v0lMNgdAeLlhs=
+		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		8T3sC1PKpawKRqwJRFMpzznCulo=
+		AkUtVmlpk6l9vMrV/3t/HwGfLaU=
 		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
@@ -51,7 +59,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		y4WuYxM3bfCzEAK/qhlGUDfLot0=
+		8zNIhcjT1tngHF/zeS6Ht86AyVA=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -63,7 +71,7 @@
 		</data>
 		<key>PlugIns/react_nativeTests.xctest.dSYM/Contents/Resources/DWARF/react_nativeTests</key>
 		<data>
-		ust5k79OBb/lEIBtTbznLGx0zKc=
+		H7IrU6Nkqv+ycU0o6PFPYX120d4=
 		</data>
 		<key>PlugIns/react_nativeTests.xctest/Info.plist</key>
 		<data>
@@ -75,20 +83,42 @@
 		</data>
 		<key>PlugIns/react_nativeTests.xctest/react_nativeTests</key>
 		<data>
-		XWZMgSTkrVm3KMoBmQ+98oF9noY=
+		K54NPB3GLsNJl2Qt+H2kHFieRQI=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AppIcon60x60@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5mbgInXirMTdTAwMWJQFU76nN84=
+			</data>
+			<key>hash2</key>
+			<data>
+			kWYr2blnxxjZ7AWBitPup/Mwj3nqxXkqc51x4/EQ7pk=
+			</data>
+		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			64Ntknd73WD5U8v0lMNgdAeLlhs=
+			</data>
+			<key>hash2</key>
+			<data>
+			OfMjnvPxbTP0GE7t3oVqmVe+MdzTwt23p3Eza1B0G1I=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8T3sC1PKpawKRqwJRFMpzznCulo=
+			AkUtVmlpk6l9vMrV/3t/HwGfLaU=
 			</data>
 			<key>hash2</key>
 			<data>
-			4rRgyiX8dzJ0i1jXeXXdt8vBXRfjUBrca9UUsTJos+s=
+			IOw9327afolaiSdfQR1HL5ULLXQ/Hdvjpi76gguhj7Q=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
@@ -207,11 +237,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ust5k79OBb/lEIBtTbznLGx0zKc=
+			H7IrU6Nkqv+ycU0o6PFPYX120d4=
 			</data>
 			<key>hash2</key>
 			<data>
-			YcR4k7cFDmAn2765SHWQusI+qyoL6UjUeHsXCNyRh/Y=
+			Hju/ETASFMJdtVycBA+nK0bN4zcK2X+h3MJoMoJtNds=
 			</data>
 		</dict>
 		<key>PlugIns/react_nativeTests.xctest/Info.plist</key>
@@ -240,11 +270,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XWZMgSTkrVm3KMoBmQ+98oF9noY=
+			K54NPB3GLsNJl2Qt+H2kHFieRQI=
 			</data>
 			<key>hash2</key>
 			<data>
-			s+ZwGtgsNpUV3juwNi0MYlu35WpQUAHwbG29hwgyRCo=
+			7Tw+RJcpE7WUsppsMzsGqa3nrFJ2YRVp7ayXqVGW/M0=
 			</data>
 		</dict>
 	</dict>

@@ -11,7 +11,6 @@ class NewsIndex extends React.Component {
   }
 
   render(){
-    console.log(this.props.navigate);
     if (this.props.isLoading){
       return (
         <Text>I'm LOADING!!!!</Text>
