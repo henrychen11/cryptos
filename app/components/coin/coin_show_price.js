@@ -5,10 +5,7 @@ import { colors } from '../../stylesheets/constants';
 
 class CoinShowPrice extends React.Component {
   static navigationOptions = {
-    tabBarLabel: '•'
-    // tabBarIcon: () => (
-    //   <Text>•</Text>
-    // )
+    tabBarLabel: '•',
   }
 
   render() {

@@ -11,6 +11,10 @@ class NewsCoinIndex extends React.Component {
     };
   }
 
+  static navigationOptions = {
+    tabBarLabel: '•',
+  }
+
   componentDidMount(){
     console.log("inside update news");
     const url = 'https://newsapi.org/v2/everything?'

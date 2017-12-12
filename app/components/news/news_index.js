@@ -11,6 +11,7 @@ class NewsIndex extends React.Component {
   }
 
   render(){
+    console.log(this.props.navigate);
     if (this.props.isLoading){
       return (
         <Text>I'm LOADING!!!!</Text>
@@ -22,7 +23,9 @@ class NewsIndex extends React.Component {
             dataSource={this.props.dataSource}
             enableEmptySections={true}
             renderRow={(article) => (
-              <NewsIndexItem article={article} />
+              <NewsIndexItem
+                navigate={this.props.navigate}
+                article={article} />
             )}>
           </ListView>
         </View>
