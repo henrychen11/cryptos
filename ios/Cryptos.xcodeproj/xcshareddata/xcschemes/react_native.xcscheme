@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "react_native.app"
+               BuildableName = "Cryptos.app"
                BlueprintName = "Cryptos"
                ReferencedContainer = "container:Cryptos.xcodeproj">
             </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "react_native.app"
+            BuildableName = "Cryptos.app"
             BlueprintName = "Cryptos"
             ReferencedContainer = "container:Cryptos.xcodeproj">
          </BuildableReference>
@@ -96,7 +96,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "react_native.app"
+            BuildableName = "Cryptos.app"
             BlueprintName = "Cryptos"
             ReferencedContainer = "container:Cryptos.xcodeproj">
          </BuildableReference>
@@ -115,7 +115,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "react_native.app"
+            BuildableName = "Cryptos.app"
             BlueprintName = "Cryptos"
             ReferencedContainer = "container:Cryptos.xcodeproj">
          </BuildableReference>

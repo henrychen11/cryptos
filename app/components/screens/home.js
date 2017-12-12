@@ -3,8 +3,6 @@ import { View, StyleSheet, Button, Text } from 'react-native';
 
 import CoinIndexContainer from '../coin/coin_index_container';
 import CoinShow from './coin_show';
-// import CoinShowPrice from '../coin/coin_show_price';
-
 
 class Home extends React.Component{
   static navigationOptions = {
@@ -22,8 +20,6 @@ class Home extends React.Component{
     );
   }
 }
-
-Home.router = CoinShow.router;
 
 const styles = StyleSheet.create({
   container: {

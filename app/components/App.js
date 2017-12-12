@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import { TabNavigator } from 'react-navigation';
+import { colors, layouts } from '../stylesheets/constants';
 
 import Home from './screens/home';
 import News from './screens/news';
-import Wallet from './screens/wallet';
 
 const App = TabNavigator({
   Home: { screen: Home },
-  News: { screen: News },
-  Wallet: { screen: Wallet }
+  News: { screen: News }
 }, {
   tabBarPosition: 'top',
   animationEnabled: true,
   swipeEnabled: true,
-  lazy: false,
+  lazy: true,
   tabBarOptions: {
     activeTintColor: 'green',
     labelStyle: {
@@ -21,6 +20,8 @@ const App = TabNavigator({
     },
     style: {
       backgroundColor: 'black',
+      padding: 10,
+      marginTop: 20,
     },
   }
 });
