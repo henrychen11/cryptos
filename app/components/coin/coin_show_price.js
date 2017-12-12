@@ -1,9 +1,15 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Image, Text } from 'react-native';
 import CoinPriceInfoContainer from '../coin/coin_price_info_container';
 import { colors } from '../../stylesheets/constants';
 
 class CoinShowPrice extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: '•'
+    // tabBarIcon: () => (
+    //   <Text>•</Text>
+    // )
+  }
 
   render() {
     return(

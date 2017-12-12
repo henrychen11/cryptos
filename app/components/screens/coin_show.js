@@ -5,8 +5,12 @@ import { TabNavigator } from 'react-navigation';
 
 
 const App = TabNavigator({
-  Price: { screen: CoinShowPrice },
-  News: { screen: News }
+  Price: {
+    screen: CoinShowPrice,
+  },
+  News: {
+    screen: News
+  },
 }, {
   tabBarVisible: false,
   animationEnabled: false,
@@ -16,11 +20,22 @@ const App = TabNavigator({
   tabBarPosition: 'bottom',
   tabBarOptions: {
     activeTintColor: 'green',
+    showIcon: false,
+    showLabel: true,
+    tabStyle: {
+      padding: 5,
+      flex: 0,
+      justifyContent: 'center',
+    },
+    iconStyle: {
+      color: 'green'
+    },
     labelStyle: {
-      fontSize: 14,
+      fontSize: 20,
     },
     style: {
       backgroundColor: 'black',
+      justifyContent: 'center'
     },
   }
 });
