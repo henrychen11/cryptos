@@ -17,7 +17,6 @@ class NewsIndexItem extends React.Component {
   }
 
   _onClick() {
-    console.log(this.props.article.url);
     return this.props.navigate('NewsPreview', {uri: this.props.article.url});
   }
 

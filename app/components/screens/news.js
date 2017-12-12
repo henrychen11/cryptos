@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, ListView, TextInput } from 'react-native';
 import NewsIndex from '../news/news_index';
+import { getNews } from '../util/api_util';
 
 class News extends React.Component {
   constructor(props) {
@@ -17,40 +18,19 @@ class News extends React.Component {
                 + 'sources=crypto-coins-news, cbs-news, engadget, buzzfeed&'
                 + 'language=en&'
                 + 'apiKey=bfa105efac2f4515889f3e14dddfc0f1';
-    return fetch(url)
-            .then((response) => (response.json()))
-            .then((responseJSON) => {
-              const ds = new ListView.DataSource({
-                rowHasChanged: (r1, r2) => r1 !== r2
-              });
-              this.setState({
-                isLoading: false,
-                dataSource: ds.cloneWithRows(responseJSON.articles)
-                });
-              })
-            .catch((error) => (console.log(error)));
-  }
-
-  updateNews(term){
-    console.log("inside update news");
-    const url = 'https://newsapi.org/v2/everything?'
-                + `q=${term}&`
-                + 'sources=crypto-coins-news, cbs-news, engadget, buzzfeed&'
-                + 'language=en&'
-                + 'apiKey=bfa105efac2f4515889f3e14dddfc0f1';
 
     return fetch(url)
-            .then((response) => (response.json()))
-            .then((responseJSON) => {
-              const ds = new ListView.DataSource({
-                rowHasChanged: (r1, r2) => r1 !== r2
-              });
-              this.setState({
-                isLoading: false,
-                dataSource: ds.cloneWithRows(responseJSON.articles)
-                });
-              })
-            .catch((error) => (console.log(error)));
+          .then((response) => (response.json()))
+          .then((responseJSON) => {
+            const ds = new ListView.DataSource({
+              rowHasChanged: (r1, r2) => r1 !== r2
+            });
+            this.setState({
+              isLoading: false,
+              dataSource: ds.cloneWithRows(responseJSON.articles)
+            });
+          })
+          .catch((error) => (console.log(error)));
   }
 
   render() {
