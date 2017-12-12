@@ -50,17 +50,17 @@ setInterval(() => {
   coinModel.getData();
 }, 10000);
 
-setTimeout(() => {
-  coinModel.Coin.find((err, coins) => {
-    if (!err) {
-      coins.forEach((coin) => {
-        historicalCoinModel.setTimerForMinuteUpdate(coin);
-        historicalCoinModel.setTimerForHourlyUpdate(coin);
-        historicalCoinModel.setTimerForDailyUpdate(coin);
-      });
-    }
-  });
-}, 30000);
+// setTimeout(() => {
+//   coinModel.Coin.find((err, coins) => {
+//     if (!err) {
+//       coins.forEach((coin) => {
+//         historicalCoinModel.setTimerForMinuteUpdate(coin);
+//         historicalCoinModel.setTimerForHourlyUpdate(coin);
+//         historicalCoinModel.setTimerForDailyUpdate(coin);
+//       });
+//     }
+//   });
+// }, 30000);
 
 const server = app.listen('8080', 'localhost', () => {
   console.log('running server on port ' + server.address().port);
