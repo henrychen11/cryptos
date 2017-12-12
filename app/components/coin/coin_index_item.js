@@ -16,7 +16,6 @@ class CoinIndexItem extends React.Component {
   }
 
   _onPress() {
-    console.log(this.props.receiveCurrentCoin);
     this.props.receiveCurrentCoin(this.props.coin);
   }
 
@@ -28,7 +27,7 @@ class CoinIndexItem extends React.Component {
     }
     let priceDisplay, changeDisplay;
     if (price) {
-      priceDisplay = `$${price}`;
+      priceDisplay = `฿${price}`;
     } else {
       priceDisplay = "----";
     }

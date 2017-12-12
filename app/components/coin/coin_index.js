@@ -23,6 +23,7 @@ class CoinIndex extends React.Component {
   }
 
   componentDidMount() {
+    console.log("requesting coins");
     this.props.requestCoins();
     if (this.props.coins.length > 0) {
       this.props.coins.length.forEach( coin => {
@@ -33,6 +34,7 @@ class CoinIndex extends React.Component {
 
   render() {
     const { coins, receiveCurrentCoin } = this.props;
+    console.log(coins);
     if (coins.length > 0) {
       return (
         <ScrollView style={styles.coinIndex}>
