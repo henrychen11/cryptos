@@ -1,22 +1,22 @@
 dependencies: \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Modules/RCTDevSettings.mm \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Modules/RCTDevSettings.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTBridge+Private.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTEventDispatcher.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTJSEnvironment.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/Profiler/RCTProfile.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
-  /Users/jyschwrtz/AA/flex_project/cryptos/react_native/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTJSEnvironment.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/henrychen/Dropbox/AppAcademy/flex_project/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h
