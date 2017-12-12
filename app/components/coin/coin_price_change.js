@@ -1,25 +1,57 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
 class CoinPriceChange extends React.Component {
+  constructor(props) {
+    super(props);
 
-  render() {
-    let viewStyle, sign;
+    this.viewStyle = styles.negative;
+  }
+
+  contentDisplay() {
+    let sign;
     if (this.props.priceChange < 0) {
       sign = "+";
-      viewStyle = styles.positive;
+      this.viewStyle = styles.positive;
     } else {
-      viewStyle = styles.negative;
+      this.viewStyle = styles.negative;
     }
-    return (
-      <View style={styles.coinPriceChange}>
-        <View style={viewStyle}>
+
+    switch (this.props.changeDisplay) {
+      case 'percentVar':
+        return (
           <Text style={styles.priceChange}>
             {sign}
             {this.props.priceChange}%
           </Text>
+        );
+      case 'priceVar':
+        return (
+          <Text style={styles.priceChange}>
+            {sign}
+            {this.props.priceChange}
+          </Text>
+        );
+      case 'marketCap':
+        return (
+          <Text style={styles.priceChange}>
+            {this.props.priceChange}B
+          </Text>
+        );
+    }
+  }
+
+  render() {
+    let content = this.contentDisplay();
+    return (
+      <TouchableWithoutFeedback
+        onPress={(e) => this.props.toggleChangeDisplay(e)} >
+        <View style={styles.coinPriceChange}>
+          <View style={this.viewStyle}>
+            { content }
+          </View>
         </View>
-      </View>
+      </TouchableWithoutFeedback>
     );
   }
 }

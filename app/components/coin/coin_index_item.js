@@ -57,7 +57,10 @@ class CoinIndexItem extends React.Component {
               <Text style={styles.coinPrice}>
                 {priceDisplay}
               </Text>
-              <CoinPriceChange priceChange={changeDisplay}/>
+              <CoinPriceChange
+                toggleChangeDisplay={this.props.toggleChangeDisplay}
+                changeDisplay={this.props.changeDisplay}
+                priceChange={changeDisplay}/>
             </View>
         </View>
       </TouchableHighlight>

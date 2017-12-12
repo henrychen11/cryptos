@@ -14,7 +14,7 @@ const App = TabNavigator({
 }, {
   tabBarVisible: false,
   animationEnabled: false,
-  lazy: true,
+  lazy: false,
 
   swipeEnabled: true,
   tabBarPosition: 'bottom',
