@@ -1,6 +1,6 @@
 import React from 'react';
 import CoinShowPrice from '../coin/coin_show_price';
-import News from '../news/news_coin_index';
+import News from '../news/news_coin_index_container';
 import { TabNavigator } from 'react-navigation';
 
 
