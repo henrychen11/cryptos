@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, ListView, TextInput } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
-import NewsIndexItem from './news_index_item';
-// import { fetch } from '../util/api_util';
+import NewsCoinIndexItem from './news_coin_index_item';
 
 class NewsCoinIndex extends React.Component {
   constructor(props){
@@ -70,7 +69,7 @@ class NewsCoinIndex extends React.Component {
                 dataSource={this.state.dataSource}
                 enableEmptySections={true}
                 renderRow={(article) => (
-                  <NewsIndexItem article={article} />
+                  <NewsCoinIndexItem article={article} />
                 )}
                 />
             </View>
