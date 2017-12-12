@@ -25,7 +25,7 @@ module.exports = class CoinModel {
     this.getCoinNames().then((result) => {
       result.forEach((coin) => {
         this.getCoinData(coin);
-      });
+      }, (errors) => console.log(errors));
     });
   }
 
@@ -37,15 +37,26 @@ module.exports = class CoinModel {
         response.on("data", data => {
           body += data;
         });
+        response.on("uncaughtException", (err) => {
+          console.log("Caught connection error: ");
+          console.log(err);
+          return;
+        });
         response.on("end", () => {
-          body = JSON.parse(body);
-          let result = body.result.filter( (coin, idx) => idx < 20);
-          result = result.map((coin, idx) => ({
-            id: idx,
-            symbol: coin.Currency,
-            name: coin.CurrencyLong
-          }));
-          success(result);
+          try { body = JSON.parse(body);
+            if (body["success"] === true) {
+              // let result = body.result.filter( (coin, idx) => idx < 20);
+              let result = body.result;
+              result = result.map((coin, idx) => ({
+                id: idx,
+                symbol: coin.Currency,
+                name: coin.CurrencyLong
+              }));
+              success(result);
+            }
+          } catch (e) {
+            console.log(e);
+          }
         });
       });
     });
@@ -58,22 +69,30 @@ module.exports = class CoinModel {
       response.on("data", data => {
         body += data;
       });
+      response.on("uncaughtException", (err) => {
+        console.log("Caught connection error: ");
+        console.log(err);
+        return;
+      });
       response.on("end", () => {
-        body = JSON.parse(body);
-        if (body["success"] === true) {
-          coin.high = body['result'][0]["High"];
-          coin.low = body['result'][0]["Low"];
-          coin.volume = body['result'][0]["Volume"];
-          coin.last = body['result'][0]["Last"];
-          coin.bid = body['result'][0]["Bid"];
-          coin.ask = body['result'][0]["Ask"];
-          coin.prevDay = body['result'][0]["PrevDay"];
-          const query = { name: coin.name };
-          const update = coin;
-          const options = { upsert: true };
-          this.Coin.findOneAndUpdate(query, update, options, () => {
-            // console.log('updated');
-          });
+        try { body = JSON.parse(body);
+          if (body["success"] === true) {
+            coin.high = body['result'][0]["High"];
+            coin.low = body['result'][0]["Low"];
+            coin.volume = body['result'][0]["Volume"];
+            coin.last = body['result'][0]["Last"];
+            coin.bid = body['result'][0]["Bid"];
+            coin.ask = body['result'][0]["Ask"];
+            coin.prevDay = body['result'][0]["PrevDay"];
+            const query = { name: coin.name };
+            const update = coin;
+            const options = { upsert: true };
+            this.Coin.findOneAndUpdate(query, update, options, () => {
+              // console.log('updated');
+            });
+          }
+        } catch (e) {
+          console.log(e);
         }
       });
     });
