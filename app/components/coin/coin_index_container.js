@@ -10,7 +10,7 @@ import CoinIndex from './coin_index';
 
 const mapStateToProps = (state) => ({
   coins: Object.values(state.entities.coins),
-
+  currentCoin: state.ui.currentCoin,
 });
 
 const mapDispatchToProps = (dispatch) => ({

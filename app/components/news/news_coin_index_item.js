@@ -22,7 +22,6 @@ class NewsCoinIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.article)
     return (
       <View>
         <TouchableHighlight

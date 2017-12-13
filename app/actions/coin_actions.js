@@ -19,18 +19,8 @@ export const receiveCurrentCoin = (currentCoin) => ({
   currentCoin
 });
 
-export const requestCoins = () => dispatch => {
-//   let xmlhttp = new XMLHttpRequest(),
-//   method = 'GET',
-//   url = 'https://cryptos-api.herokuapp.com/coins';
-//
-//   xmlhttp.open(method, url, true);
-//   xmlhttp.onerror = function (e) {
-//     console.log(e);
-//   };
-//   xmlhttp.send();
-// };
-  return (fetch('https://cryptos-api.herokuapp.com/coins', {
+export const requestCoins = () => dispatch => (
+  fetch('https://cryptos-api.herokuapp.com/coins', {
     method: 'GET',
     mode: 'no-cors',
     headers: {
@@ -46,16 +36,10 @@ export const requestCoins = () => dispatch => {
         res.push(responseJSON[i]);
       }
       return res;
-      // let res = responseJSON.filter( (coin, idx) => idx < 20);
-      // return res.map((coin, idx) => ({
-      //   id: idx,
-      //   symbol: co,
-      //   name: coin.CurrencyLong,
-      // }));
     })
     .then(coins => dispatch(receiveCoins(coins)))
     .catch((error) => console.log(error))
-);};
+);
 
 export const requestCoin = (coinSymbol) => dispatch => (
   fetch(`https://bittrex.com/api/v1.1/public/getorderbook?market=BTC-${coinSymbol}&type=both`)
