@@ -8,6 +8,7 @@ import {
 import { colors, layouts } from '../../stylesheets/constants';
 
 import CoinPriceChange from './coin_price_change';
+import CoinPriceDisplay from './coin_price_display';
 
 class CoinIndexItem extends React.Component {
   constructor(props) {
@@ -16,19 +17,21 @@ class CoinIndexItem extends React.Component {
   }
 
   _onPress() {
-    console.log(this.props.receiveCurrentCoin);
     this.props.receiveCurrentCoin(this.props.coin);
   }
 
   render() {
-    const { id, symbol, name, price, change } = this.props.coin;
+    const { id, symbol, name, bid, prevDay } = this.props.coin;
+    const btcPrice = 17500;
+    const change = Math.round((bid - prevDay) * btcPrice * 100) / 100;
+    const price = Math.round(bid * btcPrice * 1000) / 1000;
     let highlightStyle = styles.normal;
     if (id === this.props.currentCoin.id) {
       highlightStyle = styles.selected;
     }
     let priceDisplay, changeDisplay;
     if (price) {
-      priceDisplay = `$${price}`;
+      priceDisplay = `${price}`;
     } else {
       priceDisplay = "----";
     }
@@ -54,9 +57,10 @@ class CoinIndexItem extends React.Component {
               </Text>
             </View>
             <View style={styles.coinValues}>
-              <Text style={styles.coinPrice}>
-                {priceDisplay}
-              </Text>
+              <CoinPriceDisplay
+                togglePriceDisplay={this.props.togglePriceDisplay}
+                priceType={this.props.priceType}
+                priceDisplay={priceDisplay}/>
               <CoinPriceChange
                 toggleChangeDisplay={this.props.toggleChangeDisplay}
                 changeDisplay={this.props.changeDisplay}
@@ -99,11 +103,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  coinPrice: {
-    color: 'white',
-    fontSize: 18,
-    paddingRight: 7,
-  }
 });
 
 export default CoinIndexItem;

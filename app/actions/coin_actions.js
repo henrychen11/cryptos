@@ -1,3 +1,5 @@
+import * as CoinAPIUtil from '../util/coin_api_util';
+
 export const RECEIVE_COIN = 'RECEIVE_COIN';
 export const RECEIVE_COINS = 'RECEIVE_COINS';
 export const RECEIVE_CURRENT_COIN = 'RECEIVE_CURRENT_COIN';
@@ -18,18 +20,25 @@ export const receiveCurrentCoin = (currentCoin) => ({
 });
 
 export const requestCoins = () => dispatch => (
-  fetch('https://bittrex.com/api/v1.1/public/getcurrencies')
-    .then((response) => (response.json()))
+  fetch('https://cryptos-api.herokuapp.com/coins', {
+    method: 'GET',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8'
+    }
+  })
+    .then((response) => {
+      return response.json();
+    })
     .then((responseJSON) => {
-      let res = responseJSON.result.filter( (coin, idx) => idx < 20);
-      return res.map((coin, idx) => ({
-        id: idx,
-        symbol: coin.Currency,
-        name: coin.CurrencyLong,
-      }));
+      let res = [];
+      for (let i = 0; i < 20; i++) {
+        res.push(responseJSON[i]);
+      }
+      return res;
     })
     .then(coins => dispatch(receiveCoins(coins)))
-    .catch((error) => (console.log(error)))
+    .catch((error) => console.log(error))
 );
 
 export const requestCoin = (coinSymbol) => dispatch => (

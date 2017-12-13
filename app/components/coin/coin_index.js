@@ -6,7 +6,8 @@ class CoinIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      changeDisplay: 'priceVar'
+      changeDisplay: 'priceVar',
+      priceType: 'usd',
     };
   }
 
@@ -22,12 +23,20 @@ class CoinIndex extends React.Component {
     }
   }
 
+  togglePriceDisplay(e) {
+    e.preventDefault();
+    let newDisplay = this.state.priceType === 'usd' ? 'btc' : 'usd';
+    this.setState({ priceType: newDisplay });
+  }
+
   componentDidMount() {
     this.props.requestCoins();
-    if (this.props.coins.length > 0) {
-      this.props.coins.length.forEach( coin => {
-        this.props.requestCoin(coin.Currency);
-      });
+    setInterval(this.props.requestCoins, 30000);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (!newProps.currentCoin.symbol && newProps.coins.length > 0) {
+      newProps.receiveCurrentCoin(newProps.coins[0]);
     }
   }
 
@@ -41,7 +50,9 @@ class CoinIndex extends React.Component {
               <CoinIndexItemContainer
                 key={idx}
                 toggleChangeDisplay={this.toggleChangeDisplay.bind(this)}
+                togglePriceDisplay={this.togglePriceDisplay.bind(this)}
                 changeDisplay={this.state.changeDisplay}
+                priceType={this.state.priceType}
                 coin={coin} />
             ))
           }

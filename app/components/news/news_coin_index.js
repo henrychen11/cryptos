@@ -37,7 +37,6 @@ class NewsCoinIndex extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    console.log("new coin", newProps.currentCoin.name)
     const url = 'https://newsapi.org/v2/everything?'
                 + `q=${newProps.currentCoin.name}&`
                 + 'sources=crypto-coins-news, cbs-news, engadget, buzzfeed&'
@@ -61,7 +60,7 @@ class NewsCoinIndex extends React.Component {
   render(){
     const { currentCoin } = this.props;
 
-    if (currentCoin.name){
+    if (currentCoin.name && this.state.dataSource){
       return (
         <View style={styles.coinNewsInfo}>
             <View style={styles.newsIndex}>
