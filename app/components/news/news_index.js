@@ -5,12 +5,10 @@ import NewsIndexItem from './news_index_item';
 class NewsIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      searchTerm: ''
-    };
   }
 
   render(){
+    console.log("news index ", this.props);
     if (this.props.isLoading){
       return (
         <Text>I'm LOADING!!!!</Text>
@@ -23,6 +21,7 @@ class NewsIndex extends React.Component {
             enableEmptySections={true}
             renderRow={(article) => (
               <NewsIndexItem
+                orientation={this.props.orientation}
                 navigate={this.props.navigate}
                 article={article} />
             )}>
