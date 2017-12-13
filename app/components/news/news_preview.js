@@ -2,6 +2,10 @@ import React from 'react';
 import { StyleSheet, WebView } from 'react-native';
 
 class newsPreview extends React.Component {
+  static navigationOptions = {
+
+  }
+
   render() {
     return (
       <WebView

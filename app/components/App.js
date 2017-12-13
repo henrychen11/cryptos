@@ -10,16 +10,21 @@ const ModalStack = StackNavigator({
   News: {
     screen: News,
     navigationOptions: {
-      title: 'news'
+      title: 'News',
+      header: null,
     }
   },
   NewsPreview: {
     path: 'NewsPreview',
     screen: NewsPreview,
+    navigationOptions: {
+      headerStyle: {
+      
+      },
+    }
   },
 }, {
   mode: 'modal',
-  headerMode: 'none',
 });
 
 const App = TabNavigator({
