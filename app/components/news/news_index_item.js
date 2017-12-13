@@ -24,15 +24,13 @@ class NewsIndexItem extends React.Component {
   }
 
   render() {
-    console.log("news index item orientation = ", this.props)
-    if (this.props.orientation === 'vertical'){
       return (
-        <View>
           <TouchableHighlight
+            style={styles.item}
             activeOpacity={5}
             underlayColor="gray"
             onPress={ this._onClick.bind(this) }>
-            <View style={styles.newsIndexItem}>
+            <View>
               <View style={styles.left}>
                 <Image
                   source={{ uri: `${this.props.article.urlToImage}` }}
@@ -53,17 +51,18 @@ class NewsIndexItem extends React.Component {
               </View>
             </View>
           </TouchableHighlight>
-        </View>
       );
-    } else {
-      <Text>This is horizontal</Text>
     }
-  }
 }
 
 export default NewsIndexItem;
 
 const styles = StyleSheet.create({
+  item: {
+    backgroundColor: 'red',
+    margin: 3,
+    width: 325
+  },
   left: {
     flex: 1,
     justifyContent: 'center',
@@ -73,32 +72,33 @@ const styles = StyleSheet.create({
     flex: 2,
     flexDirection: 'column',
   },
-  newsIndexItem: {
-    paddingVertical: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderColor: 'gray',
-    borderBottomWidth: 1,
-    marginHorizontal: layouts.marginHorizontal,
-  },
-  newsName: {
-    paddingTop: 10,
-    fontWeight: "800",
-    color: 'white',
-    fontSize: 14,
-  },
-  newsDescription: {
-    paddingTop: 10,
-    color: 'white',
-    flexDirection: 'row',
-    fontSize: 11,
-  },
+  // newsIndexItem: {
+  //   width: 100,
+  //   flexWrap: 'wrap'
+    // paddingVertical: 1,
+    // flexDirection: 'row',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    // borderColor: 'gray',
+    // borderBottomWidth: 1,
+    // marginHorizontal: layouts.marginHorizontal,
+  // },
+  // newsName: {
+  //   paddingTop: 10,
+  //   fontWeight: "800",
+  //   color: 'white',
+  //   fontSize: 14,
+  // },
+  // newsDescription: {
+  //   paddingTop: 10,
+  //   color: 'white',
+  //   flexDirection: 'row',
+  //   fontSize: 11,
+  // },
   image: {
     justifyContent: 'center',
     height: 80,
     borderRadius: 3,
     width: 80
-  },
-
+  }
 });

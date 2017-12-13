@@ -15,18 +15,18 @@ class NewsIndex extends React.Component {
       );
     } else {
       return (
-        <View style={styles.newsIndex}>
-          <ListView style={styles.newsIndexList}
+          <ListView
+            contentContainerStyle={styles.list}
             dataSource={this.props.dataSource}
             enableEmptySections={true}
             renderRow={(article) => (
               <NewsIndexItem
+                style={styles.item}
                 orientation={this.props.orientation}
                 navigate={this.props.navigate}
                 article={article} />
             )}>
           </ListView>
-        </View>
       );
     }
   }
@@ -34,20 +34,11 @@ class NewsIndex extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  newsIndex: {
-    flex: 1,
-    flexDirection: 'column'
-  },
-  newsIndexList: {
-    backgroundColor: 'black',
-    flex: 1,
-    flexDirection: 'column',
-    width: '100%',
-    paddingTop: 10,
-    overflow: 'scroll',
-    borderBottomWidth: 1,
-    borderColor: 'gray'
-  }
+    list: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
+    },
 });
 
 export default NewsIndex;
