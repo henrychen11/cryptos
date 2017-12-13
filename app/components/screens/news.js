@@ -8,17 +8,10 @@ class News extends React.Component {
     super(props);
     this.state ={
       isLoading: true,
-      searchTerm: ''
     };
   }
 
-  componentDidMount(){
-    const url = 'https://newsapi.org/v2/everything?'
-                + 'q=cryptocurrency&'
-                + 'sources=crypto-coins-news, cbs-news, engadget, buzzfeed&'
-                + 'language=en&'
-                + 'apiKey=bfa105efac2f4515889f3e14dddfc0f1';
-
+  getNews(url){
     return fetch(url)
           .then((response) => (response.json()))
           .then((responseJSON) => {
@@ -31,6 +24,24 @@ class News extends React.Component {
             });
           })
           .catch((error) => (console.log(error)));
+  }
+
+  componentDidMount(){
+    const url = 'https://newsapi.org/v2/everything?'
+                + 'q=crypto&'
+                + 'sources=crypto-coins-news, cbs-news, engadget, buzzfeed&'
+                + 'language=en&'
+                + 'apiKey=bfa105efac2f4515889f3e14dddfc0f1';
+    this.getNews(url);
+  }
+
+  updateNews(searchTerm){
+    const url = 'https://newsapi.org/v2/everything?'
+                + `q=${searchTerm}&`
+                + 'sources=crypto-coins-news, cbs-news, engadget, buzzfeed&'
+                + 'language=en&'
+                + 'apiKey=bfa105efac2f4515889f3e14dddfc0f1';
+    this.getNews(url);
   }
 
   render() {

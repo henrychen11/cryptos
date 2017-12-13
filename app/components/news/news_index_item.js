@@ -24,22 +24,18 @@ class NewsIndexItem extends React.Component {
   }
 
   render() {
-    console.log("news index item orientation = ", this.props)
-    if (this.props.orientation === 'vertical'){
       return (
-        <View>
           <TouchableHighlight
+            style={styles.item}
             activeOpacity={5}
             underlayColor="gray"
             onPress={ this._onClick.bind(this) }>
-            <View style={styles.newsIndexItem}>
-              <View style={styles.left}>
+            <View style={styles.container}>
                 <Image
                   source={{ uri: `${this.props.article.urlToImage}` }}
                   style={styles.image}>
                 </Image>
-              </View>
-              <View style={styles.right}>
+              <View style={styles.text}>
                 <Text
                   numberOfLines={2}
                   style={styles.newsName}>
@@ -53,52 +49,45 @@ class NewsIndexItem extends React.Component {
               </View>
             </View>
           </TouchableHighlight>
-        </View>
       );
-    } else {
-      <Text>This is horizontal</Text>
     }
-  }
 }
 
 export default NewsIndexItem;
 
 const styles = StyleSheet.create({
-  left: {
+  item: {
+
+    color: 'white',
+    margin: 3,
+    width: 325,
+    height: 100
+  },
+  container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'row'
   },
-  right: {
-    flex: 2,
+  text: {
+    flex: 1,
     flexDirection: 'column',
-  },
-  newsIndexItem: {
-    paddingVertical: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'gray',
     borderBottomWidth: 1,
-    marginHorizontal: layouts.marginHorizontal,
+    borderColor: 'gray'
   },
   newsName: {
-    paddingTop: 10,
     fontWeight: "800",
     color: 'white',
     fontSize: 14,
   },
   newsDescription: {
-    paddingTop: 10,
+    marginTop: 5,
     color: 'white',
-    flexDirection: 'row',
-    fontSize: 11,
+    fontSize: 10,
   },
   image: {
-    justifyContent: 'center',
+    margin: 10,
     height: 80,
-    borderRadius: 3,
-    width: 80
-  },
-
+    width: 80,
+    borderRadius: 10
+  }
 });
