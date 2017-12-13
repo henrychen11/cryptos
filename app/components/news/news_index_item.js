@@ -57,11 +57,11 @@ export default NewsIndexItem;
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: 'black',
+
     color: 'white',
     margin: 3,
     width: 325,
-    height: 50
+    height: 100
   },
   container: {
     flex: 1,
@@ -70,19 +70,24 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
     flexDirection: 'column',
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderColor: 'gray'
   },
   newsName: {
-    paddingTop: 10,
     fontWeight: "800",
     color: 'white',
     fontSize: 14,
   },
   newsDescription: {
+    marginTop: 5,
     color: 'white',
-    fontSize: 11,
+    fontSize: 10,
   },
   image: {
+    margin: 10,
     height: 80,
-    width: 80
+    width: 80,
+    borderRadius: 10
   }
 });
