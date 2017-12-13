@@ -21,35 +21,40 @@ class NewsIndexItem extends React.Component {
   }
 
   render() {
-    return (
-      <View>
-        <TouchableHighlight
-          activeOpacity={5}
-          underlayColor="gray"
-          onPress={ this._onClick.bind(this) }>
-          <View style={styles.newsIndexItem}>
-            <View style={styles.left}>
-              <Image
-                source={{ uri: `${this.props.article.urlToImage}` }}
-                style={styles.image}>
-              </Image>
+    console.log("news index item orientation = ", this.props)
+    if (this.props.orientation === 'vertical'){
+      return (
+        <View>
+          <TouchableHighlight
+            activeOpacity={5}
+            underlayColor="gray"
+            onPress={ this._onClick.bind(this) }>
+            <View style={styles.newsIndexItem}>
+              <View style={styles.left}>
+                <Image
+                  source={{ uri: `${this.props.article.urlToImage}` }}
+                  style={styles.image}>
+                </Image>
+              </View>
+              <View style={styles.right}>
+                <Text
+                  numberOfLines={2}
+                  style={styles.newsName}>
+                  {this.props.article.title}
+                </Text>
+                <Text
+                  numberOfLines={3}
+                  style={styles.newsDescription}>
+                  {this.props.article.description}
+                </Text>
+              </View>
             </View>
-            <View style={styles.right}>
-              <Text
-                numberOfLines={2}
-                style={styles.newsName}>
-                {this.props.article.title}
-              </Text>
-              <Text
-                numberOfLines={3}
-                style={styles.newsDescription}>
-                {this.props.article.description}
-              </Text>
-            </View>
-          </View>
-        </TouchableHighlight>
-      </View>
-    );
+          </TouchableHighlight>
+        </View>
+      );
+    } else {
+      <Text>This is horizontal</Text>
+    }
   }
 }
 

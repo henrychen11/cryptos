@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, ListView, TextInput } from 'react-native';
-import NewsIndex from '../news/news_index';
+import NewsIndex from '../news/news_index_container';
 
 
 class News extends React.Component {

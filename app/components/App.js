@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { colors, layouts } from '../stylesheets/constants';
 
-import Home from './screens/home';
+import Home from './screens/home_container';
 import News from './screens/news';
 import NewsPreview from './news/news_preview';
 
