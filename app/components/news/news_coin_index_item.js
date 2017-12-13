@@ -1,5 +1,4 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
 import {
   View, StyleSheet, Text, ListView, TouchableHighlight, Image, WebView, Linking
 } from 'react-native';
