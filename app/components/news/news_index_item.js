@@ -30,14 +30,12 @@ class NewsIndexItem extends React.Component {
             activeOpacity={5}
             underlayColor="gray"
             onPress={ this._onClick.bind(this) }>
-            <View>
-              <View style={styles.left}>
+            <View style={styles.container}>
                 <Image
                   source={{ uri: `${this.props.article.urlToImage}` }}
                   style={styles.image}>
                 </Image>
-              </View>
-              <View style={styles.right}>
+              <View style={styles.text}>
                 <Text
                   numberOfLines={2}
                   style={styles.newsName}>
@@ -59,46 +57,32 @@ export default NewsIndexItem;
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: 'red',
+    backgroundColor: 'black',
+    color: 'white',
     margin: 3,
-    width: 325
+    width: 325,
+    height: 50
   },
-  left: {
+  container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'row'
   },
-  right: {
-    flex: 2,
+  text: {
+    flex: 1,
     flexDirection: 'column',
   },
-  // newsIndexItem: {
-  //   width: 100,
-  //   flexWrap: 'wrap'
-    // paddingVertical: 1,
-    // flexDirection: 'row',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // borderColor: 'gray',
-    // borderBottomWidth: 1,
-    // marginHorizontal: layouts.marginHorizontal,
-  // },
-  // newsName: {
-  //   paddingTop: 10,
-  //   fontWeight: "800",
-  //   color: 'white',
-  //   fontSize: 14,
-  // },
-  // newsDescription: {
-  //   paddingTop: 10,
-  //   color: 'white',
-  //   flexDirection: 'row',
-  //   fontSize: 11,
-  // },
+  newsName: {
+    paddingTop: 10,
+    fontWeight: "800",
+    color: 'white',
+    fontSize: 14,
+  },
+  newsDescription: {
+    color: 'white',
+    fontSize: 11,
+  },
   image: {
-    justifyContent: 'center',
     height: 80,
-    borderRadius: 3,
     width: 80
   }
 });
