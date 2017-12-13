@@ -6,6 +6,8 @@ import Home from './screens/home_container';
 import News from './screens/news';
 import NewsPreview from './news/news_preview';
 
+import CoinChart from './coin/coin_chart';
+
 const ModalStack = StackNavigator({
   News: {
     screen: News,
@@ -19,7 +21,7 @@ const ModalStack = StackNavigator({
     screen: NewsPreview,
     navigationOptions: {
       headerStyle: {
-      
+
       },
     }
   },
@@ -29,7 +31,8 @@ const ModalStack = StackNavigator({
 
 const App = TabNavigator({
   Home: { screen: Home },
-  News: { screen: ModalStack }
+  News: { screen: ModalStack },
+  Chart: { screen: CoinChart }
 }, {
   tabBarPosition: 'top',
   animationEnabled: true,
