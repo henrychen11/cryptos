@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const formatPrice = (num) => {
   if (num > .1) {
     return num.toFixed(2);
@@ -32,4 +34,8 @@ export const formatMarketCap = (marketCap) => {
   } else {
     return `${num.toFixed(2)}B`;
   }
+};
+
+export const formatChartDate = (date) => {
+  return moment(date).format('YYYY');
 };
