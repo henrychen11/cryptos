@@ -5,7 +5,6 @@ const receiveChartData = (chartData) => ({
   chartData
 });
 
-
 // time = 'hour' || 'day' \\ 'week'
 export const requestChartData = (coinSymbol, time) => dispatch => (
   fetch(`https://cryptos-api.herokuapp.com/history/${coinSymbol}/${time}`)
