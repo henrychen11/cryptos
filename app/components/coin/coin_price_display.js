@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { formatPrice } from '../../util/formatter';
+import { colors, layouts } from '../../stylesheets/constants';
 
 class CoinPriceDisplay extends React.Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class CoinPriceDisplay extends React.Component {
 
 const styles = StyleSheet.create({
   coinPrice: {
-    color: 'white',
+    color: colors.white,
     fontSize: 18,
     paddingRight: 7,
   }

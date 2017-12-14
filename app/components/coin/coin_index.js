@@ -2,6 +2,8 @@ import React from 'react';
 import { Text, ScrollView, StyleSheet } from 'react-native';
 import CoinIndexItemContainer from './coin_index_item_container';
 
+import { colors, layouts } from '../../stylesheets/constants';
+
 class CoinIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -66,14 +68,14 @@ class CoinIndex extends React.Component {
 
 const styles = StyleSheet.create({
   coinIndex: {
-    backgroundColor: 'black',
+    backgroundColor: colors.black,
     flex: 1,
     flexDirection: 'column',
     width: '100%',
     paddingTop: 10,
     overflow: 'scroll',
     borderBottomWidth: 1,
-    borderColor: 'gray'
+    borderColor: colors.gray,
   }
 });
 

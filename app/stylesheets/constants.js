@@ -5,6 +5,9 @@ export const colors = {
   "gray": "#3c3c3c",
   "dark_gray": "#212121",
 
+  "green": '#32CD32',
+  "red": '#FF0000',
+
   "background": "#000000",
   "text_color": "#ffffff",
 

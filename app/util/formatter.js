@@ -36,6 +36,18 @@ export const formatMarketCap = (marketCap) => {
   }
 };
 
+export const formatVolume = (volume) => {
+  if (!volume) {
+    return '----';
+  }
+  const num = volume / 1000000;
+  if (num > 99.99) {
+    return `${num.toFixed(1)}M`;
+  } else {
+    return `${num.toFixed(2)}M`;
+  }
+};
+
 export const formatChartDate = (date) => {
   return moment(date).format('YYYY');
 };

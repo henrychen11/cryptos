@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderColor: 'gray',
+    borderColor: colors.gray,
     borderBottomWidth: 1,
     marginHorizontal: layouts.marginHorizontal,
   },
@@ -91,18 +91,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   selected: {
-    backgroundColor: 'gray',
+    backgroundColor: colors.gray,
   },
   coinTitles: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   coinSymbol: {
-    color: 'white',
+    color: colors.white,
     fontSize: 18,
   },
   coinName: {
-    color: 'white',
+    color: colors.white,
     fontSize: 18,
   },
   coinValues: {
