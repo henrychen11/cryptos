@@ -1,6 +1,6 @@
 import React from 'react'
 import { LineChart, XAxis, YAxis } from 'react-native-svg-charts'
-// import * as shape from 'd3-shape'
+import * as shape from 'd3-shape'
 import { Text, View, StyleSheet, Button } from 'react-native';
 
 class MainChart extends React.Component {
@@ -23,8 +23,7 @@ class MainChart extends React.Component {
         const data2 = [ 1,2,331,4,5,6,7 ]
         
         const contentInset = { top: 20, bottom: 20 }
-        
-        console.log(this.props);
+
         let display;
 
         if (this.state.chartOption === 'hour'){
@@ -37,21 +36,22 @@ class MainChart extends React.Component {
                         labelStyle={ { color: 'grey' } }
                         formatLabel={ value => `$${value}` }
                     />
-                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
+                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', zIndex: 4 }}>
                         <LineChart
-                            style={ { flex: 1, marginLeft: 20 } }
+                            style={ { flex: 1, marginLeft: 20, backgroundColor: 'gray', fill: 'rgb(255, 255, 255)'} }
                             dataPoints={ data }
                             svg={{
                                 stroke: 'rgb(134, 65, 244)',
+                                fill: 'rgb(255, 255, 255)'
                             }}
                             shadowSvg={ {
                                 stroke: 'rgba(134, 65, 244, 0.2)',
-                                strokeWidth: 5,
+                                strokeWidth: 2,
                             } }
                             contentInset={ contentInset }
                         />
                     <XAxis
-                        style={ { paddingVertical: 16 } }
+                        style={ { paddingVertical: 16, marginLeft: 20 } }
                         values={ data }
                         formatLabel={ (value, index) => value }
                         chartType={ XAxis.Type.LINE }
@@ -98,6 +98,7 @@ class MainChart extends React.Component {
                             stroke: 'rgb(134, 65, 244)',
                         }}
                         contentInset={ contentInset }
+                        curve={shape.curveLinear}
                     />
             </View>
         </View>
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black',
+
   },
   chartContainer: {
     flex: 1,
@@ -145,13 +146,3 @@ const styles = StyleSheet.create({
 //     textAlign: 'center',
 //   }
 });
-
-
-// <XAxis
-// style={ { paddingVertical: 16 } }
-// values={ index }
-// formatLabel={ (value, index) => index }
-// chartType={ XAxis.Type.LINE }
-// labelStyle={ { color: 'grey' } }
-// contentInset={ contentInset }
-// />
