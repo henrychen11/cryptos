@@ -1,13 +1,13 @@
 import React from 'react'
 import { LineChart, XAxis, YAxis } from 'react-native-svg-charts'
-import * as shape from 'd3-shape'
+// import * as shape from 'd3-shape'
 import { Text, View, StyleSheet, Button } from 'react-native';
 
 class LineChartExample extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            chartOption: 'Hour'
+            chartOption: 'hour'
         }
         this.updateView = this.updateView.bind(this);
     }
@@ -22,23 +22,13 @@ class LineChartExample extends React.Component {
         const contentInset = { top: 20, bottom: 20 }
         
         console.log(this.state.chartOption);
+        let display;
 
-        return (
-            
-            <View style={styles.main}>
-                <View style={styles.options}>
-                    <Button
-                        title="1H"
-                        onPress={() => this.updateView("hour")} />
-                    <Button
-                        title="1D"
-                        onPress={() => this.updateView("day")}  />
-                    <Button
-                        title="1W"
-                        onPress={() => this.updateView("week")}  />
-                </View>
-
-                <View style={ { height: "85%", flexDirection: 'row' } }>
+        if (this.state.chartOption === 'hour'){
+            display = 
+            <View style={styles.chartContainer}>
+                <Text style={styles.chartTitle}>Hour</Text>
+                <View style={ { height: "100%", flexDirection: 'row' } }>
                     <YAxis
                         dataPoints={ data }
                         contentInset={ contentInset }
@@ -53,7 +43,65 @@ class LineChartExample extends React.Component {
                         }}
                         contentInset={ contentInset }
                     />
+            </View>
+        </View>
+        } else if (this.state.chartOption === 'day'){
+            display = <View style={ { height: "85%", flexDirection: 'row' } }>
+            <Text style={styles.chartTitle}>Day</Text>
+            <YAxis
+                dataPoints={ data }
+                contentInset={ contentInset }
+                labelStyle={ { color: 'grey' } }
+                formatLabel={ value => `$${value}` }
+            />
+            <LineChart
+                style={ { flex: 1, marginLeft: 16 } }
+                dataPoints={ data }
+                svg={{
+                    stroke: 'rgb(134, 65, 244)',
+                }}
+                contentInset={ contentInset }
+            />
+        </View>
+        } else if (this.state.chartOption === 'week'){
+            display = 
+            <View style={ { height: "85%", flexDirection: 'row' } }>
+                <Text style={styles.chartTitle}>Week</Text>
+                <YAxis
+                    dataPoints={ data }
+                    contentInset={ contentInset }
+                    labelStyle={ { color: 'grey' } }
+                    formatLabel={ value => `$${value}` }
+                />
+                <LineChart
+                    style={ { flex: 1, marginLeft: 16 } }
+                    dataPoints={ data }
+                    svg={{
+                        stroke: 'rgb(134, 65, 244)',
+                    }}
+                    contentInset={ contentInset }
+                />
+            </View>
+        }
+
+        return (
+            
+            <View style={styles.main}>
+        
+                    {display}
+    
+                <View style={styles.options}>
+                    <Button
+                        title="1H"
+                        onPress={() => this.updateView("hour")} />
+                    <Button
+                        title="1D"
+                        onPress={() => this.updateView("day")}  />
+                    <Button
+                        title="1W"
+                        onPress={() => this.updateView("week")}  />
                 </View>
+                
             </View>
         )
     }
@@ -64,10 +112,21 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     flexDirection: 'column',
+    backgroundColor: 'black',
+  },
+  chartContainer: {
+    height: "85%",
+    padding: 20,
   },
   options: {
-      fontSize: 14,
       flexDirection: 'row',
       justifyContent: 'center'
+  },
+  chartTitle: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    justifyContent: 'center',
+    color: 'white',
+    alignItems: 'center',
   }
 });
