@@ -47,31 +47,42 @@ class News extends React.Component {
   render() {
     return (
       <View style={styles.newsContainer}>
-        <TextInput
-          style={styles.searchInput}
-          onChangeText={ (searchTerm) => this.setState({searchTerm})}
-          value={this.state.searchTerm}
-          placeholder="Enter Search Term"
-          onSubmitEditing={ (event) => this.updateNews(event.nativeEvent.text)}
-          />
-        <NewsIndex
-          navigate={this.props.navigation.navigate}
-          dataSource={this.state.dataSource}
-          isLoading={this.state.isLoading}/>
+        <View style={styles.searchInputContainer}>
+          <TextInput
+            style={styles.searchInput}
+            onChangeText={ (searchTerm) => this.setState({searchTerm})}
+            value={this.state.searchTerm}
+            placeholder="Enter Search Term"
+            onSubmitEditing={ (event) => this.updateNews(event.nativeEvent.text)}
+            />
+          <NewsIndex
+            navigate={this.props.navigation.navigate}
+            dataSource={this.state.dataSource}
+            isLoading={this.state.isLoading}/>
+          </View>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
   newsContainer: {
+    backgroundColor: 'black',
     flexDirection: 'column',
     height: "100%"
   },
+  searchInputContainer: {
+    flex: 1,
+    width: "100%",
+    alignItems: 'center', 
+    justifyContent: 'center',
+  },
   searchInput: {
-    borderBottomColor: 'white',
-    borderBottomWidth: 1,
-    height: 35,
+    borderRadius: 10,
+    backgroundColor: 'gray',
+    height: 30,
+    width: 250,
     textAlign: 'center',
+    opacity: 0.5,
   }
 });
 export default News;

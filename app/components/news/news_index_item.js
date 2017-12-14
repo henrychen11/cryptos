@@ -59,7 +59,9 @@ const styles = StyleSheet.create({
   item: {
     margin: 3,
     width: 325,
-    height: 100
+    height: 100,
+    borderBottomWidth: 1,
+    borderColor: 'gray'
   },
   container: {
     flex: 1,
@@ -69,8 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    borderBottomWidth: 1,
-    borderColor: 'gray'
+
   },
   newsName: {
     fontWeight: "800",
