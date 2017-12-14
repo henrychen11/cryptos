@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import { formatPrice } from '../../util/helpers';
+import { formatPrice } from '../../util/formatter';
 
 class CoinPriceDisplay extends React.Component {
   constructor(props) {

@@ -4,7 +4,7 @@ import {
   formatChange,
   formatPriceChange,
   formatMarketCap
-} from '../../util/helpers';
+} from '../../util/formatter';
 
 class CoinPriceChange extends React.Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class CoinPriceChange extends React.Component {
       case 'marketCap':
         return (
           <Text style={styles.priceChange}>
-            {formatMarketCap(this.props.marketCapUSD)}B
+            {formatMarketCap(this.props.marketCapUSD)}
           </Text>
         );
     }
