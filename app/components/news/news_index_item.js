@@ -57,8 +57,6 @@ export default NewsIndexItem;
 
 const styles = StyleSheet.create({
   item: {
-
-    color: 'white',
     margin: 3,
     width: 325,
     height: 100
