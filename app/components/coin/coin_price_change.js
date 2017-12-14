@@ -5,6 +5,7 @@ import {
   formatPriceChange,
   formatMarketCap
 } from '../../util/formatter';
+import { colors, layouts } from '../../stylesheets/constants';
 
 class CoinPriceChange extends React.Component {
   constructor(props) {
@@ -70,15 +71,15 @@ const styles = StyleSheet.create({
     width: 78,
   },
   positive: {
-    backgroundColor: 'green',
+    backgroundColor: colors.green,
     width: '100%',
   },
   negative: {
-    backgroundColor: 'red',
+    backgroundColor: colors.red,
     width: '100%',
   },
   priceChange: {
-    color: 'white',
+    color: colors.white,
     fontSize: 18,
     padding: 5,
     textAlign: 'right',
