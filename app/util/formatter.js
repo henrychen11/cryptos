@@ -7,7 +7,7 @@ export const formatPrice = (num) => {
 };
 
 export const formatChange = (num) => {
- if (num > 9.99) {
+ if (num > 9.99 || num < -9.99) {
     return num.toFixed(1);
   } else {
     return num.toFixed(2);
@@ -23,10 +23,13 @@ export const formatPriceChange = (num) => {
 };
 
 export const formatMarketCap = (marketCap) => {
+  if (!marketCap) {
+    return '----';
+  }
   const num = marketCap / 1000000000;
   if (num > 99.99) {
-    return num.toFixed(1);
+    return `${num.toFixed(1)}B`;
   } else {
-    return num.toFixed(2);
+    return `${num.toFixed(2)}B`;
   }
 };

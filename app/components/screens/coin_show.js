@@ -1,7 +1,7 @@
 import React from 'react';
 import CoinShowPrice from '../coin/coin_show_price';
 import News from '../news/news_coin_index_container';
-import LineChart from '../charts/line_chart';
+import ChartContainer from '../charts/chart_container';
 import { TabNavigator } from 'react-navigation';
 
 
@@ -10,7 +10,7 @@ const App = TabNavigator({
     screen: CoinShowPrice,
   },
   Chart: {
-    screen: LineChart
+    screen: ChartContainer
   },
   News: {
     screen: News

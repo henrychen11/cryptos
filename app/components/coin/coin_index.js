@@ -6,7 +6,7 @@ class CoinIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      changeDisplay: 'priceVar',
+      changeDisplay: 'percentVar',
       priceType: 'usd',
     };
   }
