@@ -6,7 +6,7 @@ import Home from './screens/home_container';
 import News from './screens/news';
 import NewsPreview from './news/news_preview';
 
-import LineChartExample from './charts/candle_chart';
+import MainChart from './charts/main_chart_container';
 
 const ModalStack = StackNavigator({
   News: {
@@ -32,7 +32,7 @@ const ModalStack = StackNavigator({
 const App = TabNavigator({
   Home: { screen: Home },
   News: { screen: ModalStack },
-  Chart: { screen: LineChartExample }
+  Chart: { screen: MainChart }
 }, {
   tabBarPosition: 'top',
   animationEnabled: true,
