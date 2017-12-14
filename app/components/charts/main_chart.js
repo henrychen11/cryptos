@@ -1,6 +1,6 @@
 import React from 'react'
 import { LineChart, XAxis, YAxis } from 'react-native-svg-charts'
-import * as shape from 'd3-shape'
+// import * as shape from 'd3-shape'
 import { Text, View, StyleSheet, Button } from 'react-native';
 
 class MainChart extends React.Component {
@@ -20,29 +20,30 @@ class MainChart extends React.Component {
     }
     render() {
         const data = [ 50, 10, 40, 95, -4, -24, 85]
-        const data2 = [ 1,2,331,4,5,6,7 ]
-        
+        console.log(Math.max(...data)+10)
         const contentInset = { top: 20, bottom: 20 }
-
         let display;
-
         if (this.state.chartOption === 'hour'){
             display = 
             <View style={styles.chartContainer}>
                 <View style={ { flex: 1, height: "100%", flexDirection: 'row' } }>
-                    <YAxis
-                        dataPoints={ data }
-                        contentInset={ contentInset }
-                        labelStyle={ { color: 'grey' } }
-                        formatLabel={ value => `$${value}` }
-                    />
-                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', zIndex: 4 }}>
+                    <View style={{height: "100%", marginRight: 10, }}>
+                        <YAxis
+                            style={{position: 'absolute', left: 0, bottom: 0, top: 0}}
+                            dataPoints={ data }
+                            contentInset={ contentInset }
+                            labelStyle={ { color: 'white', fontWeight: 'bold' } }
+                            formatLabel={ value => `$${value}` }
+                        />
+                    </View>
+                    <View style={{flex: 1, height: "100%", flexDirection: 'column'}}>
                         <LineChart
-                            style={ { flex: 1, marginLeft: 20, backgroundColor: 'gray', fill: 'rgb(255, 255, 255)'} }
+                            gridMax={100}
+                            gridMin={-100}
+                            style={ { flex: 1, marginLeft: 25} }
                             dataPoints={ data }
                             svg={{
                                 stroke: 'rgb(134, 65, 244)',
-                                fill: 'rgb(255, 255, 255)'
                             }}
                             shadowSvg={ {
                                 stroke: 'rgba(134, 65, 244, 0.2)',
@@ -51,57 +52,94 @@ class MainChart extends React.Component {
                             contentInset={ contentInset }
                         />
                     <XAxis
-                        style={ { paddingVertical: 16, marginLeft: 20 } }
+                        style={ { position: 'absolute', left: 25, bottom: 0, right: 10 } }
                         values={ data }
                         formatLabel={ (value, index) => value }
                         chartType={ XAxis.Type.LINE }
-                        labelStyle={ { color: 'grey' } }
+                        labelStyle={ { color: 'white', fontWeight: 'bold' } }
                         contentInset={ contentInset }
                     />
                     </View>
+                </View>
             </View>
-        </View>
         } else if (this.state.chartOption === 'day'){
             display = 
             <View style={styles.chartContainer}>
-                <View style={ { height: "100%", flexDirection: 'row' } }>
-                    <YAxis
-                        dataPoints={ data }
+                <View style={ { flex: 1, height: "100%", flexDirection: 'row' } }>
+                    <View style={{height: "100%", marginRight: 10, }}>
+                        <YAxis
+                            style={{position: 'absolute', left: 0, bottom: 0, top: 0}}
+                            dataPoints={ data }
+                            contentInset={ contentInset }
+                            labelStyle={ { color: 'white', fontWeight: 'bold' } }
+                            formatLabel={ value => `$${value}` }
+                        />
+                    </View>
+                    <View style={{flex: 1, height: "100%", flexDirection: 'column'}}>
+                        <LineChart
+                            gridMax={100}
+                            gridMin={-100}
+                            style={ { flex: 1, marginLeft: 25} }
+                            dataPoints={ data }
+                            svg={{
+                                stroke: 'rgb(134, 65, 244)',
+                            }}
+                            shadowSvg={ {
+                                stroke: 'rgba(134, 65, 244, 0.2)',
+                                strokeWidth: 2,
+                            } }
+                            contentInset={ contentInset }
+                        />
+                    <XAxis
+                        style={ { position: 'absolute', left: 25, bottom: 0, right: 10 } }
+                        values={ data }
+                        formatLabel={ (value, index) => value }
+                        chartType={ XAxis.Type.LINE }
+                        labelStyle={ { color: 'white', fontWeight: 'bold' } }
                         contentInset={ contentInset }
-                        labelStyle={ { color: 'grey' } }
-                        formatLabel={ value => `$${value}` }
                     />
-                    <LineChart
-                        style={ { flex: 1, marginLeft: 16 } }
-                        dataPoints={ data }
-                        svg={{
-                            stroke: 'rgb(134, 65, 244)',
-                        }}
-                        contentInset={ contentInset }
-                    />
+                    </View>
+                </View>
             </View>
-        </View>
         } else if (this.state.chartOption === 'week'){
             display = 
             <View style={styles.chartContainer}>
-                <View style={ { height: "100%", flexDirection: 'row' } }>
-                    <YAxis
-                        dataPoints={ data }
+                <View style={ { flex: 1, height: "100%", flexDirection: 'row' } }>
+                    <View style={{height: "100%", marginRight: 10, }}>
+                        <YAxis
+                            style={{position: 'absolute', left: 0, bottom: 0, top: 0}}
+                            dataPoints={ data }
+                            contentInset={ contentInset }
+                            labelStyle={ { color: 'white', fontWeight: 'bold' } }
+                            formatLabel={ value => `$${value}` }
+                        />
+                    </View>
+                    <View style={{flex: 1, height: "100%", flexDirection: 'column'}}>
+                        <LineChart
+                            gridMax={100}
+                            gridMin={-100}
+                            style={ { flex: 1, marginLeft: 25} }
+                            dataPoints={ data }
+                            svg={{
+                                stroke: 'rgb(134, 65, 244)',
+                            }}
+                            shadowSvg={ {
+                                stroke: 'rgba(134, 65, 244, 0.2)',
+                                strokeWidth: 2,
+                            } }
+                            contentInset={ contentInset }
+                        />
+                    <XAxis
+                        style={ { position: 'absolute', left: 25, bottom: 0, right: 10 } }
+                        values={ data }
+                        formatLabel={ (value, index) => value }
+                        chartType={ XAxis.Type.LINE }
+                        labelStyle={ { color: 'white', fontWeight: 'bold' } }
                         contentInset={ contentInset }
-                        labelStyle={ { color: 'grey' } }
-                        formatLabel={ value => `$${value}` }
                     />
-                    <LineChart
-                        style={ { flex: 1, marginLeft: 16 } }
-                        dataPoints={ data }
-                        svg={{
-                            stroke: 'rgb(134, 65, 244)',
-                        }}
-                        contentInset={ contentInset }
-                        curve={shape.curveLinear}
-                    />
+                    </View>
+                </View>
             </View>
-        </View>
         }
 
         return (
@@ -128,21 +166,17 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     flexDirection: 'column',
-
+    backgroundColor: 'gray'
   },
   chartContainer: {
     flex: 1,
-    height: "85%",
-    padding: 20,
+    flexDirection: 'column',
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 15,
   },
   options: {
       flexDirection: 'row',
       justifyContent: 'center'
   },
-//   chartTitle: {
-//     fontWeight: 'bold',
-//     fontSize: 20,
-//     color: 'white',
-//     textAlign: 'center',
-//   }
 });
