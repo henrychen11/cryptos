@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { formatPrice } from '../../util/helpers';
 
 class CoinPriceDisplay extends React.Component {
   constructor(props) {
@@ -7,24 +8,25 @@ class CoinPriceDisplay extends React.Component {
   }
 
   contentDisplay() {
+    const { price } = this.props;
     switch (this.props.priceType) {
       case 'usd':
         return (
           <Text style={styles.coinPrice}>
-            ${this.props.priceDisplay}
+            ${formatPrice(price)}
           </Text>
         );
       case 'btc':
         if (this.props.priceDisplay > 0) {
           return (
             <Text style={styles.coinPrice}>
-            ฿{Math.round(this.props.priceDisplay / 17500 * 100000) / 100000}
+            ฿{formatPrice(price)}
             </Text>
           );
         } else {
           return (
             <Text style={styles.coinPrice}>
-            ฿{this.props.priceDisplay}
+            ฿{formatPrice(price)}
             </Text>
           );
         }

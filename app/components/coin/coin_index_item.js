@@ -21,26 +21,32 @@ class CoinIndexItem extends React.Component {
   }
 
   render() {
-    const { id, symbol, name, bid, prevDay } = this.props.coin;
-    const btcPrice = 17500;
-    const change = Math.round((bid - prevDay) * btcPrice * 100) / 100;
-    const price = Math.round(bid * btcPrice * 1000) / 1000;
+    const {
+      id,
+      symbol,
+      name,
+      bid,
+      bidUSD,
+      prevDay,
+      percentChange24Hours,
+      marketCapUSD,
+    } = this.props.coin;
+    const { priceType } = this.props;
+    let price = priceType === 'usd' ? bidUSD : bid;
+    if (symbol === 'BTC' && priceType === 'btc') {
+      price = 1;
+    }
     let highlightStyle = styles.normal;
     if (id === this.props.currentCoin.id) {
       highlightStyle = styles.selected;
     }
     let priceDisplay, changeDisplay;
-    if (price) {
+    if (bidUSD) {
       priceDisplay = `${price}`;
     } else {
       priceDisplay = "----";
     }
 
-    if (change) {
-      changeDisplay = change;
-    } else {
-      changeDisplay = "----";
-    }
     return(
       <TouchableHighlight
         activeOpacity={5}
@@ -52,19 +58,19 @@ class CoinIndexItem extends React.Component {
               <Text style={styles.coinSymbol}>
                 {symbol}
               </Text>
-              <Text style={styles.coinName}>
-                {" | "}{name}
-              </Text>
             </View>
             <View style={styles.coinValues}>
               <CoinPriceDisplay
                 togglePriceDisplay={this.props.togglePriceDisplay}
                 priceType={this.props.priceType}
-                priceDisplay={priceDisplay}/>
+                price={price}
+                />
               <CoinPriceChange
                 toggleChangeDisplay={this.props.toggleChangeDisplay}
                 changeDisplay={this.props.changeDisplay}
-                priceChange={changeDisplay}/>
+                marketCapUSD={marketCapUSD}
+                percentChange={percentChange24Hours}
+                bidUSD={bidUSD}/>
             </View>
         </View>
       </TouchableHighlight>
