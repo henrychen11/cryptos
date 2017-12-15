@@ -12,12 +12,19 @@ class MainChart extends React.Component {
         this.updateView = this.updateView.bind(this);
     }
 
-    componentDidMount() {
-      this.props.requestChartData(
-        this.props.currentCoin.symbol,
-        this.state.chartOption
-      );
-    }
+    // HOLD ON THIS FOR NOW - WILL DELETE IF APP WORKS AS IS
+    // componentDidMount() {
+    //   const { currentCoin, currentChart } = this.props;
+    //   if (currentCoin
+    //     && currentChart
+    //     && currentCoin.symbol.toLowerCase() !== currentChart.symbol.toLowerCase()
+    //   ) {
+    //     this.props.requestChartData(
+    //       this.props.currentCoin.symbol,
+    //       this.state.chartOption
+    //     );
+    //   }
+    // }
 
     updateView(option){
       this.setState({
@@ -185,7 +192,7 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
   },
   options: {
-      flexDirection: 'row',
-      justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });
