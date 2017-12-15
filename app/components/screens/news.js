@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, ListView, TextInput } from 'react-native';
 import NewsIndex from '../news/news_index_container';
-
+import { colors } from '../../stylesheets/constants';
 
 class News extends React.Component {
   constructor(props) {
@@ -52,7 +52,11 @@ class News extends React.Component {
             style={styles.searchInput}
             onChangeText={ (searchTerm) => this.setState({searchTerm})}
             value={this.state.searchTerm}
-            placeholder="Enter Search Term"
+            placeholder="Search"
+            placeholderTextColor={ colors.lightest_gray }
+            keyboardType="web-search"
+            autoCorrect={false}
+            clearButtonMode='always'
             onSubmitEditing={ (event) => this.updateNews(event.nativeEvent.text)}
             />
           <NewsIndex
@@ -66,24 +70,26 @@ class News extends React.Component {
 }
 const styles = StyleSheet.create({
   newsContainer: {
-    backgroundColor: 'black',
+    backgroundColor: colors.black,
     flexDirection: 'column',
     height: "100%"
   },
   searchInputContainer: {
     flex: 1,
     width: "100%",
-    alignItems: 'center', 
+    alignItems: 'center',
     justifyContent: 'center',
   },
   searchInput: {
     borderRadius: 10,
-    backgroundColor: 'gray',
+    backgroundColor: colors.gray,
     height: 30,
     width: 250,
     textAlign: 'center',
-    opacity: 0.5,
-    color: 'white'
+    // opacity: 1,
+    color: colors.white,
+    borderWidth: 1,
+    borderColor: colors.gray,
   }
 });
 export default News;

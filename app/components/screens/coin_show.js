@@ -3,7 +3,7 @@ import CoinShowPrice from '../coin/coin_show_price';
 import News from '../news/news_coin_index_container';
 import MainChartContainer from '../charts/main_chart_container';
 import { TabNavigator } from 'react-navigation';
-
+import { colors } from '../../stylesheets/constants';
 
 const App = TabNavigator({
   Price: {
@@ -23,7 +23,7 @@ const App = TabNavigator({
   swipeEnabled: true,
   tabBarPosition: 'bottom',
   tabBarOptions: {
-    activeTintColor: 'green',
+    activeTintColor: colors.green,
     showIcon: false,
     showLabel: true,
     tabStyle: {
@@ -32,13 +32,13 @@ const App = TabNavigator({
       justifyContent: 'center',
     },
     iconStyle: {
-      color: 'green'
+      color: colors.green
     },
     labelStyle: {
       fontSize: 20,
     },
     style: {
-      backgroundColor: 'black',
+      backgroundColor: colors.black,
       justifyContent: 'center'
     },
   }

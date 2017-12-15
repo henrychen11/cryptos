@@ -1,11 +1,12 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
+import { colors, layouts } from '../../stylesheets/constants';
 import {
-  View, 
-  StyleSheet, 
-  Text, 
-  ListView, 
-  TouchableHighlight, 
+  View,
+  StyleSheet,
+  Text,
+  ListView,
+  TouchableHighlight,
   Image
 } from 'react-native';
 import NewsPreview from './news_preview';
@@ -50,7 +51,7 @@ class NewsIndexItem extends React.Component {
                   style={styles.newsDescription}>
                   {this.props.article.description}
                 </Text>
-              
+
               <View style={styles.footer}>
                 <Text style={styles.footerText}>{this.props.article.source.name}</Text>
                 <Text style={styles.footerText}>{moment(this.props.article.publishedAt).format("dddd, MMMM Do")}</Text>
@@ -70,11 +71,11 @@ const styles = StyleSheet.create({
     width: 325,
     height: 100,
     borderBottomWidth: 1,
-    borderColor: 'gray'
+    borderColor: colors.gray,
   },
   container: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   text: {
     flex: 1,
@@ -84,12 +85,12 @@ const styles = StyleSheet.create({
   },
   newsName: {
     fontWeight: "800",
-    color: 'white',
+    color: colors.white,
     fontSize: 14,
   },
   newsDescription: {
     marginTop: 5,
-    color: 'white',
+    color: colors.white,
     fontSize: 10,
   },
   image: {
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 10,
-    color: 'white',
+    color: colors.white,
     marginRight: 5,
   }
 });
