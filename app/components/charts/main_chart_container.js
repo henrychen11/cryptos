@@ -7,6 +7,7 @@ import {
 
 const mapStateToProps = (state) => ({
   currentCoin: state.ui.currentCoin,
+  currentChart: state.ui.currentChart,
 });
 
 const mapDispatchToProps = (dispatch) => ({
