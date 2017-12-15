@@ -57,11 +57,9 @@ class MainChart extends React.Component {
           'time': el.time,
           'value': el.value })
       ));
-
-      console.log(data)
       let options = {
-        // width: 350 ,
-        // height: 100,
+        width: 250 ,
+        height: 250,
         color: '#2980B9',
         margin: {
           top: 50,
@@ -108,19 +106,17 @@ class MainChart extends React.Component {
 
       return (
         <View
-          onLayout={event => {this.setState({width: event.nativeEvent.layout.width, height:
-            event.nativeEvent.layout.height}) }}
-          style={{ backgroundColor: 'black'}}>
-              <View>
-            <Button
-                title="1H"
-                onPress={() => this.updateView("hour")} />
-            <Button
-                title="1D"
-                onPress={() => this.updateView("day")}  />
-            <Button
-                title="1W"
-                onPress={() => this.updateView("week")}  />
+          style={ styles.main }>
+            <View style={ styles.buttons }>
+                <Button
+                    title="1H"
+                    onPress={() => this.updateView("hour")} />
+                <Button
+                    title="1D"
+                    onPress={() => this.updateView("day")}  />
+                <Button
+                    title="1W"
+                    onPress={() => this.updateView("week")}  />
           </View>
           <StockLine data={[data]} options={options} xKey='time' yKey='value' />
         </View>
@@ -136,3 +132,18 @@ class MainChart extends React.Component {
 }
 
 export default MainChart;
+
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: 'black'
+  },
+  buttons: {
+    justifyContent: 'center',
+    flexDirection: 'row'
+  }
+})
+
+// onLayout={event => {this.setState({width: (event.nativeEvent.layout.width), height:
+//   (event.nativeEvent.layout.height)}) }}
