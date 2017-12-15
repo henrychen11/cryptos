@@ -1849,7 +1849,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #828282;
+		color: #eeeeee;
 	}
 
 	blockquote {
@@ -2934,7 +2934,7 @@
 
 	.wrapper {
 		padding: 4.5em 0 2.5em 0 ;
-		background-color: #ffffff;
+		background-color: #323232;
 		border-bottom: solid 2px #eeeeee;
 	}
 
@@ -3153,8 +3153,8 @@
 			}
 
 		.wrapper.style2 {
-			background-color: #fbfbfb;
-			color: #999999;
+			background-color: #141414;
+			color: #eeeeee;
 		}
 
 			.wrapper.style2 input[type="submit"],
@@ -3189,8 +3189,8 @@
 				.wrapper.style2 button.special,
 				.wrapper.style2 .button.special {
 					box-shadow: none;
-					background-color: #4696e5;
-					color: #ffffff !important;
+					background-color: #ffffff;
+					color: #000000 !important;
 				}
 
 					.wrapper.style2 input[type="submit"].special:hover,
@@ -3350,7 +3350,7 @@
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #828282;
+				color: #eeeeee;
 			}
 
 			.wrapper.style2 blockquote {
@@ -3628,7 +3628,7 @@
 
 	#header {
 		background-color: #4696e5;
-		color: #d0e4f8;
+		color: #ffffff;
 		padding: 4.5em 0 2.5em 0 ;
 		-moz-align-items: center;
 		-webkit-align-items: center;
@@ -3642,7 +3642,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("images/overlay.png"), url("images/pattern-size1.svg");
+		background-image: url("images/overlay.png"), url("images/header_background.jpg");
 		background-position: top left, center center;
 		background-attachment: fixed, fixed;
 		background-size: auto, cover;
@@ -3683,7 +3683,7 @@
 			#header .button.special {
 				box-shadow: none;
 				background-color: #ffffff;
-				color: #4696e5 !important;
+				color: #000000 !important;
 			}
 
 		#header label {
@@ -3900,7 +3900,7 @@
 		@media screen and (max-width: 1280px) {
 
 			#header {
-				background-image: url("images/overlay.png"), url("images/pattern-size2.svg");
+				background-image: url("images/overlay.png"), url("images/header_background.jpg");
 			}
 
 		}
@@ -3944,7 +3944,7 @@
 		@media screen and (max-width: 736px) {
 
 			#header {
-				background-image: url("images/overlay.png"), url("images/pattern-size3.svg");
+				background-image: url("images/overlay.png"), url("images/header_background.jpg");
 			}
 
 				#header h1 {
@@ -4077,7 +4077,7 @@
 /* Footer */
 
 	#footer {
-		background-color: #f7f7f7;
+		background-color: #323232;
 		color: #999999;
 		padding: 4.5em 0 2.5em 0 ;
 		color: #b0b0b0;
