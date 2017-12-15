@@ -4,7 +4,7 @@ import { receiveOrientation } from '../../actions/device_actions';
 import Home from './home';
 
 const mapStateToProps = (state) => ({
-
+  orientation: state.ui.orientation,
 });
 
 const mapDispatchToProps = (dispatch) => ({
