@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: 10,
+    width: '100%',
     borderBottomWidth: 1,
     borderColor: colors.gray,
   },
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
+    paddingHorizontal: 50,
   },
   group_right: {
     flex: 1,

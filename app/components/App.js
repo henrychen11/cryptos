@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
-import { colors, layouts } from '../stylesheets/constants';
+import { colors } from '../stylesheets/constants';
 
 import Home from './screens/home_container';
 import News from './screens/news';
@@ -39,12 +39,13 @@ const App = TabNavigator({
   swipeEnabled: true,
   lazy: true,
   tabBarOptions: {
-    activeTintColor: 'green',
+    activeTintColor: colors.green,
     labelStyle: {
       fontSize: 14,
+      fontWeight: 'bold',
     },
     style: {
-      backgroundColor: 'black',
+      backgroundColor: colors.black,
       padding: 10,
       marginTop: 20,
     },

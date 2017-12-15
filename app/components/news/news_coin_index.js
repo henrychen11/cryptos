@@ -98,13 +98,13 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   newsIndexList: {
-    backgroundColor: 'black',
+    backgroundColor: colors.black,
     flexDirection: 'column',
     width: '100%',
     paddingTop: 10,
     overflow: 'scroll',
     borderBottomWidth: 1,
-    borderColor: 'gray'
+    borderColor: colors.gray,
   }
 });
 
