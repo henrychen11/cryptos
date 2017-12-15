@@ -11,6 +11,7 @@
     "moment": "^2.19.4",
     "react": "16.0.0",
     "react-native": "0.51.0",
+    "react-native-pathjs-charts": "0.0.33",
     "react-native-svg": "^5.5.1",
     "react-native-svg-charts": "^2.0.1",
     "react-navigation": "^1.0.0-beta.21",
