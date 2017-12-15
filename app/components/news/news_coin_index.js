@@ -58,8 +58,8 @@ class NewsCoinIndex extends React.Component {
   }
 
   render(){
-    const { currentCoin } = this.props;
-
+    const { currentCoin, navigate } = this.props;
+    
     if (currentCoin.name && this.state.dataSource){
       return (
         <View style={styles.coinNewsInfo}>
@@ -68,7 +68,9 @@ class NewsCoinIndex extends React.Component {
                 dataSource={this.state.dataSource}
                 enableEmptySections={true}
                 renderRow={(article) => (
-                  <NewsCoinIndexItem article={article} />
+                  <NewsCoinIndexItem
+                    navigate={navigate}
+                    article={article} />
                 )}
                 />
             </View>

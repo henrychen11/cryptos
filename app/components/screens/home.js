@@ -18,6 +18,10 @@ class Home extends React.Component{
     })
   }
 
+  componentDidMount(){
+    this.props.setNavigation(this.props.navigation.navigate);
+  }
+
   render() {
     const { orientation } = this.props;
     let containerStyle = styles.verticalContainer;

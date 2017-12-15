@@ -17,7 +17,10 @@ class NewsCoinIndexItem extends React.Component {
   }
 
   _onClick() {
-    return this.props.navigate('NewsPreview', {uri: this.props.article.url});
+    return this.props.navigate('NewsPreview', {
+      uri: this.props.article.url,
+      title: this.props.article.title,
+    });
   }
 
   render() {

@@ -8,7 +8,7 @@ import NewsPreview from './news/news_preview';
 
 import MainChart from './charts/main_chart_container';
 
-const ModalStack = StackNavigator({
+const NewsModalStack = StackNavigator({
   News: {
     screen: News,
     navigationOptions: {
@@ -31,13 +31,12 @@ const ModalStack = StackNavigator({
 
 const App = TabNavigator({
   Home: { screen: Home },
-  News: { screen: ModalStack },
-  Chart: { screen: MainChart }
+  News: { screen: NewsModalStack },
 }, {
   tabBarPosition: 'top',
   animationEnabled: true,
   swipeEnabled: true,
-  lazy: true,
+  lazy: false,
   tabBarOptions: {
     activeTintColor: colors.green,
     labelStyle: {
