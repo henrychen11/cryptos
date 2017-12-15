@@ -1,8 +1,9 @@
 import React from 'react';
 import { StockLine } from 'react-native-pathjs-charts';
-// import * as shape from 'd3-shape';
+
 import { Text, View, StyleSheet, Button } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
+import moment from 'moment';
 
 class MainChart extends React.Component {
   static navigationOptions = {
@@ -36,11 +37,14 @@ class MainChart extends React.Component {
   selectData() {
     switch(this.state.chartOption) {
       case 'week':
+        this.labelFunction = (d) => moment(d).format('MMM Do');
         return this.props.currentChart.valuePerFifteenMinutesUSD;
       case 'hour':
+        this.labelFunction = (d) => moment(d).format('h:mm');
         return this.props.currentChart.valuePerMinuteUSD.slice(0,60);
       case 'day':
       default:
+        this.labelFunction = (d) => moment(d).format('MMM Do');
         return this.props.currentChart.valuePerMinuteUSD;
     }
   }
@@ -48,17 +52,22 @@ class MainChart extends React.Component {
   render() {
 
     if (this.props.currentChart) {
-      const data = this.selectData();
+      const data = this.selectData().map( (el) => (
+        ({
+          'time': el.time,
+          'value': el.value })
+      ));
 
+      console.log(data)
       let options = {
-        width: 250,
-        height: 250,
+        // width: 350 ,
+        // height: 100,
         color: '#2980B9',
         margin: {
-          top: 10,
-          left: 35,
-          bottom: 30,
-          right: 10
+          top: 50,
+          left: 50,
+          bottom: 50,
+          right: 50
         },
         animate: {
           type: 'delayed',
@@ -72,10 +81,11 @@ class MainChart extends React.Component {
           zeroAxis: false,
           orient: 'bottom',
           tickValues: [],
+          labelFunction: this.labelFunction,
           label: {
             fontFamily: 'Arial',
-            fontSize: 8,
-            fontWeight: true,
+            fontSize: 12,
+            fontWeight: 'bold',
             fill: '#34495E'
           }
         },
@@ -89,15 +99,29 @@ class MainChart extends React.Component {
           tickValues: [],
           label: {
             fontFamily: 'Arial',
-            fontSize: 8,
-            fontWeight: true,
+            fontSize: 12,
+            fontWeight: 'bold',
             fill: '#34495E'
           }
         }
       }
 
       return (
-        <View style={{ backgroundColor: 'black'}}>
+        <View
+          onLayout={event => {this.setState({width: event.nativeEvent.layout.width, height:
+            event.nativeEvent.layout.height}) }}
+          style={{ backgroundColor: 'black'}}>
+              <View>
+            <Button
+                title="1H"
+                onPress={() => this.updateView("hour")} />
+            <Button
+                title="1D"
+                onPress={() => this.updateView("day")}  />
+            <Button
+                title="1W"
+                onPress={() => this.updateView("week")}  />
+          </View>
           <StockLine data={[data]} options={options} xKey='time' yKey='value' />
         </View>
       )
@@ -108,26 +132,7 @@ class MainChart extends React.Component {
         </View>
       )
     }
-    }
   }
+}
 
 export default MainChart;
-
-const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: colors.lower_background,
-  },
-  chartContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingBottom: 15,
-  },
-  options: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-});
