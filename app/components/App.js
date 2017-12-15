@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { colors } from '../stylesheets/constants';
+import { StatusBar, View } from 'react-native';
 
 import Home from './screens/home_container';
 import News from './screens/news';
 import NewsPreview from './news/news_preview';
 
-import MainChart from './charts/main_chart_container';
+import ChartShow from './charts/chart_show';
 
 const NewsModalStack = StackNavigator({
   News: {
@@ -29,9 +30,10 @@ const NewsModalStack = StackNavigator({
   mode: 'modal',
 });
 
-const App = TabNavigator({
+const Tab = TabNavigator({
   Home: { screen: Home },
   News: { screen: NewsModalStack },
+  ChartShow: { screen: ChartShow },
 }, {
   tabBarPosition: 'top',
   animationEnabled: true,
@@ -46,9 +48,23 @@ const App = TabNavigator({
     style: {
       backgroundColor: colors.black,
       padding: 10,
-      marginTop: 20,
+      paddingTop: 20,
     },
   }
 });
+
+class App extends React.Component {
+  render() {
+    return(
+      <View style={{flex: 1}}>
+        <StatusBar barStyle={'light-content'}/>
+        <Tab
+
+          />
+      </View>
+
+    );
+  }
+}
 
 export default App;

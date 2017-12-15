@@ -9,6 +9,7 @@ console.disableYellowBox = true;
 
 const Root = () => (
   <Provider store={store}>
+
     <App />
   </Provider>
 );
