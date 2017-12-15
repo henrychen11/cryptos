@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     width: 250,
     textAlign: 'center',
     opacity: 0.5,
+    color: 'white'
   }
 });
 export default News;

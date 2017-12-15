@@ -1,11 +1,15 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import {
-  View, StyleSheet, Text, ListView, TouchableHighlight, Image, WebView, Linking
+  View, 
+  StyleSheet, 
+  Text, 
+  ListView, 
+  TouchableHighlight, 
+  Image
 } from 'react-native';
 import NewsPreview from './news_preview';
-
-import { colors, layouts } from '../../stylesheets/constants';
+import moment from 'moment';
 
 class NewsIndexItem extends React.Component {
   static navigationOptions = {
@@ -46,6 +50,11 @@ class NewsIndexItem extends React.Component {
                   style={styles.newsDescription}>
                   {this.props.article.description}
                 </Text>
+              
+              <View style={styles.footer}>
+                <Text style={styles.footerText}>{this.props.article.source.name}</Text>
+                <Text style={styles.footerText}>{moment(this.props.article.publishedAt).format("dddd, MMMM Do YYYY")}</Text>
+              </View>
               </View>
             </View>
           </TouchableHighlight>
@@ -88,5 +97,14 @@ const styles = StyleSheet.create({
     height: 80,
     width: 80,
     borderRadius: 10
+  },
+    footer: {
+    paddingTop: 1,
+    flexDirection: 'row',
+  },
+  footerText: {
+    fontSize: 10,
+    color: 'white',
+    marginRight: 5,
   }
 });
