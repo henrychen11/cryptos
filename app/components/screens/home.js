@@ -19,27 +19,46 @@ class Home extends React.Component{
   }
 
   render() {
+    const { orientation } = this.props;
+    let containerStyle = styles.verticalContainer;
+    let coinShowStyle = styles.coinShowVertical;
+    if (orientation === "horizontal") {
+      containerStyle = styles.horizontalContainer;
+      coinShowStyle = styles.coinShowHorizontal;
+    }
     return(
-      <View style={styles.container}>
-        <CoinIndexContainer />
-        <View style={styles.coinShow}>
-          <CoinShow />
-        </View>
+      <View style={containerStyle}>
+
+          <CoinIndexContainer />
+          <View style={coinShowStyle}>
+            <CoinShow />
+          </View>
+
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  horizontalContainer: {
     flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
   },
-  coinShow: {
+  verticalContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  coinShowVertical: {
     flex: .8,
     width: '100%',
     flexDirection: 'column',
-
+  },
+  coinShowHorizontal: {
+    flex: 1.25,
+    width: '100%',
+    flexDirection: 'column',
   },
 });
 
