@@ -84,7 +84,8 @@ class MainChart extends React.Component {
             fontFamily: 'Arial',
             fontSize: 12,
             fontWeight: 'bold',
-            fill: '#34495E'
+            fill: '#34495E',
+            rotate: 0,
           }
         },
         axisY: {
@@ -95,6 +96,7 @@ class MainChart extends React.Component {
           zeroAxis: false,
           orient: 'left',
           tickValues: [],
+          labelFunction: ( (d) => ( "$" + d.toFixed(0))),
           label: {
             fontFamily: 'Arial',
             fontSize: 12,
