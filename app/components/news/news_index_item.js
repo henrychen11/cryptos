@@ -53,7 +53,7 @@ class NewsIndexItem extends React.Component {
               
               <View style={styles.footer}>
                 <Text style={styles.footerText}>{this.props.article.source.name}</Text>
-                <Text style={styles.footerText}>{moment(this.props.article.publishedAt).format("dddd, MMMM Do YYYY")}</Text>
+                <Text style={styles.footerText}>{moment(this.props.article.publishedAt).format("dddd, MMMM Do")}</Text>
               </View>
               </View>
             </View>
