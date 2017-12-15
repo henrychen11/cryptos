@@ -7,7 +7,7 @@ import { RECEIVE_CHART_DATA } from '../actions/chart_actions';
 const initialState = {
   currentCoin: {},
   orientation: 'vertical',
-  currentChart: {},
+  // currentChart: {},
 };
 
 const UiReducer = (state = initialState, action) => {

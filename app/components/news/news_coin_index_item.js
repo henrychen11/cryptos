@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
   footer: {
     paddingTop: 1,
     flexDirection: 'row',
-    color: 'gray'
   },
   footerText: {
     fontSize: 10,
