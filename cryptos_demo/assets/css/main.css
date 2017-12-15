@@ -1671,7 +1671,8 @@
 		}
 
 	body, input, select, textarea {
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: 'Questrial', sans-serif;
+
 		font-weight: normal;
 		line-height: 1.5em;
 		letter-spacing: -0.015em;
@@ -3198,7 +3199,7 @@
 					.wrapper.style2 input[type="button"].special:hover,
 					.wrapper.style2 button.special:hover,
 					.wrapper.style2 .button.special:hover {
-						background-color: #5ca3e8;
+						background-color: #21C57D;
 					}
 
 					.wrapper.style2 input[type="submit"].special:active,
@@ -3686,6 +3687,10 @@
 				color: #000000 !important;
 			}
 
+			#header .button.special:hover {
+				background-color: #21C57D;
+			}
+
 		#header label {
 			color: #ffffff;
 		}
@@ -3817,6 +3822,11 @@
 			color: inherit;
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 			color: #ffffff;
+		}
+
+		#header #title {
+			font-family: 'Monoton', cursive;
+			font-weight:400;
 		}
 
 		#header strong, #header b {
@@ -4078,6 +4088,8 @@
 
 	#footer {
 		background-color: #323232;
+		background-image: url("images/data_background.png");
+		background-attachment: fixed;
 		color: #999999;
 		padding: 4.5em 0 2.5em 0 ;
 		color: #b0b0b0;
