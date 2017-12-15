@@ -1841,11 +1841,11 @@
 	}
 
 		a:hover {
-			color: #4696e5;
+			color: #ffffff;
 		}
 
 	strong, b {
-		color: #828282;
+		color: #eeeeee;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -3132,7 +3132,7 @@
 			}
 
 			.wrapper.style1 strong, .wrapper.style1 b {
-				color: #ffffff;
+				color: #eeeeee;
 			}
 
 			.wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6 {
@@ -3346,7 +3346,7 @@
 				}
 
 			.wrapper.style2 strong, .wrapper.style2 b {
-				color: #828282;
+				color: #eeeeee;
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
@@ -3560,7 +3560,7 @@
 				}
 
 			.wrapper.style3 strong, .wrapper.style3 b {
-				color: #828282;
+				color: #eeeeee;
 			}
 
 			.wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 h4, .wrapper.style3 h5, .wrapper.style3 h6 {
@@ -3820,7 +3820,7 @@
 		}
 
 		#header strong, #header b {
-			color: #ffffff;
+			color: #eeeeee;
 		}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -4094,11 +4094,11 @@
 		}
 
 			#footer a:hover {
-				color: #4696e5;
+				color: #ffffff;
 			}
 
 		#footer strong, #footer b {
-			color: #828282;
+			color: #eeeeee;
 		}
 
 		#footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
