@@ -36,7 +36,7 @@ class NewsCoinIndexItem extends React.Component {
               </Text>
               <View style={styles.footer}>
                 <Text style={styles.footerText}>{this.props.article.source.name}</Text>
-                <Text style={styles.footerText}>{moment(this.props.article.publishedAt).format("dddd, MMMM Do YYYY")}</Text>
+                <Text style={styles.footerText}>{moment(this.props.article.publishedAt).format("MMM Do YY")}</Text>
               </View>
             </View>
           </View>
@@ -58,14 +58,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'gray',
+    borderColor: colors.gray,
     borderBottomWidth: 1,
     marginHorizontal: 3,
   },
   newsName: {
     paddingTop: 2,
     fontWeight: "bold",
-    color: 'white',
+    color: colors.white,
     fontSize: 14,
   },
   footer: {
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 10,
-    color: 'white',
+    color: colors.white,
     marginRight: 5,
   }
 

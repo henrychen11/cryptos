@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, ListView, TextInput } from 'react-native';
 import NewsIndexItem from './news_index_item';
+import { colors, layouts } from '../../stylesheets/constants';
 
 class NewsIndex extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        backgroundColor: 'black',
+        backgroundColor: colors.black,
     },
 });
 

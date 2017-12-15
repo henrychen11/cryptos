@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
-import { colors, layouts } from '../stylesheets/constants';
+import { colors } from '../stylesheets/constants';
 
 import Home from './screens/home_container';
 import News from './screens/news';
 import NewsPreview from './news/news_preview';
 
-import CandleChart from './charts/candle_chart';
+import MainChart from './charts/main_chart_container';
 
 const ModalStack = StackNavigator({
   News: {
@@ -32,19 +32,20 @@ const ModalStack = StackNavigator({
 const App = TabNavigator({
   Home: { screen: Home },
   News: { screen: ModalStack },
-  Chart: { screen: CandleChart }
+  Chart: { screen: MainChart }
 }, {
   tabBarPosition: 'top',
   animationEnabled: true,
   swipeEnabled: true,
   lazy: true,
   tabBarOptions: {
-    activeTintColor: 'green',
+    activeTintColor: colors.green,
     labelStyle: {
       fontSize: 14,
+      fontWeight: 'bold',
     },
     style: {
-      backgroundColor: 'black',
+      backgroundColor: colors.black,
       padding: 10,
       marginTop: 20,
     },

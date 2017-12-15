@@ -1,11 +1,16 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
+import { colors, layouts } from '../../stylesheets/constants';
 import {
-  View, StyleSheet, Text, ListView, TouchableHighlight, Image, WebView, Linking
+  View,
+  StyleSheet,
+  Text,
+  ListView,
+  TouchableHighlight,
+  Image
 } from 'react-native';
 import NewsPreview from './news_preview';
-
-import { colors, layouts } from '../../stylesheets/constants';
+import moment from 'moment';
 
 class NewsIndexItem extends React.Component {
   static navigationOptions = {
@@ -46,6 +51,11 @@ class NewsIndexItem extends React.Component {
                   style={styles.newsDescription}>
                   {this.props.article.description}
                 </Text>
+
+              <View style={styles.footer}>
+                <Text style={styles.footerText}>{this.props.article.source.name}</Text>
+                <Text style={styles.footerText}>{moment(this.props.article.publishedAt).format("dddd, MMMM Do")}</Text>
+              </View>
               </View>
             </View>
           </TouchableHighlight>
@@ -57,31 +67,30 @@ export default NewsIndexItem;
 
 const styles = StyleSheet.create({
   item: {
-
-    color: 'white',
     margin: 3,
     width: 325,
-    height: 100
+    height: 100,
+    borderBottomWidth: 1,
+    borderColor: colors.gray,
   },
   container: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   text: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    borderBottomWidth: 1,
-    borderColor: 'gray'
+
   },
   newsName: {
     fontWeight: "800",
-    color: 'white',
+    color: colors.white,
     fontSize: 14,
   },
   newsDescription: {
     marginTop: 5,
-    color: 'white',
+    color: colors.white,
     fontSize: 10,
   },
   image: {
@@ -89,5 +98,14 @@ const styles = StyleSheet.create({
     height: 80,
     width: 80,
     borderRadius: 10
+  },
+    footer: {
+    paddingTop: 1,
+    flexDirection: 'row',
+  },
+  footerText: {
+    fontSize: 10,
+    color: colors.white,
+    marginRight: 5,
   }
 });

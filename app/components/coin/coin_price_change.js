@@ -1,5 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import {
+  formatChange,
+  formatPriceChange,
+  formatMarketCap
+} from '../../util/formatter';
+import { colors, layouts } from '../../stylesheets/constants';
 
 class CoinPriceChange extends React.Component {
   constructor(props) {
@@ -10,7 +16,8 @@ class CoinPriceChange extends React.Component {
 
   contentDisplay() {
     let sign;
-    if (this.props.priceChange > 0) {
+
+    if (this.props.percentChange >= 0) {
       sign = "+";
       this.viewStyle = styles.positive;
     } else {
@@ -22,20 +29,21 @@ class CoinPriceChange extends React.Component {
         return (
           <Text style={styles.priceChange}>
             {sign}
-            {this.props.priceChange}%
+            {formatChange(this.props.percentChange)}%
           </Text>
         );
       case 'priceVar':
+        let priceChange = this.props.bidUSD * this.props.percentChange / 100;
         return (
           <Text style={styles.priceChange}>
             {sign}
-            {this.props.priceChange}
+            {formatPriceChange(priceChange)}
           </Text>
         );
       case 'marketCap':
         return (
           <Text style={styles.priceChange}>
-            {this.props.priceChange}B
+            {formatMarketCap(this.props.marketCapUSD)}
           </Text>
         );
     }
@@ -60,18 +68,18 @@ const styles = StyleSheet.create({
   coinPriceChange: {
     borderRadius: 5,
     overflow: 'hidden',
-    width: 75,
+    width: 78,
   },
   positive: {
-    backgroundColor: 'green',
+    backgroundColor: colors.green,
     width: '100%',
   },
   negative: {
-    backgroundColor: 'red',
+    backgroundColor: colors.red,
     width: '100%',
   },
   priceChange: {
-    color: 'white',
+    color: colors.white,
     fontSize: 18,
     padding: 5,
     textAlign: 'right',
