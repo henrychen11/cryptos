@@ -4149,3 +4149,8 @@
 		}
 
 	}
+
+	.cool-background {
+		background-image: url("images/data_background.png");
+		background-attachment: fixed;
+	}
