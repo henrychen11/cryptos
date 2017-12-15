@@ -11,6 +11,7 @@ export const colors = {
   "red": '#FF0000',
 
   "background": "#000000",
+  "lower_background": "#212121",
   "text_color": "#ffffff",
 
 };
