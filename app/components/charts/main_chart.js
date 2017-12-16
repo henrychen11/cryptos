@@ -4,6 +4,8 @@ import { StockLine } from 'react-native-pathjs-charts';
 import { Text, View, StyleSheet, Button, Dimensions } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 import moment from 'moment';
+import { formatChartPrice } from '../../util/formatter';
+import { xValues } from '../../util/chart_x_values';
 
 class MainChart extends React.Component {
   static navigationOptions = {
@@ -42,19 +44,14 @@ class MainChart extends React.Component {
   selectData() {
     switch(this.state.chartOption) {
       case 'week':
-        this.labelFunction = (d) => moment(d).format('MM-DD');
+        this.labelFunction = (d) => moment(d).format('MMM DD');
         return this.props.currentChart.valuePerFifteenMinutesUSD;
       case 'hour':
-        this.labelFunction = (d) => moment(d).format("h:mm");
+        this.labelFunction = (d) => moment(d).format("HH:mm");
         return this.props.currentChart.valuePerMinuteUSD.slice(-60);
       case 'day':
-        this.labelFunction = (d) => moment(d).format('MMM Do');
-        const data = this.props.currentChart.valuePerMinuteUSD.slice(-96);
-        const filteredData = [];
-        for (let i = 0; i < data.length; i ++) {
-          if (i % 4 === 3) filteredData.push(data[i]);
-        }
-        return filteredData;
+        this.labelFunction = (d) => moment(d).format('HH:mm');
+        return this.props.currentChart.valuePerFifteenMinutesUSD.slice(-60);
     }
   }
 
@@ -72,36 +69,32 @@ class MainChart extends React.Component {
           'time': el.time,
           'value': el.value })
       ));
+
       let options = {
-        width: this.state.dimensions.width * 0.7,
-        height: this.state.dimensions.height * 0.7,
-        color: '#2980B9',
+        width: this.state.dimensions.width * 0.75,
+        height: this.state.dimensions.height * 0.65,
+        color: colors.green,
         margin: {
-          top: 10,
+          top: 20,
           left: 60,
-          bottom: 10,
-          right: 50
-        },
-        animate: {
-          type: 'delayed',
-          duration: 200
+          bottom: 20,
+          right: 60
         },
         axisX: {
-          showAxis: false,
+          showAxis: true,
           showLines: true,
-          showLabels: false,
-          showTicks: false,
+          showLabels: true,
+          showTicks: true,
           zeroAxis: false,
           orient: 'bottom',
-          tickValues: [
-        ],
+          tickValues: xValues(this.state.chartOption),
           labelFunction: this.labelFunction,
           label: {
             fontFamily: 'Arial',
             fontSize: 12,
             fontWeight: 'bold',
-            fill: '#34495E',
-            rotate: 45,
+            fill: colors.white,
+            rotate: 1,
           }
         },
         axisY: {
@@ -112,12 +105,12 @@ class MainChart extends React.Component {
           zeroAxis: false,
           orient: 'left',
           tickValues: [],
-          labelFunction: ( (d) => ( "$" + d.toFixed(0))),
+          labelFunction: ( (d) => ( "$" + formatChartPrice(d))),
           label: {
             fontFamily: 'Arial',
             fontSize: 12,
             fontWeight: 'bold',
-            fill: '#34495E'
+            fill: colors.white,
           }
         }
       }
@@ -128,16 +121,24 @@ class MainChart extends React.Component {
           style={ styles.main }>
             <View style={ styles.buttons }>
                 <Button
+                    color={colors.white}
                     title="1H"
                     onPress={() => this.updateView("hour")} />
                 <Button
+                    color={colors.white}
                     title="1D"
                     onPress={() => this.updateView("day")}  />
                 <Button
+                    color={colors.white}
                     title="1W"
                     onPress={() => this.updateView("week")}  />
           </View>
-          <StockLine data={[data]} rotate={45} options={options} xKey='time' yKey='value' />
+          <StockLine
+            data={[data]}
+            rotate={45}
+            options={options}
+            xKey='time'
+            yKey='value' />
         </View>
       )
     } else {
@@ -156,10 +157,13 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black'
+    backgroundColor: colors.dark_gray,
   },
   buttons: {
     justifyContent: 'center',
     flexDirection: 'row'
+  },
+  button: {
+    color: colors.white,
   }
 })

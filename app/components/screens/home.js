@@ -44,7 +44,7 @@ class Home extends React.Component{
             <CoinShow />
 
           </View>
-        <Text style={bittrexStyle}>Coin data retrieved from Bittrex API</Text>
+        <Text style={bittrexStyle}>Data from Bittrex</Text>
       </View>
     );
   }

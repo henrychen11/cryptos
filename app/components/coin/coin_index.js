@@ -78,8 +78,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     width: '100%',
     overflow: 'scroll',
-    borderBottomWidth: 1,
-    borderColor: colors.gray,
+
   }
 });
 
