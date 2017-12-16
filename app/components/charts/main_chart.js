@@ -70,12 +70,27 @@ class MainChart extends React.Component {
           'value': el.value })
       ));
 
+      let hourColor = colors.timeColor;
+      let dayColor = colors.timeColor;
+      let weekColor  = colors.timeColor;
+      switch (this.state.chartOption) {
+        case "hour":
+          hourColor = colors.selectedTimeColor;
+          break;
+        case "day":
+          dayColor = colors.selectedTimeColor;
+          break;
+        case "week":
+          weekColor = colors.selectedTimeColor;
+          break;
+      }
+
       let options = {
         width: this.state.dimensions.width * 0.75,
-        height: this.state.dimensions.height * 0.65,
+        height: this.state.dimensions.height * 0.75,
         color: colors.green,
         margin: {
-          top: 20,
+          top: 0,
           left: 60,
           bottom: 20,
           right: 60
@@ -121,15 +136,15 @@ class MainChart extends React.Component {
           style={ styles.main }>
             <View style={ styles.buttons }>
                 <Button
-                    color={colors.white}
+                    color={hourColor}
                     title="1H"
                     onPress={() => this.updateView("hour")} />
                 <Button
-                    color={colors.white}
+                    color={dayColor}
                     title="1D"
                     onPress={() => this.updateView("day")}  />
                 <Button
-                    color={colors.white}
+                    color={weekColor}
                     title="1W"
                     onPress={() => this.updateView("week")}  />
           </View>
@@ -161,7 +176,8 @@ const styles = StyleSheet.create({
   },
   buttons: {
     justifyContent: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
   },
   button: {
     color: colors.white,

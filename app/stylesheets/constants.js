@@ -13,6 +13,8 @@ export const colors = {
   "background": "#000000",
   "lower_background": "#212121",
   "selectedCoinBackground": "#212121",
+  "timeColor": "#ffffff",
+  "selectedTimeColor": "#32CD32",
   "text_color": "#ffffff",
 
 };
