@@ -1,7 +1,7 @@
 import React from 'react';
 import { StockLine } from 'react-native-pathjs-charts';
 
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, Dimensions } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 import moment from 'moment';
 
@@ -12,8 +12,13 @@ class MainChart extends React.Component {
 
   constructor(props){
       super(props);
+      let {width, height} = Dimensions.get('window')
       this.state = {
-          chartOption: 'hour'
+          chartOption: 'hour',
+          dimensions: {
+            width: width,
+            height: height
+          }
       };
       this.updateView = this.updateView.bind(this);
   }
@@ -37,16 +42,22 @@ class MainChart extends React.Component {
   selectData() {
     switch(this.state.chartOption) {
       case 'week':
-        this.labelFunction = (d) => moment(d).format('MMM Do');
+        this.labelFunction = (d) => moment(d).format('MM-DD');
         return this.props.currentChart.valuePerFifteenMinutesUSD;
       case 'hour':
-        this.labelFunction = (d) => moment(d).format('h:mm');
-        return this.props.currentChart.valuePerMinuteUSD.slice(0,60);
+        this.labelFunction = (d) => moment(d).format("h:mm");
+        return this.props.currentChart.valuePerMinuteUSD;
       case 'day':
       default:
         this.labelFunction = (d) => moment(d).format('MMM Do');
         return this.props.currentChart.valuePerMinuteUSD;
     }
+  }
+
+  onLayout = event => {
+    // if (this.state.dimensions) return // layout was already called
+    let {width, height} = event.nativeEvent.layout
+    this.setState({dimensions: {width, height}})
   }
 
   render() {
@@ -58,13 +69,13 @@ class MainChart extends React.Component {
           'value': el.value })
       ));
       let options = {
-        width: 250 ,
-        height: 250,
+        width: this.state.dimensions.width * 0.8,
+        height: this.state.dimensions.height * 0.8,
         color: '#2980B9',
         margin: {
-          top: 50,
-          left: 50,
-          bottom: 50,
+          top: 10,
+          left: 60,
+          bottom: 10,
           right: 50
         },
         animate: {
@@ -72,20 +83,21 @@ class MainChart extends React.Component {
           duration: 200
         },
         axisX: {
-          showAxis: true,
+          showAxis: false,
           showLines: true,
-          showLabels: true,
-          showTicks: true,
+          showLabels: false,
+          showTicks: false,
           zeroAxis: false,
           orient: 'bottom',
-          tickValues: [],
+          tickValues: [
+        ],
           labelFunction: this.labelFunction,
           label: {
             fontFamily: 'Arial',
             fontSize: 12,
             fontWeight: 'bold',
             fill: '#34495E',
-            rotate: 0,
+            rotate: 45,
           }
         },
         axisY: {
@@ -108,6 +120,7 @@ class MainChart extends React.Component {
 
       return (
         <View
+          onLayout={this.onLayout}
           style={ styles.main }>
             <View style={ styles.buttons }>
                 <Button
@@ -120,7 +133,7 @@ class MainChart extends React.Component {
                     title="1W"
                     onPress={() => this.updateView("week")}  />
           </View>
-          <StockLine data={[data]} options={options} xKey='time' yKey='value' />
+          <StockLine data={[data]} rotate={45} options={options} xKey='time' yKey='value' />
         </View>
       )
     } else {
@@ -146,6 +159,3 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   }
 })
-
-// onLayout={event => {this.setState({width: (event.nativeEvent.layout.width), height:
-//   (event.nativeEvent.layout.height)}) }}
