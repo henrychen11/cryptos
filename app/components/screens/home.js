@@ -21,6 +21,9 @@ class Home extends React.Component{
 
   componentDidMount(){
     this.props.setNavigation(this.props.navigation.navigate);
+    const dim = Dimensions.get('screen')
+    const orientation = (dim.height > dim.width) ? 'vertical' : 'horizontal'
+    this.props.receiveOrientation(orientation);
   }
 
   render() {
