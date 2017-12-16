@@ -4,6 +4,7 @@ import { StockLine } from 'react-native-pathjs-charts';
 import { Text, View, StyleSheet, Button, Dimensions } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 import moment from 'moment';
+import { formatChartPrice } from '../../util/formatter';
 
 class MainChart extends React.Component {
   static navigationOptions = {
@@ -82,10 +83,6 @@ class MainChart extends React.Component {
           bottom: 10,
           right: 50
         },
-        animate: {
-          type: 'delayed',
-          duration: 200
-        },
         axisX: {
           showAxis: false,
           showLines: true,
@@ -112,7 +109,7 @@ class MainChart extends React.Component {
           zeroAxis: false,
           orient: 'left',
           tickValues: [],
-          labelFunction: ( (d) => ( "$" + d.toFixed(0))),
+          labelFunction: ( (d) => ( "$" + formatChartPrice(d))),
           label: {
             fontFamily: 'Arial',
             fontSize: 12,
