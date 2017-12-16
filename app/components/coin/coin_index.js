@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     width: '100%',
-    paddingTop: 10,
     overflow: 'scroll',
     borderBottomWidth: 1,
     borderColor: colors.gray,

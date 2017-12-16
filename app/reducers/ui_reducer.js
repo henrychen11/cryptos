@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_COIN } from '../actions/coin_actions';
 import { RECEIVE_ORIENTATION } from '../actions/device_actions';
 import { RECEIVE_CHART_DATA } from '../actions/chart_actions';
+import { RECEIVE_NAVIGATION } from '../actions/navigation_actions';
 
 const initialState = {
   currentCoin: {},
@@ -26,6 +27,10 @@ const UiReducer = (state = initialState, action) => {
     case RECEIVE_CHART_DATA:
       newState = merge({}, state);
       newState.currentChart = action.chartData;
+      return newState;
+    case RECEIVE_NAVIGATION:
+      newState = merge({}, state);
+      newState.navigation = action.navigation;
       return newState;
     default:
       return state;
