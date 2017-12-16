@@ -4,6 +4,14 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AppIcon60x60@2x.png</key>
+		<data>
+		31J6maIRjBlC2lhf0t/DEEBEV7A=
+		</data>
+		<key>Assets.car</key>
+		<data>
+		0FI5yoDzoIpbkXZh/2Y8OSdUeG8=
+		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
 		T8zUkhDWss2dzQY+WzoRXMEEztM=
@@ -51,7 +59,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		tHsQF1hO1Ng99n41INfGfwGpKXc=
+		MPClRgUyh//M4Ap7k+vhe553Bgs=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -63,7 +71,7 @@
 		</data>
 		<key>PlugIns/react_nativeTests.xctest.dSYM/Contents/Resources/DWARF/react_nativeTests</key>
 		<data>
-		ipH1Ajx8HuhDFyVjJC6DPmqBZE8=
+		hE6FDG0NJoPpXfFCX3pw8UbUBuw=
 		</data>
 		<key>PlugIns/react_nativeTests.xctest/Info.plist</key>
 		<data>
@@ -75,11 +83,33 @@
 		</data>
 		<key>PlugIns/react_nativeTests.xctest/react_nativeTests</key>
 		<data>
-		mMmlFbZE39zWC5O0DAPbhVlNj7I=
+		kN/zVZeqKufeurCRvZQFXtWvS1c=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AppIcon60x60@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			31J6maIRjBlC2lhf0t/DEEBEV7A=
+			</data>
+			<key>hash2</key>
+			<data>
+			d6MkFaLAE/N+wri12q6MPlrrWMwGzGfg09DDJdRs1k8=
+			</data>
+		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0FI5yoDzoIpbkXZh/2Y8OSdUeG8=
+			</data>
+			<key>hash2</key>
+			<data>
+			e7sLE7wlQX7Nr3dpvNCgOqTwMJxehPUBqmbKzw5MjzY=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
@@ -207,11 +237,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ipH1Ajx8HuhDFyVjJC6DPmqBZE8=
+			hE6FDG0NJoPpXfFCX3pw8UbUBuw=
 			</data>
 			<key>hash2</key>
 			<data>
-			BxcMHSn7CSTHlMJi3nJ1D2VEbNzUUPOb5sVrSUJk0pw=
+			g8/LNPFQqcppfaZDEBg3zFeSsJXGpfU4HVdNVkGBJtM=
 			</data>
 		</dict>
 		<key>PlugIns/react_nativeTests.xctest/Info.plist</key>
@@ -240,11 +270,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mMmlFbZE39zWC5O0DAPbhVlNj7I=
+			kN/zVZeqKufeurCRvZQFXtWvS1c=
 			</data>
 			<key>hash2</key>
 			<data>
-			nJaAoB6vRaxKSXKaUVj9QA71lYf6KdzTZlLB94KKbP8=
+			Cka8iedg6lOp4V2s+vM34h8PMBkVTktu7/17u6HCY8o=
 			</data>
 		</dict>
 	</dict>

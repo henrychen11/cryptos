@@ -81,9 +81,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchInput: {
+    fontSize: 20,
     borderRadius: 10,
     backgroundColor: colors.gray,
-    height: 30,
+    height: 40,
     width: 250,
     textAlign: 'center',
     // opacity: 1,

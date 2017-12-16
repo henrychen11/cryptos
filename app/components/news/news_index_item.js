@@ -19,6 +19,7 @@ class NewsIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
+
   }
 
   _onClick() {
@@ -29,6 +30,7 @@ class NewsIndexItem extends React.Component {
   }
 
   render() {
+      const { orientation } = this.props;
       return (
           <TouchableHighlight
             style={styles.item}
@@ -53,7 +55,6 @@ class NewsIndexItem extends React.Component {
                 </Text>
 
               <View style={styles.footer}>
-                <Text style={styles.footerText}>{this.props.article.source.name}</Text>
                 <Text style={styles.footerText}>{moment(this.props.article.publishedAt).format("dddd, MMMM Do")}</Text>
               </View>
               </View>
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   item: {
     margin: 3,
     width: 325,
-    height: 110,
+    height: 120,
     borderBottomWidth: 1,
     borderColor: colors.gray,
   },
@@ -94,13 +95,15 @@ const styles = StyleSheet.create({
     fontSize: layouts.newsDescFontSize,
   },
   image: {
-    margin: 10,
+    marginTop: 20,
+    marginRight: 10,
+    marginLeft: 10,
     height: 80,
     width: 80,
     borderRadius: 10
   },
     footer: {
-    paddingTop: 1,
+    paddingTop: 3,
     flexDirection: 'row',
   },
   footerText: {
