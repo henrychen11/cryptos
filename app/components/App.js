@@ -33,7 +33,7 @@ const NewsModalStack = StackNavigator({
 const Tab = TabNavigator({
   Home: { screen: Home },
   News: { screen: NewsModalStack },
-  ChartShow: { screen: ChartShow },
+  // ChartShow: { screen: ChartShow },
 }, {
   tabBarPosition: 'top',
   animationEnabled: true,

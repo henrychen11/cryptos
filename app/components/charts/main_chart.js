@@ -46,11 +46,15 @@ class MainChart extends React.Component {
         return this.props.currentChart.valuePerFifteenMinutesUSD;
       case 'hour':
         this.labelFunction = (d) => moment(d).format("h:mm");
-        return this.props.currentChart.valuePerMinuteUSD;
+        return this.props.currentChart.valuePerMinuteUSD.slice(-60);
       case 'day':
-      default:
         this.labelFunction = (d) => moment(d).format('MMM Do');
-        return this.props.currentChart.valuePerMinuteUSD;
+        const data = this.props.currentChart.valuePerMinuteUSD.slice(-96);
+        const filteredData = [];
+        for (let i = 0; i < data.length; i ++) {
+          if (i % 4 === 3) filteredData.push(data[i]);
+        }
+        return filteredData;
     }
   }
 
@@ -69,8 +73,8 @@ class MainChart extends React.Component {
           'value': el.value })
       ));
       let options = {
-        width: this.state.dimensions.width * 0.8,
-        height: this.state.dimensions.height * 0.8,
+        width: this.state.dimensions.width * 0.7,
+        height: this.state.dimensions.height * 0.7,
         color: '#2980B9',
         margin: {
           top: 10,
