@@ -17,7 +17,10 @@ class NewsCoinIndexItem extends React.Component {
   }
 
   _onClick() {
-    return this.props.navigate('NewsPreview', {uri: this.props.article.url});
+    return this.props.navigate('NewsPreview', {
+      uri: this.props.article.url,
+      title: this.props.article.title,
+    });
   }
 
   render() {
@@ -66,14 +69,14 @@ const styles = StyleSheet.create({
     paddingTop: 2,
     fontWeight: "bold",
     color: colors.white,
-    fontSize: 14,
+    fontSize: layouts.newsTitleFontSize,
   },
   footer: {
     paddingTop: 1,
     flexDirection: 'row',
   },
   footerText: {
-    fontSize: 10,
+    fontSize: layouts.newsFooterFontSize,
     color: colors.white,
     marginRight: 5,
   }

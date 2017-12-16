@@ -18,6 +18,10 @@ class Home extends React.Component{
     })
   }
 
+  componentDidMount(){
+    this.props.setNavigation(this.props.navigation.navigate);
+  }
+
   render() {
     const { orientation } = this.props;
     let containerStyle = styles.verticalContainer;
@@ -51,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   coinShowVertical: {
-    flex: .8,
+    flex: .9,
     width: '100%',
     flexDirection: 'column',
   },

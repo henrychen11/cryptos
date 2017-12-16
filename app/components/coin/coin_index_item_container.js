@@ -10,6 +10,7 @@ import {
 
 const mapStateToProps = (state) => ({
   currentCoin: state.ui.currentCoin,
+  orientation: state.ui.orientation,
 });
 
 const mapDispatchToProps = (dispatch) => ({

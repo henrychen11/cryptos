@@ -47,7 +47,7 @@ class NewsIndexItem extends React.Component {
                   {this.props.article.title}
                 </Text>
                 <Text
-                  numberOfLines={3}
+                  numberOfLines={2}
                   style={styles.newsDescription}>
                   {this.props.article.description}
                 </Text>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   item: {
     margin: 3,
     width: 325,
-    height: 100,
+    height: 110,
     borderBottomWidth: 1,
     borderColor: colors.gray,
   },
@@ -86,12 +86,12 @@ const styles = StyleSheet.create({
   newsName: {
     fontWeight: "800",
     color: colors.white,
-    fontSize: 14,
+    fontSize: layouts.newsTitleFontSize,
   },
   newsDescription: {
     marginTop: 5,
     color: colors.white,
-    fontSize: 10,
+    fontSize: layouts.newsDescFontSize,
   },
   image: {
     margin: 10,
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   footerText: {
-    fontSize: 10,
+    fontSize: layouts.newsFooterFontSize,
     color: colors.white,
     marginRight: 5,
   }

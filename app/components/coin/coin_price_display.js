@@ -51,7 +51,7 @@ class CoinPriceDisplay extends React.Component {
 const styles = StyleSheet.create({
   coinPrice: {
     color: colors.white,
-    fontSize: 18,
+    fontSize: layouts.coinIndexFontSize,
     paddingRight: 7,
   }
 });
