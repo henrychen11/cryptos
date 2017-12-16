@@ -25,5 +25,5 @@ export const layouts = {
   "coinShowFontSize": 18,
   "newsTitleFontSize": 18,
   "newsDescFontSize": 16,
-  "newsFooterFontSize": 14,
+  "newsFooterFontSize": 12,
 };
