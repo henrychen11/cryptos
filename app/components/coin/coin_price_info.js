@@ -50,7 +50,7 @@ class CoinPriceInfo extends React.Component {
     } else {
        return (
         <View style={styles.coinPriceInfo}>
-          <Text style={styles.title}>Select a coin</Text>
+          <Text style={styles.title}>Loading...</Text>
         </View>
       );
     }

@@ -47,7 +47,7 @@ const Tab = TabNavigator({
     },
     style: {
       backgroundColor: colors.black,
-      padding: 10,
+      padding: 20,
       marginTop: 20,
     },
   }

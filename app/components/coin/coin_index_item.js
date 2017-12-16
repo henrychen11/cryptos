@@ -32,14 +32,24 @@ class CoinIndexItem extends React.Component {
       percentChange24Hours,
       marketCapUSD,
     } = this.props.coin;
-    const { priceType } = this.props;
+    const { priceType, orientation, currentCoin } = this.props;
     let price = priceType === 'usd' ? bidUSD : bid;
     if (symbol === 'BTC' && priceType === 'btc') {
       price = 1;
     }
+    let nameDisplay = symbol;
     let highlightStyle = styles.normal;
-    if (id === this.props.currentCoin.id) {
+    let nameStyle = styles.coinSymbol;
+    if (id === currentCoin.id) {
       highlightStyle = styles.selected;
+      nameStyle = styles.selectedName;
+      if (orientation === "vertical") {
+        if (name.length > 8) {
+          nameDisplay = name.slice(0,8) + "...";
+        } else {
+          nameDisplay = name;
+        }
+      }
     }
     let priceDisplay, changeDisplay;
     if (bidUSD) {
@@ -56,8 +66,8 @@ class CoinIndexItem extends React.Component {
         style={highlightStyle}>
         <View style={styles.coinIndexItem}>
             <View style={styles.coinTitles}>
-              <Text style={styles.coinSymbol}>
-                {symbol}
+              <Text style={nameStyle}>
+                {nameDisplay}
               </Text>
             </View>
             <View style={styles.coinValues}>
@@ -100,6 +110,10 @@ const styles = StyleSheet.create({
   },
   coinSymbol: {
     color: colors.white,
+    fontSize: layouts.coinIndexFontSize,
+  },
+  selectedName: {
+    color: colors.green,
     fontSize: layouts.coinIndexFontSize,
   },
   coinName: {
