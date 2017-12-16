@@ -1,10 +1,11 @@
 import React from 'react';
-import { SmoothLine } from 'react-native-pathjs-charts';
+import { StockLine } from 'react-native-pathjs-charts';
 
 import { Text, View, StyleSheet, Button, Dimensions } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 import moment from 'moment';
 import { formatChartPrice } from '../../util/formatter';
+import { xValues } from '../../util/chart_x_values';
 
 class MainChart extends React.Component {
   static navigationOptions = {
@@ -43,20 +44,14 @@ class MainChart extends React.Component {
   selectData() {
     switch(this.state.chartOption) {
       case 'week':
-        this.labelFunction = (d) => moment(d).format('MM-DD');
+        this.labelFunction = (d) => moment(d).format('MMM DD');
         return this.props.currentChart.valuePerFifteenMinutesUSD;
       case 'hour':
-        this.labelFunction = (d) => moment(d).format("h:mm");
+        this.labelFunction = (d) => moment(d).format("HH:mm");
         return this.props.currentChart.valuePerMinuteUSD.slice(-60);
       case 'day':
-        this.labelFunction = (d) => moment(d).format('hh:mm');
-        return this.props.currentChart.valuePerFifteenMinutesUSD.slice(-96);
-        // const data = this.props.currentChart.valuePerMinuteUSD;
-        // const filteredData = [];
-        // for (let i = 0; i < data.length; i ++) {
-          // if (i % 15 === 0) filteredData.push(data[i]);
-        // }
-        // return filteredData;
+        this.labelFunction = (d) => moment(d).format('HH:mm');
+        return this.props.currentChart.valuePerFifteenMinutesUSD.slice(-60);
     }
   }
 
@@ -74,9 +69,9 @@ class MainChart extends React.Component {
           'time': el.time,
           'value': el.value })
       ));
-      console.log(<SmoothLine/>);
+
       let options = {
-        width: this.state.dimensions.width * 0.77,
+        width: this.state.dimensions.width * 0.75,
         height: this.state.dimensions.height * 0.65,
         color: colors.green,
         margin: {
@@ -92,7 +87,7 @@ class MainChart extends React.Component {
           showTicks: true,
           zeroAxis: false,
           orient: 'bottom',
-          tickValues: [],
+          tickValues: xValues(this.state.chartOption),
           labelFunction: this.labelFunction,
           label: {
             fontFamily: 'Arial',
@@ -138,7 +133,7 @@ class MainChart extends React.Component {
                     title="1W"
                     onPress={() => this.updateView("week")}  />
           </View>
-          <SmoothLine
+          <StockLine
             data={[data]}
             rotate={45}
             options={options}
