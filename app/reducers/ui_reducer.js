@@ -19,6 +19,7 @@ const UiReducer = (state = initialState, action) => {
     case RECEIVE_CURRENT_COIN:
       newState = merge({}, state);
       newState.currentCoin = action.currentCoin;
+      newState.currentCoin.idx = action.idx;
       return newState;
     case RECEIVE_ORIENTATION:
       newState = merge({}, state);

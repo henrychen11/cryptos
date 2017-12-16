@@ -3,10 +3,11 @@ import { View, StyleSheet, Button, Text, Dimensions} from 'react-native';
 
 import CoinIndexContainer from '../coin/coin_index_container';
 import CoinShow from './coin_show';
+import { colors, layouts } from '../../stylesheets/constants';
 
 class Home extends React.Component{
   static navigationOptions = {
-    tabBarLabel: 'Cryptos',
+    tabBarLabel: 'Home',
   }
 
   constructor(props){
@@ -20,15 +21,20 @@ class Home extends React.Component{
 
   componentDidMount(){
     this.props.setNavigation(this.props.navigation.navigate);
+    const dim = Dimensions.get('screen')
+    const orientation = (dim.height > dim.width) ? 'vertical' : 'horizontal'
+    this.props.receiveOrientation(orientation);
   }
 
   render() {
     const { orientation } = this.props;
     let containerStyle = styles.verticalContainer;
     let coinShowStyle = styles.coinShowVertical;
+    let bittrexStyle = styles.bittrexVertical;
     if (orientation === "horizontal") {
       containerStyle = styles.horizontalContainer;
       coinShowStyle = styles.coinShowHorizontal;
+      bittrexStyle = styles.bittrexHorizontal;
     }
     return(
       <View style={containerStyle}>
@@ -36,8 +42,9 @@ class Home extends React.Component{
           <CoinIndexContainer />
           <View style={coinShowStyle}>
             <CoinShow />
-          </View>
 
+          </View>
+        <Text style={bittrexStyle}>Coin data retrieved from Bittrex API</Text>
       </View>
     );
   }
@@ -58,12 +65,32 @@ const styles = StyleSheet.create({
     flex: .9,
     width: '100%',
     flexDirection: 'column',
+    borderTopWidth: 1,
+    borderColor: colors.gray,
   },
   coinShowHorizontal: {
-    flex: 1.25,
+    flex: 1.20,
     width: '100%',
     flexDirection: 'column',
+    borderLeftWidth: 1,
+    borderColor: colors.gray,
   },
+  bittrexVertical: {
+    color: colors.gray,
+    position: 'absolute',
+    textAlign: 'center',
+    bottom: 0,
+    left: 0,
+    right: 0
+  },
+  bittrexHorizontal: {
+    color: colors.gray,
+    position: 'absolute',
+    textAlign: 'left',
+    bottom: 0,
+    left: 5,
+    right: 0
+  }
 });
 
 

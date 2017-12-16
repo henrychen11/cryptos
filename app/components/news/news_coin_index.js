@@ -59,7 +59,7 @@ class NewsCoinIndex extends React.Component {
 
   render(){
     const { currentCoin, navigate } = this.props;
-    
+
     if (currentCoin.name && this.state.dataSource){
       return (
         <View style={styles.coinNewsInfo}>
@@ -79,7 +79,7 @@ class NewsCoinIndex extends React.Component {
     } else {
       return (
         <View style={styles.coinNewsInfo}>
-            <Text style={styles.title}>Select a coin</Text>
+            <Text style={styles.loading}>Loading...</Text>
         </View>
       );
     }
@@ -107,6 +107,9 @@ const styles = StyleSheet.create({
     overflow: 'scroll',
     borderBottomWidth: 1,
     borderColor: colors.gray,
+  },
+  loading: {
+    color: colors.white,
   }
 });
 

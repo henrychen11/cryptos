@@ -14,7 +14,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  receiveCurrentCoin: (coin) => dispatch(receiveCurrentCoin(coin)),
+  receiveCurrentCoin: (coin, idx) => dispatch(receiveCurrentCoin(coin, idx)),
   requestChartData: (coinSymbol, time) =>
     dispatch(requestChartData(coinSymbol, time)),
 });

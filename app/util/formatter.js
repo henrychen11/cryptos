@@ -1,7 +1,9 @@
 import moment from 'moment';
 
 export const formatPrice = (num) => {
-  if (num > .1) {
+  if (num > 999.99) {
+    return num.toFixed(2).toString().replace(/(?=(\d{3})+(?!\d))/g, ",");
+  } else if (num > .1) {
     return num.toFixed(2);
   } else {
     return num.toFixed(10).match(/^-?\d*\.?0*\d{0,2}/)[0];
@@ -9,7 +11,7 @@ export const formatPrice = (num) => {
 };
 
 export const formatChange = (num) => {
- if (num > 9.99 || num < -9.99) {
+  if (num > 9.99 || num < -9.99) {
     return num.toFixed(1);
   } else {
     return num.toFixed(2);
@@ -17,11 +19,13 @@ export const formatChange = (num) => {
 };
 
 export const formatPriceChange = (num) => {
-  if (num > 99.99 || num < -99.99) {
-     return num.toFixed(1);
-   } else {
-     return num.toFixed(2);
-   }
+  if (num > 999.99 || num < -999.99) {
+    return num.toFixed(0);
+  } else if (num > 99.99 || num < -99.99) {
+    return num.toFixed(1);
+  } else {
+    return num.toFixed(2);
+  }
 };
 
 export const formatMarketCap = (marketCap) => {

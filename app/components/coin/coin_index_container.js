@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => ({
   requestCoins: () => dispatch(requestCoins()),
   requestCoin: (coin) => dispatch(requestCoins(coin)),
   requestBTC: () => dispatch(requestBTC()),
-  receiveCurrentCoin: (coin) => dispatch(receiveCurrentCoin(coin)),
+  receiveCurrentCoin: (coin, idx) => dispatch(receiveCurrentCoin(coin, idx)),
 });
 
 export default connect(

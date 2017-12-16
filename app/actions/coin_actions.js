@@ -14,9 +14,10 @@ const receiveCoins = (coins) => ({
   coins
 });
 
-export const receiveCurrentCoin = (currentCoin) => ({
+export const receiveCurrentCoin = (currentCoin, idx) => ({
   type: RECEIVE_CURRENT_COIN,
-  currentCoin
+  currentCoin,
+  idx
 });
 
 export const requestCoins = () => dispatch => (
