@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     borderColor: colors.gray,
   },
   coinShowHorizontal: {
-    flex: 1.25,
+    flex: 1.20,
     width: '100%',
     flexDirection: 'column',
     borderLeftWidth: 1,
