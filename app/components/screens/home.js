@@ -27,9 +27,11 @@ class Home extends React.Component{
     const { orientation } = this.props;
     let containerStyle = styles.verticalContainer;
     let coinShowStyle = styles.coinShowVertical;
+    let bittrexStyle = styles.bittrexVertical;
     if (orientation === "horizontal") {
       containerStyle = styles.horizontalContainer;
       coinShowStyle = styles.coinShowHorizontal;
+      bittrexStyle = styles.bittrexHorizontal;
     }
     return(
       <View style={containerStyle}>
@@ -39,7 +41,7 @@ class Home extends React.Component{
             <CoinShow />
 
           </View>
-        <Text style={styles.bittrex}>Coin Data from Bittrex API</Text>
+        <Text style={bittrexStyle}>Coin data retrieved from Bittrex API</Text>
       </View>
     );
   }
@@ -70,12 +72,20 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderColor: colors.gray,
   },
-  bittrex: {
-    color: 'gray',
+  bittrexVertical: {
+    color: colors.gray,
     position: 'absolute',
     textAlign: 'center',
     bottom: 0,
     left: 0,
+    right: 0
+  },
+  bittrexHorizontal: {
+    color: colors.gray,
+    position: 'absolute',
+    textAlign: 'left',
+    bottom: 0,
+    left: 5,
     right: 0
   }
 });

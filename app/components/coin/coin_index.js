@@ -33,7 +33,11 @@ class CoinIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestCoins();
-    setInterval(this.props.requestCoins, 30000);
+    this.reqInt = setInterval(this.props.requestCoins, 30000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.reqInt);
   }
 
   componentWillReceiveProps(newProps) {
