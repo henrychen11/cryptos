@@ -38,7 +38,7 @@ class CoinIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (!newProps.currentCoin.symbol && newProps.coins.length > 0) {
-      newProps.receiveCurrentCoin(newProps.coins[0]);
+      newProps.receiveCurrentCoin(newProps.coins[0], 0);
     }
   }
 
@@ -51,6 +51,7 @@ class CoinIndex extends React.Component {
             coins.map((coin, idx) => (
               <CoinIndexItemContainer
                 key={idx}
+                idx={idx}
                 toggleChangeDisplay={this.toggleChangeDisplay.bind(this)}
                 togglePriceDisplay={this.togglePriceDisplay.bind(this)}
                 changeDisplay={this.state.changeDisplay}

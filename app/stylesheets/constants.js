@@ -12,6 +12,7 @@ export const colors = {
 
   "background": "#000000",
   "lower_background": "#212121",
+  "selectedCoinBackground": "#212121",
   "text_color": "#ffffff",
 
 };

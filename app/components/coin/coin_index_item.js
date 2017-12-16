@@ -17,7 +17,7 @@ class CoinIndexItem extends React.Component {
   }
 
   _onPress() {
-    this.props.receiveCurrentCoin(this.props.coin);
+    this.props.receiveCurrentCoin(this.props.coin, this.props.idx);
     this.props.requestChartData(this.props.coin.symbol);
   }
 
@@ -32,7 +32,7 @@ class CoinIndexItem extends React.Component {
       percentChange24Hours,
       marketCapUSD,
     } = this.props.coin;
-    const { priceType, orientation, currentCoin } = this.props;
+    const { priceType, idx, orientation, currentCoin } = this.props;
     let price = priceType === 'usd' ? bidUSD : bid;
     if (symbol === 'BTC' && priceType === 'btc') {
       price = 1;
@@ -51,6 +51,14 @@ class CoinIndexItem extends React.Component {
         }
       }
     }
+
+    let coinIndexItemStyle = styles.coinIndexItem;
+    if (idx === currentCoin.idx + 1) {
+      coinIndexItemStyle = styles.coinIndexItemAfter;
+    } else if (idx === 0) {
+      coinIndexItemStyle = styles.coinIndexItemFirst;
+    }
+
     let priceDisplay, changeDisplay;
     if (bidUSD) {
       priceDisplay = `${price}`;
@@ -64,7 +72,7 @@ class CoinIndexItem extends React.Component {
         underlayColor="gray"
         onPress={this._onPress}
         style={highlightStyle}>
-        <View style={styles.coinIndexItem}>
+        <View style={coinIndexItemStyle}>
             <View style={styles.coinTitles}>
               <Text style={nameStyle}>
                 {nameDisplay}
@@ -94,15 +102,29 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderColor: colors.gray,
-    borderBottomWidth: 1,
+    borderColor: colors.selectedCoinBackground,
+    borderTopWidth: 1,
+    marginHorizontal: layouts.marginHorizontal,
+  },
+  coinIndexItemAfter: {
+    paddingVertical: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderColor: colors.selectedCoinBackground,
+    borderTopWidth: 1,
+    paddingHorizontal: layouts.marginHorizontal,
+  },
+  coinIndexItemFirst: {
+    paddingVertical: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginHorizontal: layouts.marginHorizontal,
   },
   normal: {
     backgroundColor: 'transparent',
   },
   selected: {
-    backgroundColor: colors.gray,
+    backgroundColor: colors.selectedCoinBackground,
   },
   coinTitles: {
     flexDirection: 'row',
