@@ -3,8 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>LastAccessedDate</key>
+<<<<<<< HEAD
+	<date>2017-12-16T01:27:53Z</date>
+	<key>WorkspacePath</key>
+	<string>/Users/henrychen/Dropbox/AppAcademy/flex_project/ios/react_native.xcodeproj</string>
+=======
 	<date>2017-12-15T21:34:17Z</date>
 	<key>WorkspacePath</key>
 	<string>/Users/milesmcleod/Desktop/AppAcademy/Cryptos/ios/react_native.xcodeproj</string>
+>>>>>>> master
 </dict>
 </plist>
