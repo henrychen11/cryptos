@@ -3,7 +3,6 @@ import { StyleSheet, WebView } from 'react-native';
 
 class newsPreview extends React.Component {
   static navigationOptions = {
-
   }
 
   render() {

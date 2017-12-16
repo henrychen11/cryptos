@@ -19,6 +19,7 @@ class NewsIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
+
   }
 
   _onClick() {
@@ -29,6 +30,7 @@ class NewsIndexItem extends React.Component {
   }
 
   render() {
+      const { orientation } = this.props;
       return (
           <TouchableHighlight
             style={styles.item}
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
   item: {
     margin: 3,
     width: 325,
-    height: 110,
+    height: 120,
     borderBottomWidth: 1,
     borderColor: colors.gray,
   },
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
   },
     footer: {
     paddingTop: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
   },
   footerText: {
     fontSize: layouts.newsFooterFontSize,

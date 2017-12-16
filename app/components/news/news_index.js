@@ -22,7 +22,6 @@ class NewsIndex extends React.Component {
             enableEmptySections={true}
             renderRow={(article) => (
               <NewsIndexItem
-                style={styles.item}
                 orientation={this.props.orientation}
                 navigate={this.props.navigate}
                 article={article} />
