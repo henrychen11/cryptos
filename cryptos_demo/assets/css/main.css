@@ -1671,7 +1671,8 @@
 		}
 
 	body, input, select, textarea {
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: 'Raleway', sans-serif;
+
 		font-weight: normal;
 		line-height: 1.5em;
 		letter-spacing: -0.015em;
@@ -1841,15 +1842,15 @@
 	}
 
 		a:hover {
-			color: #4696e5;
+			color: #ffffff;
 		}
 
 	strong, b {
-		color: #828282;
+		color: #eeeeee;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #828282;
+		color: #eeeeee;
 	}
 
 	blockquote {
@@ -2934,7 +2935,7 @@
 
 	.wrapper {
 		padding: 4.5em 0 2.5em 0 ;
-		background-color: #ffffff;
+		background-color: #323232;
 		border-bottom: solid 2px #eeeeee;
 	}
 
@@ -3132,7 +3133,7 @@
 			}
 
 			.wrapper.style1 strong, .wrapper.style1 b {
-				color: #ffffff;
+				color: #eeeeee;
 			}
 
 			.wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6 {
@@ -3153,8 +3154,8 @@
 			}
 
 		.wrapper.style2 {
-			background-color: #fbfbfb;
-			color: #999999;
+			background-color: #141414;
+			color: #eeeeee;
 		}
 
 			.wrapper.style2 input[type="submit"],
@@ -3189,8 +3190,8 @@
 				.wrapper.style2 button.special,
 				.wrapper.style2 .button.special {
 					box-shadow: none;
-					background-color: #4696e5;
-					color: #ffffff !important;
+					background-color: #ffffff;
+					color: #000000 !important;
 				}
 
 					.wrapper.style2 input[type="submit"].special:hover,
@@ -3198,7 +3199,7 @@
 					.wrapper.style2 input[type="button"].special:hover,
 					.wrapper.style2 button.special:hover,
 					.wrapper.style2 .button.special:hover {
-						background-color: #5ca3e8;
+						background-color: #21C57D;
 					}
 
 					.wrapper.style2 input[type="submit"].special:active,
@@ -3346,11 +3347,11 @@
 				}
 
 			.wrapper.style2 strong, .wrapper.style2 b {
-				color: #828282;
+				color: #eeeeee;
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #828282;
+				color: #eeeeee;
 			}
 
 			.wrapper.style2 blockquote {
@@ -3560,7 +3561,7 @@
 				}
 
 			.wrapper.style3 strong, .wrapper.style3 b {
-				color: #828282;
+				color: #eeeeee;
 			}
 
 			.wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 h4, .wrapper.style3 h5, .wrapper.style3 h6 {
@@ -3628,7 +3629,7 @@
 
 	#header {
 		background-color: #4696e5;
-		color: #d0e4f8;
+		color: #ffffff;
 		padding: 4.5em 0 2.5em 0 ;
 		-moz-align-items: center;
 		-webkit-align-items: center;
@@ -3642,7 +3643,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("images/overlay.png"), url("images/pattern-size1.svg");
+		background-image: url("images/overlay.png"), url("images/header_background.jpg");
 		background-position: top left, center center;
 		background-attachment: fixed, fixed;
 		background-size: auto, cover;
@@ -3683,7 +3684,11 @@
 			#header .button.special {
 				box-shadow: none;
 				background-color: #ffffff;
-				color: #4696e5 !important;
+				color: #000000 !important;
+			}
+
+			#header .button.special:hover {
+				background-color: #21C57D;
 			}
 
 		#header label {
@@ -3819,8 +3824,13 @@
 			color: #ffffff;
 		}
 
+		#header #title {
+			font-family: 'Monoton', cursive;
+			font-weight:400;
+		}
+
 		#header strong, #header b {
-			color: #ffffff;
+			color: #eeeeee;
 		}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -3900,7 +3910,7 @@
 		@media screen and (max-width: 1280px) {
 
 			#header {
-				background-image: url("images/overlay.png"), url("images/pattern-size2.svg");
+				background-image: url("images/overlay.png"), url("images/header_background.jpg");
 			}
 
 		}
@@ -3944,7 +3954,7 @@
 		@media screen and (max-width: 736px) {
 
 			#header {
-				background-image: url("images/overlay.png"), url("images/pattern-size3.svg");
+				background-image: url("images/overlay.png"), url("images/header_background.jpg");
 			}
 
 				#header h1 {
@@ -4077,7 +4087,9 @@
 /* Footer */
 
 	#footer {
-		background-color: #f7f7f7;
+		background-color: #323232;
+		background-image: url("images/data_background.png");
+		background-attachment: fixed;
 		color: #999999;
 		padding: 4.5em 0 2.5em 0 ;
 		color: #b0b0b0;
@@ -4094,11 +4106,11 @@
 		}
 
 			#footer a:hover {
-				color: #4696e5;
+				color: #ffffff;
 			}
 
 		#footer strong, #footer b {
-			color: #828282;
+			color: #eeeeee;
 		}
 
 		#footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
@@ -4148,4 +4160,9 @@
 			padding: 3em 1.5em 1em 1.5em ;
 		}
 
+	}
+
+	.cool-background {
+		background-image: url("images/data_background.png");
+		background-attachment: fixed;
 	}

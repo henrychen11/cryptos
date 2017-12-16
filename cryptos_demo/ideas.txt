@@ -1,0 +1,89 @@
+Cryptocurrency moves fast.
+We're here to help you keep up.
+
+Cryptos gathers real time cryptocurrency data and gets it to you in a familiar format.
+
+Cryptos is easily accessible on any iOs machine with an internet connection.
+
+Our data stays up to date, so when things change, you'll know about it right away.
+
+Get real-time data on tons of different currencies.
+
+Quickly access the numbers behind what each currency is doing on a moment to moment basis.
+
+Our graphs can help you visualize the recent history of each currency.
+
+Stay up to date with the latest news.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cryptos</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <nav class="top-nav">
+
+    </nav>
+
+    <section class="header">
+      <div class="header-left">
+        <h1>Cryptos</h1>
+
+        <h2>Cryptocurrency moves fast. <br/>
+        We're here to help you keep up.</h2>
+
+        <button>App Store</button>
+      </div>
+
+      <div class="header-left">
+      </div>
+
+    </section>
+
+    <section class="sub-header">
+      <h2>Real-time data on tons of different currencies.</h2>
+
+      <h4>Cryptos gathers cryptocurrency information and gets it to you in a familiar format. <br/> Our data stays up to date, so when things change, you'll know.</h4>
+    </section>
+
+    <section class="simulation">
+      <h2>Try:</h2>
+
+      <article class="simulator">
+
+      </article>
+    </section>
+
+    <section class="explanation">
+      <h2>How does Cryptos work?</h2>
+
+      <p>Cryptos is a JavaScript-based iOS application, written with React Native. Add something here. In the background, an Express server rapidly queries foreign APIs (like Bittrex, Coin Market Cap, and Coin Base), collects current and historical data, and serves it up to the app. </p>
+
+      <p>You can find the source code for the <a href="#">React Native application</a> and the <a href="#">back end API</a> on Github.</p>
+
+    </section>
+
+    <section class="features">
+      <h2>Features</h2>
+
+      <h5>Quickly access the numbers behind what each currency is doing on a moment to moment basis.</h5>
+
+      <h5>Our graphs can help you visualize the recent history of each currency.</h5>
+
+      <h5>Stay up to date with the latest news.</h5>
+
+    </section>
+
+    <footer>
+
+    </footer>
+
+  </body>
+</html>
