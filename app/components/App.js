@@ -33,7 +33,6 @@ const NewsModalStack = StackNavigator({
 const Tab = TabNavigator({
   Home: { screen: Home },
   News: { screen: NewsModalStack },
-  // ChartShow: { screen: ChartShow },
 }, {
   tabBarPosition: 'top',
   animationEnabled: true,
@@ -58,9 +57,7 @@ class App extends React.Component {
     return(
       <View style={{ flex: 1, backgroundColor: colors.black }}>
         <StatusBar barStyle={'light-content'}/>
-        <Tab
-
-          />
+        <Tab />
       </View>
 
     );

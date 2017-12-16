@@ -3,10 +3,11 @@ import { View, StyleSheet, Button, Text, Dimensions} from 'react-native';
 
 import CoinIndexContainer from '../coin/coin_index_container';
 import CoinShow from './coin_show';
+import { colors, layouts } from '../../stylesheets/constants';
 
 class Home extends React.Component{
   static navigationOptions = {
-    tabBarLabel: 'Cryptos',
+    tabBarLabel: 'Home',
   }
 
   constructor(props){
@@ -58,11 +59,15 @@ const styles = StyleSheet.create({
     flex: .9,
     width: '100%',
     flexDirection: 'column',
+    borderTopWidth: 1,
+    borderColor: colors.gray,
   },
   coinShowHorizontal: {
     flex: 1.25,
     width: '100%',
     flexDirection: 'column',
+    borderLeftWidth: 1,
+    borderColor: colors.gray,
   },
 });
 

@@ -1,7 +1,9 @@
 import moment from 'moment';
 
 export const formatPrice = (num) => {
-  if (num > .1) {
+  if (num > 999.99) {
+    return num.toFixed(2).toString().replace(/(?=(\d{3})+(?!\d))/g, ",");
+  } else if (num > .1) {
     return num.toFixed(2);
   } else {
     return num.toFixed(10).match(/^-?\d*\.?0*\d{0,2}/)[0];
