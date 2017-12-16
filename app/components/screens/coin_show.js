@@ -27,7 +27,10 @@ const App = TabNavigator({
     showIcon: false,
     showLabel: true,
     tabStyle: {
-      padding: 5,
+      paddingHorizontal: 5,
+      transform: [{
+        translateY: -7,
+      }],
       flex: 0,
       justifyContent: 'center',
     },

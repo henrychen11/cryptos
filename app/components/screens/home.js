@@ -37,8 +37,9 @@ class Home extends React.Component{
           <CoinIndexContainer />
           <View style={coinShowStyle}>
             <CoinShow />
-          </View>
 
+          </View>
+        <Text style={styles.bittrex}>Coin Data from Bittrex API</Text>
       </View>
     );
   }
@@ -69,6 +70,14 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderColor: colors.gray,
   },
+  bittrex: {
+    color: 'gray',
+    position: 'absolute',
+    textAlign: 'center',
+    bottom: 0,
+    left: 0,
+    right: 0
+  }
 });
 
 
