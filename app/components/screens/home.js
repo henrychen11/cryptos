@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   coinShowVertical: {
-    flex: .8,
+    flex: .9,
     width: '100%',
     flexDirection: 'column',
   },

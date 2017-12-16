@@ -100,11 +100,11 @@ const styles = StyleSheet.create({
   },
   coinSymbol: {
     color: colors.white,
-    fontSize: 18,
+    fontSize: layouts.coinIndexFontSize,
   },
   coinName: {
     color: colors.white,
-    fontSize: 18,
+    fontSize: layouts.coinIndexFontSize,
   },
   coinValues: {
     flexDirection: 'row',

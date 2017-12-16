@@ -18,4 +18,11 @@ export const colors = {
 
 export const layouts = {
   "marginHorizontal": 20,
+  "tabBarFontSize": 14,
+  "coinIndexFontSize": 22,
+  "coinShowTitleFontSize": 26,
+  "coinShowFontSize": 18,
+  "newsTitleFontSize": 18,
+  "newsDescFontSize": 16,
+  "newsFooterFontSize": 14,
 };

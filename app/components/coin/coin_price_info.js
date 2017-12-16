@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   title: {
-    fontSize: 18,
+    fontSize: layouts.coinShowTitleFontSize,
     padding: 4,
     color: colors.white,
     textAlign: 'center',

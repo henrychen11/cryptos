@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   coinPriceChange: {
     borderRadius: 5,
     overflow: 'hidden',
-    width: 78,
+    width: 90,
   },
   positive: {
     backgroundColor: colors.green,
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   priceChange: {
     color: colors.white,
-    fontSize: 18,
+    fontSize: layouts.coinIndexFontSize,
     padding: 5,
     textAlign: 'right',
   }

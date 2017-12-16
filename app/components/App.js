@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
-import { colors } from '../stylesheets/constants';
+import { colors, layouts } from '../stylesheets/constants';
 import { StatusBar, View } from 'react-native';
 
 import Home from './screens/home_container';
@@ -38,17 +38,17 @@ const Tab = TabNavigator({
   tabBarPosition: 'top',
   animationEnabled: true,
   swipeEnabled: true,
-  lazy: false,
+  lazy: true,
   tabBarOptions: {
     activeTintColor: colors.green,
     labelStyle: {
-      fontSize: 14,
+      fontSize: layouts.tabBarFontSize,
       fontWeight: 'bold',
     },
     style: {
       backgroundColor: colors.black,
       padding: 10,
-      paddingTop: 20,
+      marginTop: 20,
     },
   }
 });
@@ -56,7 +56,7 @@ const Tab = TabNavigator({
 class App extends React.Component {
   render() {
     return(
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1, backgroundColor: colors.black }}>
         <StatusBar barStyle={'light-content'}/>
         <Tab
 

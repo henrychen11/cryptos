@@ -69,14 +69,14 @@ const styles = StyleSheet.create({
     paddingTop: 2,
     fontWeight: "bold",
     color: colors.white,
-    fontSize: 14,
+    fontSize: layouts.newsTitleFontSize,
   },
   footer: {
     paddingTop: 1,
     flexDirection: 'row',
   },
   footerText: {
-    fontSize: 10,
+    fontSize: layouts.newsFooterFontSize,
     color: colors.white,
     marginRight: 5,
   }
