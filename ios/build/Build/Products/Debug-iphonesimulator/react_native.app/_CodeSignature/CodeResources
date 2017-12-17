@@ -10,11 +10,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		0FI5yoDzoIpbkXZh/2Y8OSdUeG8=
+		2wbv00YL3xcDch5/vZXs509/AYk=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		T8zUkhDWss2dzQY+WzoRXMEEztM=
+		yxqVTyID6MsmU0AjZUz5wGlckM8=
 		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
@@ -59,7 +59,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MPClRgUyh//M4Ap7k+vhe553Bgs=
+		graLGhhzfdCKxPTeN6CAhVwkD0I=
+		</data>
+		<key>LaunchImage-700-568h@2x.png</key>
+		<data>
+		139P5GAV80W5mJj+vk8A7z3j5xA=
+		</data>
+		<key>LaunchImage-700@2x.png</key>
+		<data>
+		jaK3h0tNMJI4EmPHKiI8TwhMA6A=
+		</data>
+		<key>LaunchImage-800-667h@2x.png</key>
+		<data>
+		9FyY/PROBw+PJouGwgiV4cS7ShI=
+		</data>
+		<key>LaunchImage-800-Landscape-736h@3x.png</key>
+		<data>
+		cMXU57NIiQqFuGh1GlMfLtjl0CU=
+		</data>
+		<key>LaunchImage-800-Portrait-736h@3x.png</key>
+		<data>
+		eX+eEDhQ/Mw1ErGVLlGSCGcBsyM=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -71,19 +91,23 @@
 		</data>
 		<key>PlugIns/react_nativeTests.xctest.dSYM/Contents/Resources/DWARF/react_nativeTests</key>
 		<data>
-		hE6FDG0NJoPpXfFCX3pw8UbUBuw=
+		faZaDBNl7dJjAPBF+fbC5AxFs3g=
 		</data>
 		<key>PlugIns/react_nativeTests.xctest/Info.plist</key>
 		<data>
-		2xh4J7QY/VcbBwDYvVgXrGl2NrY=
+		CZHCGFHoCk5WR3BgvdqkUDHoZAs=
 		</data>
 		<key>PlugIns/react_nativeTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		kkOklFdoMAfrL2ONMgU+aDm7cts=
+		/iJnB+AcJjm9zlxXngUmYj1Eq90=
 		</data>
 		<key>PlugIns/react_nativeTests.xctest/react_nativeTests</key>
 		<data>
-		kN/zVZeqKufeurCRvZQFXtWvS1c=
+		cWKMT9sx4V6nMhSoW8o90vIJqbg=
+		</data>
+		<key>main.jsbundle</key>
+		<data>
+		R4GnvyXMkfpGazloz2KcpooPC5U=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -103,22 +127,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0FI5yoDzoIpbkXZh/2Y8OSdUeG8=
+			2wbv00YL3xcDch5/vZXs509/AYk=
 			</data>
 			<key>hash2</key>
 			<data>
-			e7sLE7wlQX7Nr3dpvNCgOqTwMJxehPUBqmbKzw5MjzY=
+			9BNJih67OrWXTSuaAbL7NpPuErdVEV8B4RS6nrf0KpY=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			T8zUkhDWss2dzQY+WzoRXMEEztM=
+			yxqVTyID6MsmU0AjZUz5wGlckM8=
 			</data>
 			<key>hash2</key>
 			<data>
-			nSoj9H0Prqc97umBzQdMSkXGR93z4FJFzTcEf1hMDrQ=
+			OWOZ5XiYsNKP03NapcjlSq7VcQuMpXOxCca4v56z1XU=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
@@ -222,6 +246,61 @@
 			Jh5i9giCFfo5GhN25CjMKdDJ6Kdlz/p4L95RITR+WeA=
 			</data>
 		</dict>
+		<key>LaunchImage-700-568h@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			139P5GAV80W5mJj+vk8A7z3j5xA=
+			</data>
+			<key>hash2</key>
+			<data>
+			qXNlD82+Xy0EneCo7uBFJ6Uw2JEvcUojKdX0zEPxp8M=
+			</data>
+		</dict>
+		<key>LaunchImage-700@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jaK3h0tNMJI4EmPHKiI8TwhMA6A=
+			</data>
+			<key>hash2</key>
+			<data>
+			OfxQcmhYZr8dW2pv4kjA21poQKNwgrV8VI5fOAqDTpY=
+			</data>
+		</dict>
+		<key>LaunchImage-800-667h@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9FyY/PROBw+PJouGwgiV4cS7ShI=
+			</data>
+			<key>hash2</key>
+			<data>
+			plSRDZJcPoV854UjoLE4Nm8PcPIv0nRWmr3uor7HmhI=
+			</data>
+		</dict>
+		<key>LaunchImage-800-Landscape-736h@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cMXU57NIiQqFuGh1GlMfLtjl0CU=
+			</data>
+			<key>hash2</key>
+			<data>
+			V6PCa0cQ/AyQZVy9cAnJq2ZqFNGUw0/vebZoHua7v28=
+			</data>
+		</dict>
+		<key>LaunchImage-800-Portrait-736h@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			eX+eEDhQ/Mw1ErGVLlGSCGcBsyM=
+			</data>
+			<key>hash2</key>
+			<data>
+			VTkXiGUKjEP35mXqHg/1D6vTmZERWXLd5f3HFnMsCcM=
+			</data>
+		</dict>
 		<key>PlugIns/react_nativeTests.xctest.dSYM/Contents/Info.plist</key>
 		<dict>
 			<key>hash</key>
@@ -237,44 +316,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hE6FDG0NJoPpXfFCX3pw8UbUBuw=
+			faZaDBNl7dJjAPBF+fbC5AxFs3g=
 			</data>
 			<key>hash2</key>
 			<data>
-			g8/LNPFQqcppfaZDEBg3zFeSsJXGpfU4HVdNVkGBJtM=
+			jQ+bt74VNeffY8OcDcD+VB04iot5jNdacUSnd/BqIBg=
 			</data>
 		</dict>
 		<key>PlugIns/react_nativeTests.xctest/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2xh4J7QY/VcbBwDYvVgXrGl2NrY=
+			CZHCGFHoCk5WR3BgvdqkUDHoZAs=
 			</data>
 			<key>hash2</key>
 			<data>
-			09lOunM6i+nH2RNw+jrqmF2BGbMyHq2llw9z/bu0zNA=
+			HyA9i76w2/GRUDKgmH58Mp4MoA3/3b9a6d0EMnWFW7Y=
 			</data>
 		</dict>
 		<key>PlugIns/react_nativeTests.xctest/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kkOklFdoMAfrL2ONMgU+aDm7cts=
+			/iJnB+AcJjm9zlxXngUmYj1Eq90=
 			</data>
 			<key>hash2</key>
 			<data>
-			cWoCOYdvKPH/tfI9a45xilWnaCznid/cZDl87UPTg7U=
+			TuLbGb45xuOZ8DMOU8V9Hw7Fg/k6gCWu3LfAR7ugF6I=
 			</data>
 		</dict>
 		<key>PlugIns/react_nativeTests.xctest/react_nativeTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kN/zVZeqKufeurCRvZQFXtWvS1c=
+			cWKMT9sx4V6nMhSoW8o90vIJqbg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Cka8iedg6lOp4V2s+vM34h8PMBkVTktu7/17u6HCY8o=
+			q9ithWYV5DPO8l7md4Dehz5hYbrGixLx60i8w26ypBA=
+			</data>
+		</dict>
+		<key>main.jsbundle</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			R4GnvyXMkfpGazloz2KcpooPC5U=
+			</data>
+			<key>hash2</key>
+			<data>
+			0DeMggOit7t0UqzmxEHumqLATPjp0hohj/ANt9JbLJ4=
 			</data>
 		</dict>
 	</dict>
