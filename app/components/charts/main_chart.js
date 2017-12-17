@@ -35,6 +35,16 @@ class MainChart extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { currentCoin, currentChart, requestChartData } = nextProps;
+    if (currentCoin.name !== currentChart.name) {
+      requestChartData(
+        currentCoin.symbol,
+        this.state.chartOption
+      );
+    }
+  }
+
   updateView(option){
     this.setState({
         chartOption: option,

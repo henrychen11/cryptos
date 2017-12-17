@@ -18,7 +18,7 @@ class CoinIndexItem extends React.Component {
 
   _onPress() {
     this.props.receiveCurrentCoin(this.props.coin, this.props.idx);
-    this.props.requestChartData(this.props.coin.symbol);
+    
   }
 
   render() {
