@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>D347NQ4TTL.org.reactjs.native.example.react-native.cryptos.milesmcleod</string>
+	<string>UN94GYFG86.cryptos.prod.version1</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>D347NQ4TTL.org.reactjs.native.example.react-native.cryptos.milesmcleod</string>
+		<string>UN94GYFG86.cryptos.prod.version1</string>
 	</array>
 </dict>
 </plist>
