@@ -37,7 +37,7 @@ class MainChart extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { currentCoin, currentChart, requestChartData } = nextProps;
-    if (currentCoin.name !== currentChart.name) {
+    if (currentCoin.symbol !== currentChart.symbol) {
       requestChartData(
         currentCoin.symbol,
         this.state.chartOption
@@ -49,19 +49,20 @@ class MainChart extends React.Component {
     this.setState({
         chartOption: option,
     });
+    this.props.requestChartData(
+      this.props.currentCoin.symbol,
+      option
+    );
   }
 
-  selectData() {
+  selectLabels() {
     switch(this.state.chartOption) {
       case 'week':
-        this.labelFunction = (d) => moment(d).format('MMM DD');
-        return this.props.currentChart.valuePerFifteenMinutesUSD;
+        return labelFunction = (d) => moment(d).format('MMM DD');
       case 'hour':
-        this.labelFunction = (d) => moment(d).format("HH:mm");
-        return this.props.currentChart.valuePerMinuteUSD.slice(-60);
+        return labelFunction = (d) => moment(d).format("HH:mm");
       case 'day':
-        this.labelFunction = (d) => moment(d).format('HH:mm');
-        return this.props.currentChart.valuePerFifteenMinutesUSD.slice(-60);
+        return labelFunction = (d) => moment(d).format('HH:mm');
     }
   }
 
@@ -74,11 +75,12 @@ class MainChart extends React.Component {
   render() {
 
     if (this.props.currentChart) {
-      const data = this.selectData().map( (el) => (
-        ({
-          'time': el.time,
-          'value': el.value })
-      ));
+      // const data = this.selectData().map( (el) => (
+      //   ({
+      //     'time': el.time,
+      //     'value': el.value })
+      // ));
+      const data = this.props.currentChart.dataUSD;
 
       let hourColor = colors.timeColor;
       let dayColor = colors.timeColor;
@@ -113,7 +115,7 @@ class MainChart extends React.Component {
           zeroAxis: false,
           orient: 'bottom',
           tickValues: xValues(this.state.chartOption),
-          labelFunction: this.labelFunction,
+          labelFunction: this.selectLabels(),
           label: {
             fontFamily: 'Arial',
             fontSize: 12,
