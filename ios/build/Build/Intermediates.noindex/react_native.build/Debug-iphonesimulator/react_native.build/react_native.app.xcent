@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>UN94GYFG86.cryptos.prod.version1</string>
+	<string>UJ4NV9ZYGU.com.cryptos.cryptosapp</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>UN94GYFG86.cryptos.prod.version1</string>
+		<string>UJ4NV9ZYGU.com.cryptos.cryptosapp</string>
 	</array>
 </dict>
 </plist>

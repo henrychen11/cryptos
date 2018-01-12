@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
 import CoinIndexItemContainer from './coin_index_item_container';
 
 import { colors, layouts } from '../../stylesheets/constants';
@@ -66,19 +66,28 @@ class CoinIndex extends React.Component {
         </ScrollView>
       );
     } else {
-      return <Text>Loading...</Text>;
+      return (
+        <View>
+          
+        </View>
+      );
     }
   }
 }
 
 const styles = StyleSheet.create({
+  coinLoading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+  },
   coinIndex: {
     backgroundColor: colors.black,
     flex: 1,
     flexDirection: 'column',
     width: '100%',
     overflow: 'scroll',
-
   }
 });
 

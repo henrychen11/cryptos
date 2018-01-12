@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, ListView, TextInput } from 'react-native';
+import { View, StyleSheet, Text, ListView, TextInput, ActivityIndicator } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 import NewsCoinIndexItem from './news_coin_index_item';
 
@@ -79,7 +79,7 @@ class NewsCoinIndex extends React.Component {
     } else {
       return (
         <View style={styles.coinNewsInfo}>
-            <Text style={styles.loading}>Loading...</Text>
+          <ActivityIndicator size="large" color="#32CD32" />
         </View>
       );
     }
@@ -87,6 +87,12 @@ class NewsCoinIndex extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  coinLoading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+  },
   coinNewsInfo: {
     backgroundColor: colors.dark_gray,
     flex: 1,
