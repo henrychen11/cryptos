@@ -75,11 +75,6 @@ class MainChart extends React.Component {
   render() {
 
     if (this.props.currentChart) {
-      // const data = this.selectData().map( (el) => (
-      //   ({
-      //     'time': el.time,
-      //     'value': el.value })
-      // ));
       const data = this.props.currentChart.dataUSD;
 
       let hourColor = colors.timeColor;
