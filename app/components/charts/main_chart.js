@@ -58,7 +58,7 @@ class MainChart extends React.Component {
   selectLabels() {
     switch(this.state.chartOption) {
       case 'week':
-        return labelFunction = (d) => moment(d).format('MMM DD');
+        return labelFunction = (d) => moment(d).format('MM/DD');
       case 'hour':
         return labelFunction = (d) => moment(d).format("HH:mm");
       case 'day':
@@ -94,7 +94,7 @@ class MainChart extends React.Component {
 
       let options = {
         width: this.state.dimensions.width * 0.75,
-        height: this.state.dimensions.height * 0.75,
+        height: this.state.dimensions.height * 0.24,
         color: colors.green,
         margin: {
           top: 0,
