@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, ListView, TextInput } from 'react-native';
+import { View, StyleSheet, Text, ListView, TextInput, ActivityIndicator } from 'react-native';
 import NewsIndexItem from './news_index_item';
 import { colors, layouts } from '../../stylesheets/constants';
 
@@ -9,10 +9,11 @@ class NewsIndex extends React.Component {
   }
 
   render(){
-    console.log("news index ", this.props);
     if (this.props.isLoading){
       return (
-        <Text>I'm LOADING!!!!</Text>
+        <View style={styles.coinLoading}>
+          <ActivityIndicator size="large" color="#32CD32" />
+        </View>
       );
     } else {
       return (
@@ -34,12 +35,18 @@ class NewsIndex extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    list: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        backgroundColor: colors.black,
-    },
+  coinLoading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+  },
+  list: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      backgroundColor: colors.black,
+  },
 });
 
 export default NewsIndex;

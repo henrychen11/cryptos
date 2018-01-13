@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 import CoinPriceInfoItem from './coin_price_info_item';
 
@@ -49,8 +49,8 @@ class CoinPriceInfo extends React.Component {
       );
     } else {
        return (
-        <View style={styles.coinPriceInfo}>
-          <Text style={styles.title}>Loading...</Text>
+        <View style={styles.coinLoading}>
+          <ActivityIndicator size="large" color="#32CD32" />
         </View>
       );
     }
@@ -59,6 +59,12 @@ class CoinPriceInfo extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  coinLoading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+  },
   coinPriceInfo: {
     flex: 1,
     flexDirection: 'column',
