@@ -1,7 +1,7 @@
 import React from 'react';
 import { StockLine } from 'react-native-pathjs-charts';
 
-import { Text, View, StyleSheet, Button, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, Button, Dimensions, ActivityIndicator } from 'react-native';
 import { colors, layouts } from '../../stylesheets/constants';
 import moment from 'moment';
 import { formatChartPrice } from '../../util/formatter';
@@ -170,8 +170,8 @@ class MainChart extends React.Component {
       )
     } else {
       return (
-        <View style={{ backgroundColor: 'black'}}>
-          <Text>Loading...</Text>
+        <View style={ styles.coinLoading }>
+          <ActivityIndicator size="large" color="#32CD32" />
         </View>
       )
     }
@@ -181,6 +181,7 @@ class MainChart extends React.Component {
 export default MainChart;
 
 const styles = StyleSheet.create({
+
   main: {
     flex: 1,
     flexDirection: 'column',
@@ -193,5 +194,12 @@ const styles = StyleSheet.create({
   },
   button: {
     color: colors.white,
-  }
+  },
+  coinLoading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: 'black'
+  },
 })

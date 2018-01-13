@@ -78,7 +78,7 @@ class NewsCoinIndex extends React.Component {
       );
     } else {
       return (
-        <View style={styles.coinNewsInfo}>
+        <View style={styles.coinLoading}>
           <ActivityIndicator size="large" color="#32CD32" />
         </View>
       );
