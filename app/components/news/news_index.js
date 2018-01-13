@@ -9,10 +9,9 @@ class NewsIndex extends React.Component {
   }
 
   render(){
-    console.log("news index ", this.props);
     if (this.props.isLoading){
       return (
-        <View>
+        <View style={styles.coinLoading}>
           <ActivityIndicator size="large" color="#32CD32" />
         </View>
       );
