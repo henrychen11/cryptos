@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, ScrollView, StyleSheet } from 'react-native';
+import { Text, ScrollView, StyleSheet, AsyncStorage } from 'react-native';
 import CoinIndexItemContainer from './coin_index_item_container';
 
 import { colors, layouts } from '../../stylesheets/constants';
@@ -48,11 +48,23 @@ class CoinIndex extends React.Component {
 
   render() {
     const { coins, receiveCurrentCoin } = this.props;
+    let dispCoins = coins;
     if (coins.length > 0) {
+
+      console.log(coins);
+    } else {
+      dispCoins = [{name: 'Bitcoin', id: -1, symbol: 'BTC'},
+                  {name: 'Ethereum', id: -2, symbol: 'ETH'},
+                  {name: 'Ripple', id: 99, symbol: 'XRP'},
+                  {name: 'Ada', id: 278, symbol: 'ADA'},
+                  {name: 'Litecoin', id: 1, symbol: 'LTC'},
+                  {name: 'NewEconomyMovement', id: 120, symbol: 'XEM'},
+                  {name: 'Lumen', id: 156, symbol: 'XLM'}];
+    }
       return (
         <ScrollView style={styles.coinIndex}>
           {
-            coins.map((coin, idx) => (
+            dispCoins.map((coin, idx) => (
               <CoinIndexItemContainer
                 key={idx}
                 idx={idx}
@@ -65,9 +77,6 @@ class CoinIndex extends React.Component {
           }
         </ScrollView>
       );
-    } else {
-      return <Text>Loading...</Text>;
-    }
   }
 }
 

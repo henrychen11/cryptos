@@ -18,7 +18,7 @@ class CoinIndexItem extends React.Component {
 
   _onPress() {
     this.props.receiveCurrentCoin(this.props.coin, this.props.idx);
-    
+
   }
 
   render() {
@@ -65,7 +65,7 @@ class CoinIndexItem extends React.Component {
     } else {
       priceDisplay = "----";
     }
-
+    console.log(priceDisplay);
     return(
       <TouchableHighlight
         activeOpacity={5}
